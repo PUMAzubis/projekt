@@ -1,5 +1,12 @@
 package de.dpma.pumaz.bvs;
 
-public class MainApp {
+import java.util.logging.Logger;
 
+public class MainApp {
+	
+	Logger log = Logger.getLogger(MainApp.class.getName());
+	
+	public static void main(String[] args) {
+		
+	}
 }
