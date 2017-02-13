@@ -1,0 +1,5 @@
+Das Deutsche Patent- und Markenamt (DPMA) ist die Zentralbehörde auf dem Gebiet des Gewerblichen Rechtsschutzes in Deutschland. Organisatorisch ist das Deutsche Patent- und Markenamt dem Bundesministerium der Justiz und für Verbraucherschutz nachgeordnet. Das DPMA ist mit mehr als 2.500 Mitarbeiterinnen und Mitarbeitern in den Dienststellen München, Jena und Berlin vertreten. Hauptsitz des Deutschen Patent- und Markenamts ist München. Gesetzlicher Auftrag des DPMA ist es, gewerbliche Schutzrechte zu erteilen und zu verwalten sowie über bestehende gewerbliche Schutzrechte für Deutschland zu informieren.
+
+Darüber hinaus besitzt das Deutsche Patent- und Markenamt eine der größten technischen Bibliotheken in Deutschland. Die Medien wie z.B. Bücher, E-Books etc. helfen den jeweiligen Prüfer bei Ihrer Arbeit.
+
+Ziel des vorliegenden Projektes ist es ein Bibliotheksverwaltungs-software(BVS) im DPMA einzuführen, um die elektronische Erfassung und Ausleihe von Büchern für Mitarbeiter des DPMA zu gewährleisten.
