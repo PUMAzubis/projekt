@@ -3,6 +3,78 @@ package de.dpma.pumaz.bvs.model;
 import java.util.logging.Logger;
 
 public class User {
-	
-	Logger log = Logger.getLogger(User.class.getName());
+
+	private int id;
+	private int identification_number;
+	private String forename;
+	private String surname;
+	private String password;
+	private int librarian;
+
+	Logger log = Logger.getLogger(Buch.class.getName());
+
+	public User(int id, int identification_number, String forename, String surname, String password, int librarian) {
+		this.id = id;
+		this.identification_number = identification_number;
+		this.forename = forename;
+		this.surname = surname;
+		this.password = password;
+		this.librarian = librarian;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public int getIdentification_number() {
+		return identification_number;
+	}
+
+	public void setIdentification_number(int identification_number) {
+		this.identification_number = identification_number;
+	}
+
+	public String getForename() {
+		return forename;
+	}
+
+	public void setForename(String forename) {
+		this.forename = forename;
+	}
+
+	public String getSurname() {
+		return surname;
+	}
+
+	public void setSurname(String surname) {
+		this.surname = surname;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public int getLibrarian() {
+		return librarian;
+	}
+
+	public void setLibrarian(int librarian) {
+		this.librarian = librarian;
+	}
+
+	public Logger getLog() {
+		return log;
+	}
+
+	public void setLog(Logger log) {
+		this.log = log;
+	}
 }
