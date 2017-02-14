@@ -21,5 +21,7 @@ public class LoginController {
 		}
 		System.exit(0);
 	}
-	
+	public void handleAbout() {
+		
+	}
 }
