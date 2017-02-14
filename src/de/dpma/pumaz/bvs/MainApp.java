@@ -40,24 +40,25 @@ public class MainApp extends Application {
 			rootLayout.setCenter(login);
 		}
 		catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
 	}
 	
-	private void initRootLayout() throws IOException {
+	private void initRootLayout() {
 		
-		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(MainApp.class.getResource("view/RootLayout.fxml"));
-		
-		// Parent parent = null;
-		rootLayout = (BorderPane) loader.load();
-		Scene scene = new Scene(rootLayout);
-		// stage.initOwner(primaryStage);
-		// stage.setScene();
-		primaryStage.setScene(scene);
-		primaryStage.show();
+		try {
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("view/RootLayout.fxml"));
+			
+			rootLayout = (BorderPane) loader.load();
+			Scene scene = new Scene(rootLayout);
+			primaryStage.setScene(scene);
+			primaryStage.show();
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public static void main(String[] args) {
