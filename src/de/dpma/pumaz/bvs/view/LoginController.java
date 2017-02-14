@@ -8,6 +8,7 @@ public class LoginController {
 	
 	public void handleExit() {
 		
+		System.exit(0);
 	}
 	
 }
