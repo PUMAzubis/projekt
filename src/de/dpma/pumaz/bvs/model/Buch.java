@@ -11,6 +11,11 @@ public class Buch {
 	private String ISBN;
 	private int id_categorys;
 
+	private int books_single_id;
+	private int books_single_id_books;
+	private int books_single_id_borrower;
+	private int books_single_available;
+
 	Logger log = Logger.getLogger(Buch.class.getName());
 
 	public Buch(int id, String name, String author, int release_year, String ISBN, int id_categorys) {
@@ -20,6 +25,46 @@ public class Buch {
 		this.release_year = release_year;
 		this.ISBN = ISBN;
 		this.id_categorys = id_categorys;
+	}
+
+	public Buch(int books_single_id, int books_single_id_books, int books_single_id_borrower,
+			int books_single_available) {
+		this.books_single_id = books_single_id;
+		this.books_single_id_books = books_single_id_books;
+		this.books_single_id_borrower = books_single_id_borrower;
+		this.books_single_available = books_single_available;
+	}
+
+	public int getBooks_single_id() {
+		return books_single_id;
+	}
+
+	public void setBooks_single_id(int books_single_id) {
+		this.books_single_id = books_single_id;
+	}
+
+	public int getBooks_single_id_books() {
+		return books_single_id_books;
+	}
+
+	public void setBooks_single_id_books(int books_single_id_books) {
+		this.books_single_id_books = books_single_id_books;
+	}
+
+	public int getBooks_single_id_borrower() {
+		return books_single_id_borrower;
+	}
+
+	public void setBooks_single_id_borrower(int books_single_id_borrower) {
+		this.books_single_id_borrower = books_single_id_borrower;
+	}
+
+	public int getBooks_single_available() {
+		return books_single_available;
+	}
+
+	public void setBooks_single_available(int books_single_available) {
+		this.books_single_available = books_single_available;
 	}
 
 	public int getId() {
