@@ -4,8 +4,6 @@ import java.sql.SQLException;
 import java.util.logging.Logger;
 
 import de.dpma.pumaz.bvs.dao.DatabaseConnection;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.fxml.FXMLLoader;
 
 public class LoginController {
@@ -26,7 +24,7 @@ public class LoginController {
 	}
 	
 	public void handleAbout() {
-
+		
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(LoginController.class.getResource("RootLayout.fxml"));
 	}
