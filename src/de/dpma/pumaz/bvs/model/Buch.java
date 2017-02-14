@@ -11,12 +11,19 @@ public class Buch {
 	private String ISBN;
 	private int id_categorys;
 
+	private int count;
+	private int available_count;
+
 	private int books_single_id;
 	private int books_single_id_books;
 	private int books_single_id_borrower;
 	private int books_single_available;
 
 	Logger log = Logger.getLogger(Buch.class.getName());
+
+	public Buch() {
+
+	}
 
 	public Buch(int id, String name, String author, int release_year, String ISBN, int id_categorys) {
 		this.id = id;
@@ -25,6 +32,18 @@ public class Buch {
 		this.release_year = release_year;
 		this.ISBN = ISBN;
 		this.id_categorys = id_categorys;
+	}
+
+	public Buch(int id, String name, String author, int release_year, String ISBN, int id_categorys, int count,
+			int available_count) {
+		this.id = id;
+		this.name = name;
+		this.author = author;
+		this.release_year = release_year;
+		this.ISBN = ISBN;
+		this.id_categorys = id_categorys;
+		this.count = count;
+		this.available_count = available_count;
 	}
 
 	public Buch(int books_single_id, int books_single_id_books, int books_single_id_borrower,
@@ -65,6 +84,22 @@ public class Buch {
 
 	public void setBooks_single_available(int books_single_available) {
 		this.books_single_available = books_single_available;
+	}
+
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
+	}
+
+	public int getAvailable_count() {
+		return available_count;
+	}
+
+	public void setAvailable_count(int available_count) {
+		this.available_count = available_count;
 	}
 
 	public int getId() {
