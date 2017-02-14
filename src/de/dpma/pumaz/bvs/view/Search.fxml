@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text layoutX="313.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Suche">
+         <font>
+            <Font name="Century Gothic" size="36.0" />
+         </font>
+      </Text>
+      <Label layoutX="70.0" layoutY="162.0" text="Titel:" />
+      <Label layoutX="70.0" layoutY="252.0" text="ISBN:" />
+      <TextField layoutX="313.0" layoutY="157.0" text="Titel" />
+      <TextField layoutX="313.0" layoutY="247.0" text="0000 0000" />
+      <Button layoutX="63.0" layoutY="331.0" mnemonicParsing="false" text="Abbrechen" />
+      <Button layoutX="433.0" layoutY="331.0" mnemonicParsing="false" text="Suchen" />
+      <Label layoutX="194.0" layoutY="110.0" text="Titel oder ISBN des Buchs eingeben." />
+      <Label layoutX="68.0" layoutY="206.0" text="Autor:" />
+      <TextField layoutX="313.0" layoutY="201.0" text="Autor" />
+      <ImageView fitHeight="110.0" fitWidth="200.0" layoutX="4.0">
+         <image>
+            <Image url="@../../../../../../resources/dpma.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

@@ -6,6 +6,7 @@ import java.util.logging.Logger;
 import de.dpma.pumaz.bvs.dao.DatabaseConnection;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.fxml.FXMLLoader;
 
 public class LoginController {
 	
@@ -23,18 +24,10 @@ public class LoginController {
 		}
 		System.exit(0);
 	}
+	
 	public void handleAbout() {
-		Alert alert = new Alert(AlertType.INFORMATION);
-		
-		alert.setTitle("Über");
-		
-		alert.setHeaderText("Über");
-		
-		String s ="Das Programm wurde erstellt von Florian Seidl, Kenneth Böhmer, Kinan Saeb, Abdahllah Al-Maskari und Alexander Bacher";
-		
-		alert.setContentText(s);
-		
-		alert.show();
 
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(LoginController.class.getResource("RootLayout.fxml"));
 	}
 }

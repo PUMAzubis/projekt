@@ -2,16 +2,47 @@ package de.dpma.pumaz.bvs;
 
 import java.sql.SQLException;
 import java.util.logging.Logger;
+import java.io.IOException;
 
 import de.dpma.pumaz.bvs.dao.DatabaseConnection;
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 public class MainApp extends Application {
 
+	private Stage primaryStage;
+
+	private BorderPane rootLayout;
+
+	Logger log = Logger.getLogger(MainApp.class.getName());
+	
 	@Override
-	public void start(Stage arg0) throws Exception {
-		// TODO Auto-generated method stub
+	public void start(Stage primaryStage) throws Exception, ClassNotFoundException, SQLException {
+
+		this.primaryStage = primaryStage;
+		initRootLayout();
+		showLogin();
+	}
+
+	private void showLogin() {
+
+		try {
+			
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("view/Login.fxml"));
+			
+			AnchorPane login;
+			login = (AnchorPane) loader.load();
+			rootLayout.setCenter(login);
+		}
+		catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 
