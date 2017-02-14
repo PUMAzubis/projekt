@@ -29,9 +29,9 @@
       <TextField layoutX="321.0" layoutY="105.0" prefHeight="31.0" prefWidth="265.0" text="Titel des Buchs" />
       <TextField layoutX="320.0" layoutY="145.0" prefHeight="31.0" prefWidth="265.0" text="Autor des Buchs" />
       <TextField layoutX="320.0" layoutY="185.0" prefHeight="31.0" prefWidth="265.0" text="8, 10 oder 13 stellige ISB-Nummer" />
-      <TextField layoutX="320.0" layoutY="225.0" prefHeight="31.0" prefWidth="265.0" text="yyyy" />
+      <TextField layoutX="320.0" layoutY="225.0" prefHeight="31.0" prefWidth="265.0" text="yyyy-Format" />
       <TextField layoutX="320.0" layoutY="265.0" prefHeight="31.0" prefWidth="265.0" text="z. B. IT, Verwaltung, ..." />
-      <Button layoutX="321.0" layoutY="350.0" mnemonicParsing="false" text="Speichern" />
+      <Button layoutX="320.0" layoutY="350.0" mnemonicParsing="false" text="Speichern" />
       <Button layoutX="492.0" layoutY="350.0" mnemonicParsing="false" text="Abbrechen" />
       <Label layoutX="65.0" layoutY="313.0" text="Mit * markierte Felder müssen ausgefüllt werden." textFill="RED" />
       <ImageView fitHeight="110.0" fitWidth="200.0" layoutX="2.0" layoutY="4.0">
