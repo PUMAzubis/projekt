@@ -1,9 +1,8 @@
 package de.dpma.pumaz.bvs;
 
-
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Logger;
-import java.io.IOException;
 
 import de.dpma.pumaz.bvs.dao.DatabaseConnection;
 import javafx.application.Application;
@@ -14,21 +13,21 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 public class MainApp extends Application {
-
+	
 	private Stage primaryStage;
-
+	
 	private BorderPane rootLayout;
 	
 	Logger log = Logger.getLogger(MainApp.class.getName());
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception, ClassNotFoundException, SQLException {
-
+		
 		this.primaryStage = primaryStage;
 		initRootLayout();
 		showLogin();
 	}
-
+	
 	private void showLogin() {
 		
 		try {
@@ -44,9 +43,9 @@ public class MainApp extends Application {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
+		
 	}
-
+	
 	private void initRootLayout() throws IOException {
 		
 		FXMLLoader loader = new FXMLLoader();
@@ -59,12 +58,14 @@ public class MainApp extends Application {
 		// stage.setScene();
 		primaryStage.setScene(scene);
 		primaryStage.show();
-	}	
+	}
+	
 	public static void main(String[] args) {
 		
 		DatabaseConnection dbcon = null;
 		try {
 			dbcon = new DatabaseConnection();
+			
 		}
 		catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
@@ -77,6 +78,7 @@ public class MainApp extends Application {
 				e.printStackTrace();
 			}
 		}
-
+		launch(args);
+		
 	}
 }
