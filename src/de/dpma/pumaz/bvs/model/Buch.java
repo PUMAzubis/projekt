@@ -21,11 +21,14 @@ public class Buch {
 
 	Logger log = Logger.getLogger(Buch.class.getName());
 
+	// Constructor um in BuchDAO Select ein Buch zu erstellen und dieses mit
+	// Daten zu füllen
 	public Buch() {
 
 	}
 
-	public Buch(int id, String name, String author, int release_year, String ISBN, int id_categorys) {
+	// Standard Buch Constructor
+	public Buch(String name, String author, int release_year, String ISBN, int id_categorys) {
 		this.id = id;
 		this.name = name;
 		this.author = author;
@@ -34,7 +37,8 @@ public class Buch {
 		this.id_categorys = id_categorys;
 	}
 
-	public Buch(int id, String name, String author, int release_year, String ISBN, int id_categorys, int count,
+	// Standard Buch Constructor mit Anzahlangaben
+	public Buch(String name, String author, int release_year, String ISBN, int id_categorys, int count,
 			int available_count) {
 		this.id = id;
 		this.name = name;
@@ -46,7 +50,8 @@ public class Buch {
 		this.available_count = available_count;
 	}
 
-	public Buch(int books_single_id, int books_single_id_books, int books_single_id_borrower,
+	// Single Buch Constructor
+	public Buch(int books_single_id_books, int books_single_id_borrower,
 			int books_single_available) {
 		this.books_single_id = books_single_id;
 		this.books_single_id_books = books_single_id_books;
