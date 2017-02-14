@@ -29,5 +29,5 @@ public class LoginController {
 
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(LoginController.class.getResource("RootLayout.fxml"));
-
+	}
 }
