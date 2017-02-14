@@ -59,7 +59,7 @@
       <Text fill="#ee0a0a" layoutX="37.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mit * markierte Felder müssen ausgefüllt werden." />
       <ImageView fitHeight="110.0" fitWidth="200.0" layoutX="6.0">
          <image>
-            <Image url="@DEgov-DPMA-Logo.svg.png" />
+            <Image url="@../../../../../../resources/dpma.png" />
          </image>
       </ImageView>
    </children>

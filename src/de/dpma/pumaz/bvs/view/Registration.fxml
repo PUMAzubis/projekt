@@ -56,9 +56,9 @@
             <PasswordField layoutX="219.0" layoutY="226.0" prefHeight="31.0" prefWidth="218.0" />
             <PasswordField layoutX="219.0" layoutY="269.0" prefHeight="31.0" prefWidth="218.0" AnchorPane.leftAnchor="219.0" />
             <PasswordField layoutX="219.0" layoutY="318.0" prefHeight="31.0" prefWidth="218.0" AnchorPane.leftAnchor="219.0" />
-            <ImageView fitHeight="110.0" fitWidth="200.0" layoutX="6.0" layoutY="5.0">
+            <ImageView fitHeight="110.0" fitWidth="200.0" layoutX="6.0">
                <image>
-                  <Image url="@DEgov-DPMA-Logo.svg.png" />
+                  <Image url="@../../../../../../resources/dpma.png" />
                </image>
             </ImageView>
          </children>
