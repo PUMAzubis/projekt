@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.logging.Logger;
 
 import de.dpma.pumaz.bvs.dao.DatabaseConnection;
+import javafx.fxml.FXMLLoader;
 
 public class LoginController {
 	
@@ -21,7 +22,10 @@ public class LoginController {
 		}
 		System.exit(0);
 	}
+	
 	public void handleAbout() {
 		
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(LoginController.class.getResource("RootLayout.fxml"));
 	}
 }
