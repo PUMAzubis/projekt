@@ -24,11 +24,6 @@
       </Text>
       <Text layoutX="486.0" layoutY="422.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Version:" AnchorPane.bottomAnchor="10.0" />
       <Text layoutX="555.0" layoutY="422.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1.0.0" AnchorPane.bottomAnchor="10.0" />
-      <ImageView fitHeight="110.0" fitWidth="200.0" layoutX="6.0" layoutY="6.0">
-         <image>
-            <Image url="@../DEgov-DPMA-Logo.svg.png" />
-         </image>
-      </ImageView>
       <Text layoutX="552.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" />
       <Text layoutX="36.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ausweisnummer*:">
          <font>
@@ -62,5 +57,10 @@
          </cursor>
       </Button>
       <Text fill="#ee0a0a" layoutX="37.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mit * markierte Felder müssen ausgefüllt werden." />
+      <ImageView fitHeight="110.0" fitWidth="200.0" layoutX="6.0">
+         <image>
+            <Image url="@DEgov-DPMA-Logo.svg.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

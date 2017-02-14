@@ -9,7 +9,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="507.0" prefWidth="615.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="507.0" prefWidth="624.0">
@@ -19,11 +18,6 @@
                   <Font name="Century Gothic" size="37.0" />
                </font>
             </Text>
-            <ImageView fitHeight="110.0" fitWidth="200.0" layoutX="6.0" layoutY="6.0">
-               <image>
-                  <Image url="@../DEgov-DPMA-Logo.svg.png" />
-               </image>
-            </ImageView>
             <Text layoutX="552.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" />
             <Text layoutX="31.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ausweisnummer*:" AnchorPane.leftAnchor="40.0">
                <font>
@@ -62,6 +56,11 @@
             <PasswordField layoutX="219.0" layoutY="226.0" prefHeight="31.0" prefWidth="218.0" />
             <PasswordField layoutX="219.0" layoutY="269.0" prefHeight="31.0" prefWidth="218.0" AnchorPane.leftAnchor="219.0" />
             <PasswordField layoutX="219.0" layoutY="318.0" prefHeight="31.0" prefWidth="218.0" AnchorPane.leftAnchor="219.0" />
+            <ImageView fitHeight="110.0" fitWidth="200.0" layoutX="6.0" layoutY="5.0">
+               <image>
+                  <Image url="@DEgov-DPMA-Logo.svg.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </children>
