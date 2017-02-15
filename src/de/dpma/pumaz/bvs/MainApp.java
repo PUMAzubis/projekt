@@ -67,7 +67,10 @@ public class MainApp extends Application {
 		try {
 			dbcon = new DatabaseConnection();
 			BookDAO bookDao = new BookDAO(dbcon.getConnection());
-			bookDao.insertBuch(new Book("Tolles Buch", "Toller Autor", 2016, "0000000000", 1));
+			bookDao.insertBook(new Book("Tolles Buch", "Toller Autor", 2016, "0000000000", 1));
+			for (Book b : bookDao.allBooks()) {
+				System.out.println(b.getName());
+			}
 
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
