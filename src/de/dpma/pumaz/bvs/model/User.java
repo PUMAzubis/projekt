@@ -11,7 +11,7 @@ public class User {
 	private String password;
 	private int librarian;
 
-	Logger log = Logger.getLogger(Buch.class.getName());
+	Logger log = Logger.getLogger(Book.class.getName());
 
 	public User(int id, int identification_number, String forename, String surname, String password, int librarian) {
 		this.id = id;

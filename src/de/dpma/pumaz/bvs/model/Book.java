@@ -2,7 +2,7 @@ package de.dpma.pumaz.bvs.model;
 
 import java.util.logging.Logger;
 
-public class Buch {
+public class Book {
 
 	private int id;
 	private String name;
@@ -19,14 +19,16 @@ public class Buch {
 	private int books_single_id_borrower;
 	private int books_single_available;
 
-	Logger log = Logger.getLogger(Buch.class.getName());
+	Logger log = Logger.getLogger(Book.class.getName());
 
-	public Buch() {
+	// Constructor um in BuchDAO Select ein Buch zu erstellen und dieses mit
+	// Daten zu füllen
+	public Book() {
 
 	}
 
-	public Buch(int id, String name, String author, int release_year, String ISBN, int id_categorys) {
-		this.id = id;
+	// Standard Buch Constructor
+	public Book(String name, String author, int release_year, String ISBN, int id_categorys) {
 		this.name = name;
 		this.author = author;
 		this.release_year = release_year;
@@ -34,9 +36,9 @@ public class Buch {
 		this.id_categorys = id_categorys;
 	}
 
-	public Buch(int id, String name, String author, int release_year, String ISBN, int id_categorys, int count,
+	// Standard Buch Constructor mit Anzahlangaben
+	public Book(String name, String author, int release_year, String ISBN, int id_categorys, int count,
 			int available_count) {
-		this.id = id;
 		this.name = name;
 		this.author = author;
 		this.release_year = release_year;
@@ -46,9 +48,8 @@ public class Buch {
 		this.available_count = available_count;
 	}
 
-	public Buch(int books_single_id, int books_single_id_books, int books_single_id_borrower,
-			int books_single_available) {
-		this.books_single_id = books_single_id;
+	// Single Buch Constructor
+	public Book(int books_single_id_books, int books_single_id_borrower, int books_single_available) {
 		this.books_single_id_books = books_single_id_books;
 		this.books_single_id_borrower = books_single_id_borrower;
 		this.books_single_available = books_single_available;
