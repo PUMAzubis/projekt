@@ -3,6 +3,7 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -43,19 +44,35 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <tooltip>
+                  <Tooltip text="Hier Klicken um Ihre Registration abzuschliessen." />
+               </tooltip>
             </Button>
             <Button layoutX="40.0" layoutY="456.0" mnemonicParsing="false" text="Zurück">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <tooltip>
+                  <Tooltip text="Hier Klicken, um zurück zum Login Fenster zu kommen." />
+               </tooltip>
             </Button>
-            <Text layoutX="493.0" layoutY="488.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Version:" AnchorPane.bottomAnchor="10.0" />
-            <Text layoutX="562.0" layoutY="488.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1.0.0" AnchorPane.bottomAnchor="10.0" />
             <Text fill="#ee0a0a" layoutX="40.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mit * markierte Felder müssen ausgefüllt werden." />
-            <PasswordField layoutX="219.0" layoutY="185.0" prefHeight="31.0" prefWidth="218.0" />
-            <PasswordField layoutX="219.0" layoutY="226.0" prefHeight="31.0" prefWidth="218.0" />
-            <PasswordField layoutX="219.0" layoutY="269.0" prefHeight="31.0" prefWidth="218.0" AnchorPane.leftAnchor="219.0" />
-            <PasswordField layoutX="219.0" layoutY="318.0" prefHeight="31.0" prefWidth="218.0" AnchorPane.leftAnchor="219.0" />
+            <PasswordField layoutX="219.0" layoutY="185.0" prefHeight="31.0" prefWidth="218.0">
+               <tooltip>
+                  <Tooltip text="Bitte Ihre Firmeninterne Ausweisnummer angeben." />
+               </tooltip></PasswordField>
+            <PasswordField layoutX="219.0" layoutY="226.0" prefHeight="31.0" prefWidth="218.0">
+               <tooltip>
+                  <Tooltip text="Bitte Ihren Vornamen eingeben." />
+               </tooltip></PasswordField>
+            <PasswordField layoutX="219.0" layoutY="269.0" prefHeight="31.0" prefWidth="218.0" AnchorPane.leftAnchor="219.0">
+               <tooltip>
+                  <Tooltip text="Bitte Ihren Nachnamen eingeben." />
+               </tooltip></PasswordField>
+            <PasswordField layoutX="219.0" layoutY="318.0" prefHeight="31.0" prefWidth="218.0" AnchorPane.leftAnchor="219.0">
+               <tooltip>
+                  <Tooltip text="Bitte ein Passwort mit mindestens 8 Zeichen auswählen." />
+               </tooltip></PasswordField>
             <ImageView fitHeight="110.0" fitWidth="200.0" layoutX="6.0">
                <image>
                   <Image url="@../../../../../../resources/dpma.png" />

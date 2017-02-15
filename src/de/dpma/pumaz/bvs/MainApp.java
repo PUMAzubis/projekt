@@ -63,6 +63,10 @@ public class MainApp extends Application {
 
 	public static void main(String[] args) {
 
+		launch(args);
+
+		DatabaseConnection dbcon = null;
+
 		try {
 			dbcon = new DatabaseConnection();
 			// BookDAO bookDao = new BookDAO(dbcon.getConnection());
@@ -71,7 +75,6 @@ public class MainApp extends Application {
 			// for (Book b : bookDao.allBooks()) {
 			// System.out.println(b.getName());
 			// }
-
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -82,6 +85,5 @@ public class MainApp extends Application {
 			}
 		}
 		launch(args);
-
 	}
 }

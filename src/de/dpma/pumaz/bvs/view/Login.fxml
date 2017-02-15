@@ -5,6 +5,7 @@
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.effect.Blend?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -35,27 +36,42 @@
             <Font size="20.0" />
          </font>
       </Text>
-      <TextField layoutX="219.0" layoutY="185.0" prefHeight="31.0" prefWidth="218.0" />
-      <PasswordField layoutX="219.0" layoutY="246.0" prefHeight="31.0" prefWidth="218.0" />
-      <ButtonBar layoutX="36.0" layoutY="376.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="473.0">
+      <TextField layoutX="219.0" layoutY="185.0" prefHeight="31.0" prefWidth="218.0">
+         <tooltip>
+            <Tooltip text="Bitte Ihre Firmeninterne Ausweisnummer angeben." />
+         </tooltip></TextField>
+      <PasswordField layoutX="219.0" layoutY="246.0" prefHeight="31.0" prefWidth="218.0">
+         <tooltip>
+            <Tooltip text="Bitte Groß- und Kleinschreibung beachten." />
+         </tooltip></PasswordField>
+      <ButtonBar layoutX="36.0" layoutY="336.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="488.0">
          <buttons>
             <Button mnemonicParsing="false" text="Passwort vergessen">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <tooltip>
+                  <Tooltip text="Falls Sie Ihr Passwort vergessen haben, Klicken Sie hier um es zurückzusetzen." />
+               </tooltip>
             </Button>
           <Button mnemonicParsing="false" text="Registrieren">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <tooltip>
+                  <Tooltip text="Falls Sie über keinen Account verfügen, bitte hier Klicken um sich zu Registrieren." />
+               </tooltip>
+            </Button>
+            <Button mnemonicParsing="false" text="Login">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <tooltip>
+                  <Tooltip text="Nachdem Ausweisnummer und Passwort eingegeben wurden, bitte hier Klicken." />
+               </tooltip>
             </Button>
          </buttons>
       </ButtonBar>
-      <Button layoutX="37.0" layoutY="328.0" mnemonicParsing="false" text="Login">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
       <Text fill="#ee0a0a" layoutX="37.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mit * markierte Felder müssen ausgefüllt werden." />
       <ImageView fitHeight="110.0" fitWidth="200.0" layoutX="6.0">
          <image>
