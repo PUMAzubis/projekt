@@ -62,14 +62,15 @@ public class UserDAO {
 		ResultSet result = stat.executeQuery();
 
 		User User = new User();
-		User.setId(result.getInt("id"));
-		User.setIdentification_number(result.getInt("identification_number"));
-		User.setForename(result.getString("forename"));
-		User.setSurname(result.getString("surname"));
-		User.setPassword(result.getString("password"));
-		User.setLibrarian(result.getInt("librarian"));
+		while (result.next()) {
+			User.setId(result.getInt("id"));
+			User.setIdentification_number(result.getInt("identification_number"));
+			User.setForename(result.getString("forename"));
+			User.setSurname(result.getString("surname"));
+			User.setPassword(result.getString("password"));
+			User.setLibrarian(result.getInt("librarian"));
+		}
 		return User;
-
 	}
 
 	public List<User> alleUser() throws SQLException {

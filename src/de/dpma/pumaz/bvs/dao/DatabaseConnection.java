@@ -14,8 +14,8 @@ public class DatabaseConnection {
 	public DatabaseConnection() throws ClassNotFoundException, SQLException {
 		log.info("Die Verbindung zur Datenbank wird gestartet");
 		Class.forName("com.mysql.jdbc.Driver");
-		con = DriverManager
-				.getConnection("jdbc:mysql://192.168.111.144:3306/bvs?" + "user=bvsroot&password=Kekskuchen");
+		con = DriverManager.getConnection("jdbc:mysql://192.168.111.121:3306/bvs?"
+				+ "user=bvsroot&password=Kekskuchen&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false&maxReconnects=10");
 		log.info("Verbindung erfolgreich");
 	}
 
