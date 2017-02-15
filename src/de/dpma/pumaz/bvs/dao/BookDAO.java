@@ -10,13 +10,13 @@ import java.util.List;
 import de.dpma.pumaz.bvs.model.Book;
 
 public class BookDAO {
-	final String INSERT_BUCH = "INSERT INTO `books` (`name`, `author`, `release_year`, `isbn`, `id_category`) VALUES (?, ?, ?, ?, ?)";
+	final String INSERT_BUCH = "INSERT INTO `books` (`name`, `author`, `release_year`, `isbn`, `id_categorys`) VALUES (?, ?, ?, ?, ?)";
 	final String INSERT_BUCH_INSTANZ = "INSERT INTO `books_single` (`id_books`, `id_borrower`, `available`) VALUES (?, ?, ?)";
 
 	final String DELETE_BUCH = "DELETE FROM `books` WHERE `id` = ?";
 	final String DELETE_BUCH_INSTANZ = "DELETE FROM `books_single` WHERE `single_id` = ?";
 
-	final String UPDATE_BUCH = "UPDATE `books` SET `name` = ?, `author` = ?, `release_year` = ?, `isbn` = ?, `id_category` = ? WHERE `id` = ?";
+	final String UPDATE_BUCH = "UPDATE `books` SET `name` = ?, `author` = ?, `release_year` = ?, `isbn` = ?, `id_categorys` = ? WHERE `id` = ?";
 	final String UPDATE_BUCH_INSTANZ = "UPDATE `books_single` SET `id_books` = ?, `id_borrower` = ?, `available` = ? WHERE `single_id` = ?";
 
 	// SELECT_BUCH ohne ALL Noch nicht implementiert
