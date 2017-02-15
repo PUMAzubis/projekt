@@ -32,10 +32,10 @@ Löschen - Delete
 Registration.fxml
 ----------------------
 Ausweisnummer - Identification number
-Vorname - first name
-Nachname - last name
+Vorname - First name
+Nachname - Surname
 Passwort - Password
-Registration abschließen - complete registration
+Registrieren - Register
 Zurück - Back
 
 
@@ -43,8 +43,8 @@ RootLayout.fxml
 --------------
 Datei - File 
 Hilfe - Help
-Sprache ändern - Change Language
-Beenden - Close Application
+Sprache ändern - Change language
+Beenden - Close application
 Anleitung - Instructions
 Über - About
 
@@ -53,15 +53,15 @@ Anleitung - Instructions
 Employees.fxml
 -----------------
 Vorname - first name
-Nachname - last name
+Nachname -  surname
 Mitarbeiterbearbeitung - Edit employees
-Mitarbeiter details - employee details
+Mitarbeiter details - Employee details
 ID - ID
 Ausweisnummer - Identification number
 Status - Status
 Bearbeiten - Edit
 Neu - New
-Löschen - delete
+Löschen - Delete
 Zurück - Back
 
 
@@ -70,7 +70,7 @@ Zurück - Back
 Search.fxml
 ------------------------
 Suche - Search
-Titel oder ISBN des Buches eingeben - Please type in title, ISBN or author of the book
+Titel oder ISBN des Buches eingeben - Insert title or ISBN
 Titel - Title
 Autor - Author
 Abbrechen - Cancel
@@ -80,12 +80,12 @@ Suchen - Search
 Loan.fxml
 ----------------------
 Menü - Menu
-Suche - search
+Suche - Search
 Verleihen - lend, borrow
-Löschen - delete
-Bearbeiten - edit 
-neues buch - new book
-zurück - back
+Löschen - Delete
+Bearbeiten - Edit 
+neues buch - New book
+zurück - Back
 
 Login.fxml
 ---------------
