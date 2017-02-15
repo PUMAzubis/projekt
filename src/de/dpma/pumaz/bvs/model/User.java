@@ -13,13 +13,32 @@ public class User {
 
 	Logger log = Logger.getLogger(Book.class.getName());
 
-	public User(int id, int identification_number, String forename, String surname, String password, int librarian) {
-		this.id = id;
+	PasswordAuthentication pwauth = new PasswordAuthentication();
+
+	public User() {
+
+	}
+
+	public User(int identification_number) {
+		this.identification_number = identification_number;
+	}
+
+	public User(int identification_number, String forename, String surname, String password, int librarian) {
 		this.identification_number = identification_number;
 		this.forename = forename;
 		this.surname = surname;
 		this.password = password;
 		this.librarian = librarian;
+	}
+
+	@SuppressWarnings("deprecation")
+	public String hashPassword(String pw) {
+		return pwauth.hash(pw);
+	}
+
+	@SuppressWarnings("deprecation")
+	public boolean checkPassword(String pw, String hash) {
+		return pwauth.authenticate(pw, hash);
 	}
 
 	public int getId() {
@@ -72,9 +91,5 @@ public class User {
 
 	public Logger getLog() {
 		return log;
-	}
-
-	public void setLog(Logger log) {
-		this.log = log;
 	}
 }

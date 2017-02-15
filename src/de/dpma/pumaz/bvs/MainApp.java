@@ -4,9 +4,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Logger;
 
-import de.dpma.pumaz.bvs.dao.BookDAO;
 import de.dpma.pumaz.bvs.dao.DatabaseConnection;
-import de.dpma.pumaz.bvs.model.Book;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -19,6 +17,8 @@ public class MainApp extends Application {
 	private Stage primaryStage;
 
 	private BorderPane rootLayout;
+
+	public static DatabaseConnection dbcon = null;
 
 	Logger log = Logger.getLogger(MainApp.class.getName());
 
@@ -63,14 +63,14 @@ public class MainApp extends Application {
 
 	public static void main(String[] args) {
 
-		DatabaseConnection dbcon = null;
 		try {
 			dbcon = new DatabaseConnection();
-			BookDAO bookDao = new BookDAO(dbcon.getConnection());
-			bookDao.insertBook(new Book("Tolles Buch", "Toller Autor", 2016, "0000000000", 1));
-			for (Book b : bookDao.allBooks()) {
-				System.out.println(b.getName());
-			}
+			// BookDAO bookDao = new BookDAO(dbcon.getConnection());
+			// bookDao.insertBook(new Book("Tolles Buch", "Toller Autor", 2016,
+			// "0000000000", 1));
+			// for (Book b : bookDao.allBooks()) {
+			// System.out.println(b.getName());
+			// }
 
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();

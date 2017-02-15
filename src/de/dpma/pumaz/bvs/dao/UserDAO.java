@@ -10,14 +10,14 @@ import java.util.List;
 import de.dpma.pumaz.bvs.model.User;
 
 public class UserDAO {
-	final String INSERT_USER = "INSERT INTO `books` (`name`, `author`, `release_year`, `isbn`, `id_categorys`) VALUES (?, ?, ?, ?, ?)";
+	final String INSERT_USER = "INSERT INTO `users` (`identification_number`, `forename`, `surname`, `password`, `librarian`) VALUES (?, ?, ?, ?, ?)";
 
-	final String DELETE_USER = "DELETE FROM `books` WHERE `id` = ?";
+	final String DELETE_USER = "DELETE FROM `users` WHERE `id` = ?";
 
-	final String UPDATE_USER = "UPDATE `books` SET `name` = ?, `author` = ?, `release_year` = ?, `isbn` = ?, `id_categorys` = ? WHERE `id` = ?";
+	final String UPDATE_USER = "UPDATE `users` SET `identification_number` = ?, `forename` = ?, `surname` = ?, `password` = ?, `librarian` = ? WHERE `id` = ?";
 
-	// SELECT_BUCH ohne ALL Noch nicht implementiert
-	final String SELECT_USER = "SELECT *, (SELECT COUNT(*) FROM `books_single` WHERE b.`id` = 1) as count, (SELECT COUNT(*) FROM `books_single` WHERE b.`id` = 1 AND `available` = 1) as available_count FROM `books` b WHERE `id` = ?";
+	final String SELECT_USER = "SELECT * FROM `users` WHERE `identification_number` = ?";
+	final String SELECT_USER_ALL = "SELECT * FROM `users`";
 
 	private final Connection con;
 
@@ -25,120 +25,68 @@ public class UserDAO {
 		this.con = con;
 	}
 
-	public User insertBuch(User b) throws SQLException {
-		PreparedStatement stat = con.prepareStatement(INSERT_BUCH);
-		stat.setString(1, b.getName());
-		stat.setString(2, b.getAuthor());
-		stat.setInt(3, b.getRelease_year());
-		stat.setString(4, b.getISBN());
-		stat.setInt(5, b.getId_categorys());
+	public User insertUser(User u) throws SQLException {
+		PreparedStatement stat = con.prepareStatement(INSERT_USER);
+		stat.setInt(1, u.getIdentification_number());
+		stat.setString(2, u.getForename());
+		stat.setString(3, u.getSurname());
+		stat.setString(4, u.hashPassword(u.getPassword()));
+		stat.setInt(5, u.getLibrarian());
 		stat.executeUpdate();
-		return b;
+		return u;
 	}
 
-	public User insertBuchInstanz(User b) throws SQLException {
-		PreparedStatement stat = con.prepareStatement(INSERT_BUCH_INSTANZ);
-		stat.setInt(1, b.getUsers_single_id_books());
-		stat.setInt(2, b.getUsers_single_id_borrower());
-		stat.setInt(3, b.getUsers_single_available());
+	public User updateUser(User u) throws SQLException {
+		PreparedStatement stat = con.prepareStatement(UPDATE_USER);
+		stat.setInt(1, u.getIdentification_number());
+		stat.setString(2, u.getForename());
+		stat.setString(3, u.getSurname());
+		stat.setString(4, u.hashPassword(u.getPassword()));
+		stat.setInt(5, u.getLibrarian());
+		stat.setInt(6, u.getId());
 		stat.executeUpdate();
-		return b;
+		return u;
 	}
 
-	public User updateBuch(User b) throws SQLException {
-		PreparedStatement stat = con.prepareStatement(UPDATE_BUCH);
-		stat.setString(1, b.getName());
-		stat.setString(2, b.getAuthor());
-		stat.setInt(3, b.getRelease_year());
-		stat.setString(4, b.getISBN());
-		stat.setInt(5, b.getId_categorys());
-		stat.setInt(6, b.getId());
+	public User deleteUser(User u) throws SQLException {
+		PreparedStatement stat = con.prepareStatement(DELETE_USER);
+		stat.setInt(1, u.getId());
 		stat.executeUpdate();
-		return b;
+		return u;
 	}
 
-	public User updateBuchInstanz(User b) throws SQLException {
-		PreparedStatement stat = con.prepareStatement(UPDATE_BUCH_INSTANZ);
-		stat.setInt(1, b.getUsers_single_id_books());
-		stat.setInt(2, b.getUsers_single_id_borrower());
-		stat.setInt(3, b.getUsers_single_available());
-		stat.setInt(4, b.getUsers_single_id());
-		stat.executeUpdate();
-		return b;
-	}
-
-	public User deleteBuch(User b) throws SQLException {
-		PreparedStatement stat = con.prepareStatement(DELETE_BUCH);
-		stat.setInt(1, b.getId());
-		stat.executeUpdate();
-		return b;
-	}
-
-	public User deleteBuchInstanz(User b) throws SQLException {
-		PreparedStatement stat = con.prepareStatement(DELETE_BUCH_INSTANZ);
-		stat.setInt(1, b.getUsers_single_id());
-		stat.executeUpdate();
-		return b;
-	}
-
-	public List<User> alleBuecher() throws SQLException {
-		PreparedStatement stat = con.prepareStatement(SELECT_BUCH_ALL);
+	public User findUser(User u) throws SQLException {
+		PreparedStatement stat = con.prepareStatement(SELECT_USER);
+		stat.setInt(1, u.getIdentification_number());
 		ResultSet result = stat.executeQuery();
 
-		ArrayList<User> Buecher = new ArrayList<>();
-		while (result.next()) {
-			User User = new User();
-			User.setCount(result.getInt("count"));
-			User.setAvailable_count(result.getInt("available_count"));
+		User User = new User();
+		User.setId(result.getInt("id"));
+		User.setIdentification_number(result.getInt("identification_number"));
+		User.setForename(result.getString("forename"));
+		User.setSurname(result.getString("surname"));
+		User.setPassword(result.getString("password"));
+		User.setLibrarian(result.getInt("librarian"));
+		return User;
 
-			User.setId(result.getInt("id"));
-			User.setName(result.getString("name"));
-			User.setAuthor(result.getString("author"));
-			User.setRelease_year(result.getInt("release_year"));
-			User.setISBN(result.getString("isbn"));
-			User.setId_categorys(result.getInt("id_categorys"));
-			Buecher.add(User);
-		}
-		return Buecher;
 	}
 
-	public List<User> alleBuecherInstanz() throws SQLException {
-		PreparedStatement stat = con.prepareStatement(SELECT_BUCH_ALL_INSTANZ);
+	public List<User> alleUser() throws SQLException {
+		PreparedStatement stat = con.prepareStatement(SELECT_USER_ALL);
 		ResultSet result = stat.executeQuery();
 
-		ArrayList<User> Buecher = new ArrayList<>();
-		while (result.next()) {
-			User User = new User();
-			User.setUsers_single_id(result.getInt("single_id"));
-			User.setUsers_single_id_books(result.getInt("id_books"));
-			User.setUsers_single_id_borrower(result.getInt("id_borrower"));
-			User.setUsers_single_available(result.getInt("available"));
-			Buecher.add(User);
-		}
-		return Buecher;
-	}
-
-	public List<User> alleBuecherTogether() throws SQLException {
-		PreparedStatement stat = con.prepareStatement(SELECT_BUCH_ALL_INSTANZ);
-		ResultSet result = stat.executeQuery();
-
-		ArrayList<User> Buecher = new ArrayList<>();
+		ArrayList<User> Users = new ArrayList<>();
 		while (result.next()) {
 			User User = new User();
 			User.setId(result.getInt("id"));
-			User.setName(result.getString("name"));
-			User.setAuthor(result.getString("author"));
-			User.setRelease_year(result.getInt("release_year"));
-			User.setISBN(result.getString("isbn"));
-			User.setId_categorys(result.getInt("id_categorys"));
-
-			User.setUsers_single_id(result.getInt("single_id"));
-			User.setUsers_single_id_books(result.getInt("id_books"));
-			User.setUsers_single_id_borrower(result.getInt("id_borrower"));
-			User.setUsers_single_available(result.getInt("available"));
-			Buecher.add(User);
+			User.setIdentification_number(result.getInt("identification_number"));
+			User.setForename(result.getString("forename"));
+			User.setSurname(result.getString("surname"));
+			User.setPassword(result.getString("password"));
+			User.setLibrarian(result.getInt("librarian"));
+			Users.add(User);
 		}
-		return Buecher;
+		return Users;
 	}
 
 }
