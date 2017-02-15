@@ -101,9 +101,9 @@
          </children>
       </GridPane>
       <Label layoutX="217.0" layoutY="120.0" text="Referat 4.1.3" />
-      <ImageView fitHeight="119.0" fitWidth="241.0" layoutX="2.0">
+      <ImageView fitHeight="110.0" fitWidth="200.0" layoutY="4.0">
          <image>
-            <Image url="@DEgov-DPMA-Logo.svg.png" />
+            <Image url="@../../../../../../resources/dpma.png" />
          </image>
       </ImageView>
    </children>
