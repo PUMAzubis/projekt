@@ -41,7 +41,7 @@
                      <tooltip>
                         <Tooltip text="Hier Klicken um das ausgewählte Buch zu verleihen." />
                      </tooltip></Button>
-                  <Button layoutX="86.0" layoutY="226.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="99.0" text="Löschen" AnchorPane.rightAnchor="66.0">
+                  <Button layoutX="86.0" layoutY="226.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="99.0" text="Neues Buch" AnchorPane.rightAnchor="66.0">
                      <tooltip>
                         <Tooltip text="Hier Klicken um das ausgewählte Buch zu löschen." />
                      </tooltip></Button>
@@ -49,7 +49,7 @@
                      <tooltip>
                         <Tooltip text="Hier Klicken um das ausgewählte Buch zu bearbeiten." />
                      </tooltip></Button>
-                  <Button layoutX="86.0" layoutY="319.0" mnemonicParsing="false" text="Neues Buch" AnchorPane.rightAnchor="66.0">
+                  <Button layoutX="88.0" layoutY="315.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="99.0" text="Löschen" AnchorPane.rightAnchor="64.0">
                      <tooltip>
                         <Tooltip text="Hier Klicken um ein Neues Buch hinzuzufügen." />
                      </tooltip></Button>
