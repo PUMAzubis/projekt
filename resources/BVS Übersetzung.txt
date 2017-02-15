@@ -1,0 +1,107 @@
+
+
+About.fxml
+-----------------
+Über - About
+Erstellt von - Created by
+
+Bookprocessing.fxml
+------------------------
+Buchbearbeitung - Edit books
+Titel - Title
+Autor - Author
+ISBN - ISBN
+Erscheinungsjahr - Year of release
+Kategorie - Category
+
+
+EditBook.fxml
+-------------
+Buchbearbeitung - Edit books
+Buch Details - Book details
+ISBN - ISBN
+Titel - Title
+Autor - Author
+Erscheinungsjahr - Year of release
+Kategorie - Category
+Neu - New
+Bearbeiten - Edit
+Löschen - Delete
+
+
+Registration.fxml
+----------------------
+Ausweisnummer - Identification number
+Vorname - first name
+Nachname - last name
+Passwort - Password
+Registration abschließen - complete registration
+Zurück - Back
+
+
+RootLayout.fxml
+--------------
+Datei - File 
+Hilfe - Help
+Sprache ändern - Change Language
+Beenden - Close Application
+Anleitung - Instructions
+Über - About
+
+
+
+Employees.fxml
+-----------------
+Vorname - first name
+Nachname - last name
+Mitarbeiterbearbeitung - Edit employees
+Mitarbeiter details - employee details
+ID - ID
+Ausweisnummer - Identification number
+Status - Status
+Bearbeiten - Edit
+Neu - New
+Löschen - delete
+Zurück - Back
+
+
+
+
+Search.fxml
+------------------------
+Suche - Search
+Titel oder ISBN des Buches eingeben - Please type in title, ISBN or author of the book
+Titel - Title
+Autor - Author
+Abbrechen - Cancel
+Suchen - Search
+
+
+Loan.fxml
+----------------------
+Menü - Menu
+Suche - search
+Verleihen - lend, borrow
+Löschen - delete
+Bearbeiten - edit 
+neues buch - new book
+zurück - back
+
+Login.fxml
+---------------
+Bibliotheksverwaltungssoftware - Library management software
+Ausweisnummer - Identification number
+Passwort - Password
+Mit * markierte Felder müssen ausgefüllt werden - Fields marked with * are required 
+Login - Login
+Registrieren - Register
+Passwort vergessen - Reset Password
+
+PasswordReset.fxml	
+------------
+If you forgot the password to your personal account, please do not hesitate to contact one of your adminstrators via Email.
+
+
+
+
+
