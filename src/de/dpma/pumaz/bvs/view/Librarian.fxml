@@ -20,7 +20,7 @@
 
                <children>
 
-                  <Text layoutX="180.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Verwaltung" textAlignment="JUSTIFY">
+                  <Text layoutX="180.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Verwaltung" textAlignment="JUSTIFY" AnchorPane.topAnchor="58.0">
 
                      <font>
 
@@ -49,6 +49,7 @@
                   <Button layoutX="66.0" layoutY="226.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="158.0" text="Bücher anzeigen" />
                   <Button layoutX="320.0" layoutY="226.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="158.0" text="Bücher suchen" />
                   <Button layoutX="320.0" layoutY="161.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="158.0" text="Bücher verleihen" />
+                  <Button layoutX="204.0" layoutY="288.0" mnemonicParsing="false" text="Passwort ändern" AnchorPane.topAnchor="288.0" />
 
                </children>
 
