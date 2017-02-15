@@ -63,21 +63,11 @@ public class MainApp extends Application {
 
 	public static void main(String[] args) {
 
-<<<<<<< HEAD
-=======
-		launch(args);
-
->>>>>>> branch 'master' of https://github.com/PUMAzubis/projekt.git
 		DatabaseConnection dbcon = null;
 		try {
 			dbcon = new DatabaseConnection();
-<<<<<<< HEAD
-			BookDAO buchDao = new BookDAO(dbcon.getConnection());
-			buchDao.insertBuch(new Book("Tolles Buch", "Toller Autor", 2016, "0000000000", 1));
-=======
-			BuchDAO buchDao = new BuchDAO(dbcon.getConnection());
-			buchDao.insertBuch(new Buch("Tolles Buch", "Toller Autor", 2016, "0000000000", 1));
->>>>>>> branch 'master' of https://github.com/PUMAzubis/projekt.git
+			BookDAO bookDao = new BookDAO(dbcon.getConnection());
+			bookDao.insertBuch(new Book("Tolles Buch", "Toller Autor", 2016, "0000000000", 1));
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -87,10 +77,7 @@ public class MainApp extends Application {
 				e.printStackTrace();
 			}
 		}
-<<<<<<< HEAD
 		launch(args);
 
-=======
->>>>>>> branch 'master' of https://github.com/PUMAzubis/projekt.git
 	}
 }
