@@ -23,6 +23,7 @@ public class LoginController {
 
 	Logger log = Logger.getLogger(LoginController.class.getName());
 
+	// Eingaben prüfen und Nutzer einloggen
 	public void handleLogin() throws SQLException {
 		if (identificationNumberText.getText().isEmpty() || !isNumeric(identificationNumberText.getText())
 				|| identificationNumberText.getText().length() > 5) {
@@ -39,7 +40,7 @@ public class LoginController {
 
 		UserDAO UserDao = new UserDAO(MainApp.dbcon.getConnection());
 		loginUser = UserDao.findUser(new User(Integer.parseInt(identificationNumberText.getText())));
-		if (loginUser.getForename().isEmpty()) {
+		if (loginUser.getForename() == null) {
 			// TODO: Alert anzeigen
 			log.info("Mitarbeiter nicht gefunden");
 		} else {
