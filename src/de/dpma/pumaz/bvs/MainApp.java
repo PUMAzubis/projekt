@@ -63,12 +63,9 @@ public class MainApp extends Application {
 
 	public static void main(String[] args) {
 
-		launch(args);
-
-		DatabaseConnection dbcon = null;
-
 		try {
 			dbcon = new DatabaseConnection();
+			launch(args);
 			// BookDAO bookDao = new BookDAO(dbcon.getConnection());
 			// bookDao.insertBook(new Book("Tolles Buch", "Toller Autor", 2015,
 			// "0000000000", 1));
@@ -84,6 +81,5 @@ public class MainApp extends Application {
 				e.printStackTrace();
 			}
 		}
-		launch(args);
 	}
 }
