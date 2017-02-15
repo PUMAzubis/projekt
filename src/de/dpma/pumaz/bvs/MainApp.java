@@ -27,9 +27,9 @@ public class MainApp extends Application {
 	public void start(Stage primaryStage) throws Exception, ClassNotFoundException, SQLException {
 
 		this.primaryStage = primaryStage;
-		//Icon
+		// Icon
 		this.primaryStage.getIcons().add(new Image("file:resources/book.png"));
-		
+
 		initRootLayout();
 		showLogin();
 	}
@@ -70,6 +70,10 @@ public class MainApp extends Application {
 		try {
 			dbcon = new DatabaseConnection();
 			launch(args);
+			// UserDAO userDao = new UserDAO(dbcon.getConnection());
+			// userDao.insertUser(new User(12345, "Flo", "Seidl", "Kekskuchen",
+			// 0));
+			//
 			// BookDAO bookDao = new BookDAO(dbcon.getConnection());
 			// bookDao.insertBook(new Book("Tolles Buch", "Toller Autor", 2015,
 			// "0000000000", 1));
