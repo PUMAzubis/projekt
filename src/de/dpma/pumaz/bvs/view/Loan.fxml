@@ -5,12 +5,12 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="461.0" prefWidth="924.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -28,16 +28,36 @@
                         <Image url="@../../../../../../resources/book.png" />
                      </image>
                   </ImageView>
-                  <TextField layoutX="66.0" layoutY="103.0" AnchorPane.bottomAnchor="331.0" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="103.0" />
+                  <TextField layoutX="66.0" layoutY="103.0" AnchorPane.bottomAnchor="331.0" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="103.0">
+                     <tooltip>
+                        <Tooltip text="Hier den Titel, ISBN oder Autor des Buches eingeben" />
+                     </tooltip></TextField>
                   <Text layoutX="7.0" layoutY="126.203125" strokeType="OUTSIDE" strokeWidth="0.0" text="Suche:" AnchorPane.bottomAnchor="333.77734375">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Text>
-                  <Button layoutX="16.0" layoutY="183.0" mnemonicParsing="false" text="Verleihen" />
-                  <Button layoutX="16.0" layoutY="233.0" mnemonicParsing="false" text="Löschen" />
-                  <Button layoutX="16.0" layoutY="281.0" mnemonicParsing="false" text="Bearbeiten" />
-                  <Button layoutX="17.0" layoutY="327.0" mnemonicParsing="false" text="Neues Buch" />
+                  <Button layoutX="16.0" layoutY="183.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="99.0" text="Verleihen">
+                     <tooltip>
+                        <Tooltip text="Hier Klicken um das ausgewählte Buch zu verleihen." />
+                     </tooltip></Button>
+                  <Button layoutX="16.0" layoutY="233.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="99.0" text="Löschen">
+                     <tooltip>
+                        <Tooltip text="Hier Klicken um das ausgewählte Buch zu löschen." />
+                     </tooltip></Button>
+                  <Button layoutX="16.0" layoutY="281.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="99.0" text="Bearbeiten">
+                     <tooltip>
+                        <Tooltip text="Hier Klicken um das ausgewählte Buch zu bearbeiten." />
+                     </tooltip></Button>
+                  <Button layoutX="17.0" layoutY="327.0" mnemonicParsing="false" text="Neues Buch">
+                     <tooltip>
+                        <Tooltip text="Hier Klicken um ein Neues Buch hinzuzufügen." />
+                     </tooltip></Button>
+                  <Button layoutX="16.0" layoutY="374.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="99.0" text="Zurück">
+                     <tooltip>
+                        <Tooltip text="Hier Klicken um zurück zum letzten Fenster zu gelangen." />
+                     </tooltip>
+                  </Button>
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="465.0" prefWidth="569.0">
