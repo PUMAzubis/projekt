@@ -35,7 +35,11 @@ Ausweisnummer - Identification number
 Vorname - First name
 Nachname - Surname
 Passwort - Password
+<<<<<<< HEAD
 Registrieren - Register
+=======
+Registration abschließen - Complete registration
+>>>>>>> branch 'master' of https://github.com/PUMAzubis/projekt.git
 Zurück - Back
 
 
