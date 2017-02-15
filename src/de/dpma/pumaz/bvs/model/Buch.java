@@ -29,7 +29,6 @@ public class Buch {
 
 	// Standard Buch Constructor
 	public Buch(String name, String author, int release_year, String ISBN, int id_categorys) {
-		this.id = id;
 		this.name = name;
 		this.author = author;
 		this.release_year = release_year;
@@ -40,7 +39,6 @@ public class Buch {
 	// Standard Buch Constructor mit Anzahlangaben
 	public Buch(String name, String author, int release_year, String ISBN, int id_categorys, int count,
 			int available_count) {
-		this.id = id;
 		this.name = name;
 		this.author = author;
 		this.release_year = release_year;
@@ -51,9 +49,7 @@ public class Buch {
 	}
 
 	// Single Buch Constructor
-	public Buch(int books_single_id_books, int books_single_id_borrower,
-			int books_single_available) {
-		this.books_single_id = books_single_id;
+	public Buch(int books_single_id_books, int books_single_id_borrower, int books_single_available) {
 		this.books_single_id_books = books_single_id_books;
 		this.books_single_id_borrower = books_single_id_borrower;
 		this.books_single_available = books_single_available;
