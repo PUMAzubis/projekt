@@ -4,9 +4,9 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Logger;
 
-import de.dpma.pumaz.bvs.dao.BuchDAO;
+import de.dpma.pumaz.bvs.dao.BookDAO;
 import de.dpma.pumaz.bvs.dao.DatabaseConnection;
-import de.dpma.pumaz.bvs.model.Buch;
+import de.dpma.pumaz.bvs.model.Book;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -66,8 +66,8 @@ public class MainApp extends Application {
 		DatabaseConnection dbcon = null;
 		try {
 			dbcon = new DatabaseConnection();
-			BuchDAO buchDao = new BuchDAO(dbcon.getConnection());
-			buchDao.insertBuch(new Buch("Tolles Buch", "Toller Autor", 2016, "0000000000", 1));
+			BookDAO buchDao = new BookDAO(dbcon.getConnection());
+			buchDao.insertBuch(new Book("Tolles Buch", "Toller Autor", 2016, "0000000000", 1));
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		} finally {

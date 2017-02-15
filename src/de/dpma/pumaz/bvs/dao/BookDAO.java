@@ -7,9 +7,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import de.dpma.pumaz.bvs.model.Buch;
+import de.dpma.pumaz.bvs.model.Book;
 
-public class BuchDAO {
+public class BookDAO {
 	final String INSERT_BUCH = "INSERT INTO `books` (`name`, `author`, `release_year`, `isbn`, `id_category`) VALUES (?, ?, ?, ?, ?)";
 	final String INSERT_BUCH_INSTANZ = "INSERT INTO `books_single` (`id_books`, `id_borrower`, `available`) VALUES (?, ?, ?)";
 
@@ -30,11 +30,11 @@ public class BuchDAO {
 
 	private final Connection con;
 
-	public BuchDAO(Connection con) {
+	public BookDAO(Connection con) {
 		this.con = con;
 	}
 
-	public Buch insertBuch(Buch b) throws SQLException {
+	public Book insertBuch(Book b) throws SQLException {
 		PreparedStatement stat = con.prepareStatement(INSERT_BUCH);
 		stat.setString(1, b.getName());
 		stat.setString(2, b.getAuthor());
@@ -45,7 +45,7 @@ public class BuchDAO {
 		return b;
 	}
 
-	public Buch insertBuchInstanz(Buch b) throws SQLException {
+	public Book insertBuchInstanz(Book b) throws SQLException {
 		PreparedStatement stat = con.prepareStatement(INSERT_BUCH_INSTANZ);
 		stat.setInt(1, b.getBooks_single_id_books());
 		stat.setInt(2, b.getBooks_single_id_borrower());
@@ -54,7 +54,7 @@ public class BuchDAO {
 		return b;
 	}
 
-	public Buch updateBuch(Buch b) throws SQLException {
+	public Book updateBuch(Book b) throws SQLException {
 		PreparedStatement stat = con.prepareStatement(UPDATE_BUCH);
 		stat.setString(1, b.getName());
 		stat.setString(2, b.getAuthor());
@@ -66,7 +66,7 @@ public class BuchDAO {
 		return b;
 	}
 
-	public Buch updateBuchInstanz(Buch b) throws SQLException {
+	public Book updateBuchInstanz(Book b) throws SQLException {
 		PreparedStatement stat = con.prepareStatement(UPDATE_BUCH_INSTANZ);
 		stat.setInt(1, b.getBooks_single_id_books());
 		stat.setInt(2, b.getBooks_single_id_borrower());
@@ -76,76 +76,76 @@ public class BuchDAO {
 		return b;
 	}
 
-	public Buch deleteBuch(Buch b) throws SQLException {
+	public Book deleteBuch(Book b) throws SQLException {
 		PreparedStatement stat = con.prepareStatement(DELETE_BUCH);
 		stat.setInt(1, b.getId());
 		stat.executeUpdate();
 		return b;
 	}
 
-	public Buch deleteBuchInstanz(Buch b) throws SQLException {
+	public Book deleteBuchInstanz(Book b) throws SQLException {
 		PreparedStatement stat = con.prepareStatement(DELETE_BUCH_INSTANZ);
 		stat.setInt(1, b.getBooks_single_id());
 		stat.executeUpdate();
 		return b;
 	}
 
-	public List<Buch> alleBuecher() throws SQLException {
+	public List<Book> alleBuecher() throws SQLException {
 		PreparedStatement stat = con.prepareStatement(SELECT_BUCH_ALL);
 		ResultSet result = stat.executeQuery();
 
-		ArrayList<Buch> Buecher = new ArrayList<>();
+		ArrayList<Book> Buecher = new ArrayList<>();
 		while (result.next()) {
-			Buch Buch = new Buch();
-			Buch.setCount(result.getInt("count"));
-			Buch.setAvailable_count(result.getInt("available_count"));
+			Book Book = new Book();
+			Book.setCount(result.getInt("count"));
+			Book.setAvailable_count(result.getInt("available_count"));
 
-			Buch.setId(result.getInt("id"));
-			Buch.setName(result.getString("name"));
-			Buch.setAuthor(result.getString("author"));
-			Buch.setRelease_year(result.getInt("release_year"));
-			Buch.setISBN(result.getString("isbn"));
-			Buch.setId_categorys(result.getInt("id_categorys"));
-			Buecher.add(Buch);
+			Book.setId(result.getInt("id"));
+			Book.setName(result.getString("name"));
+			Book.setAuthor(result.getString("author"));
+			Book.setRelease_year(result.getInt("release_year"));
+			Book.setISBN(result.getString("isbn"));
+			Book.setId_categorys(result.getInt("id_categorys"));
+			Buecher.add(Book);
 		}
 		return Buecher;
 	}
 
-	public List<Buch> alleBuecherInstanz() throws SQLException {
+	public List<Book> alleBuecherInstanz() throws SQLException {
 		PreparedStatement stat = con.prepareStatement(SELECT_BUCH_ALL_INSTANZ);
 		ResultSet result = stat.executeQuery();
 
-		ArrayList<Buch> Buecher = new ArrayList<>();
+		ArrayList<Book> Buecher = new ArrayList<>();
 		while (result.next()) {
-			Buch Buch = new Buch();
-			Buch.setBooks_single_id(result.getInt("single_id"));
-			Buch.setBooks_single_id_books(result.getInt("id_books"));
-			Buch.setBooks_single_id_borrower(result.getInt("id_borrower"));
-			Buch.setBooks_single_available(result.getInt("available"));
-			Buecher.add(Buch);
+			Book Book = new Book();
+			Book.setBooks_single_id(result.getInt("single_id"));
+			Book.setBooks_single_id_books(result.getInt("id_books"));
+			Book.setBooks_single_id_borrower(result.getInt("id_borrower"));
+			Book.setBooks_single_available(result.getInt("available"));
+			Buecher.add(Book);
 		}
 		return Buecher;
 	}
 
-	public List<Buch> alleBuecherTogether() throws SQLException {
+	public List<Book> alleBuecherTogether() throws SQLException {
 		PreparedStatement stat = con.prepareStatement(SELECT_BUCH_ALL_INSTANZ);
 		ResultSet result = stat.executeQuery();
 
-		ArrayList<Buch> Buecher = new ArrayList<>();
+		ArrayList<Book> Buecher = new ArrayList<>();
 		while (result.next()) {
-			Buch Buch = new Buch();
-			Buch.setId(result.getInt("id"));
-			Buch.setName(result.getString("name"));
-			Buch.setAuthor(result.getString("author"));
-			Buch.setRelease_year(result.getInt("release_year"));
-			Buch.setISBN(result.getString("isbn"));
-			Buch.setId_categorys(result.getInt("id_categorys"));
+			Book Book = new Book();
+			Book.setId(result.getInt("id"));
+			Book.setName(result.getString("name"));
+			Book.setAuthor(result.getString("author"));
+			Book.setRelease_year(result.getInt("release_year"));
+			Book.setISBN(result.getString("isbn"));
+			Book.setId_categorys(result.getInt("id_categorys"));
 
-			Buch.setBooks_single_id(result.getInt("single_id"));
-			Buch.setBooks_single_id_books(result.getInt("id_books"));
-			Buch.setBooks_single_id_borrower(result.getInt("id_borrower"));
-			Buch.setBooks_single_available(result.getInt("available"));
-			Buecher.add(Buch);
+			Book.setBooks_single_id(result.getInt("single_id"));
+			Book.setBooks_single_id_books(result.getInt("id_books"));
+			Book.setBooks_single_id_borrower(result.getInt("id_borrower"));
+			Book.setBooks_single_available(result.getInt("available"));
+			Buecher.add(Book);
 		}
 		return Buecher;
 	}
