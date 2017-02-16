@@ -1,6 +1,8 @@
 package de.dpma.pumaz.bvs.view;
 
 import java.sql.SQLException;
+import java.text.NumberFormat;
+import java.text.ParsePosition;
 import java.util.logging.Logger;
 
 import de.dpma.pumaz.bvs.MainApp;
@@ -20,26 +22,56 @@ public class RegistrationController {
 	@FXML
 	private TextField passwordText;
 
-	User registerUser;
+	User searchUser;
 
 	Logger log = Logger.getLogger(LoginController.class.getName());
 
+	// Registrierungsangaben prüfen und Registrierung durchführen
 	public void handleRegister() throws SQLException {
-		UserDAO UserDao = new UserDAO(MainApp.dbcon.getConnection());
-		System.out.println(identificationNumberText.getText());
-		loginUser = UserDao.findUser(new User(Integer.parseInt(identificationNumberText.getText())));
-		if (loginUser.getForename().isEmpty()) {
-			// TODO: Alert ausgeben
-			log.info("Mitarbeiter nicht gefunden");
-		} else {
-			System.out.println("Mitarbeiter gefunden");
-			if (loginUser.checkPassword(passwordText.getText(), loginUser.getPassword())) {
-				// TODO: Weiterleiten
-				log.info("Passwort richtig, User einloggen");
-			} else {
-				// TODO: Alert anzeigen
-				log.info("Passwort falsch");
-			}
+		if (identificationNumberText.getText().isEmpty() || !isNumeric(identificationNumberText.getText())
+				|| identificationNumberText.getText().length() > 5) {
+			// TODO: Alert anzeigen
+			log.info("Keine gültige Ausweisnummer");
+			return;
 		}
+
+		if (passwordText.getText().isEmpty() || passwordText.getText().length() < 8) {
+			// TODO: Alert anzeigen
+			log.info("Unsicheres Passwort");
+			return;
+		}
+
+		if (forenameText.getText().isEmpty() || forenameText.getText().length() < 2) {
+			// TODO: Alert anzeigen
+			log.info("Ungültiger Vorname");
+			return;
+		}
+
+		if (surnameText.getText().isEmpty() || surnameText.getText().length() < 2) {
+			// TODO: Alert anzeigen
+			log.info("Ungültiger Nachname");
+			return;
+		}
+
+		UserDAO UserDao = new UserDAO(MainApp.dbcon.getConnection());
+		searchUser = UserDao.findUser(new User(Integer.parseInt(identificationNumberText.getText())));
+		if (searchUser.getForename() != null) {
+			// TODO: Alert anzeigen
+			log.info("Mitarbeiter mit gleicher Ausweisnummer wurde gefunden, Registrierung nicht möglich");
+		} else {
+			System.out.println("Mitarbeiter mit gleicher Ausweisnummer nicht gefunden, Registrierung fortfahren");
+			UserDao.insertUser(new User(Integer.parseInt(identificationNumberText.getText()), forenameText.getText(),
+					surnameText.getText(), passwordText.getText(), 0));
+			// TODO: Alert anzeigen
+			log.info("Mitarbeiter angelegt");
+		}
+	}
+
+	// Check ob String eine Zahl ist. Um die Ausweisnummer zu prüfen.
+	public static boolean isNumeric(String str) {
+		NumberFormat formatter = NumberFormat.getInstance();
+		ParsePosition pos = new ParsePosition(0);
+		formatter.parse(str, pos);
+		return str.length() == pos.getIndex();
 	}
 }
