@@ -29,16 +29,14 @@ public class FXML_GUI {
 			log.info("RootLayout wird initalisiert");
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(FXML_GUI.class.getResource("view/RootLayout.fxml"));
-			log.info("RootLayout wird");
 			primaryStage.getIcons().add(new Image("file:resources/book.png"));
-			log.info("Icon hinzugefügt");
 			rootLayout = (BorderPane) loader.load();
-			log.info("Icon hinzugefügt");
 			Scene scene = new Scene(rootLayout);
 			// rootLayout.sizeToScene();
 			// primaryStage.setHeight();
 			primaryStage.setScene(scene);
 			primaryStage.show();
+			log.info("RootLayout sollte dargestellt sein");
 		}
 		catch (IOException e) {
 			e.printStackTrace();
@@ -62,13 +60,20 @@ public class FXML_GUI {
 		
 	}
 	
-	public void showAbout() {
-		
-		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(FXML_GUI.class.getResource("view/About.fxml"));
-		Stage stage = new Stage();
-		Scene scene = new Scene(rootLayout);
-		stage.setScene(scene);
-		stage.show();
-	}
+	// public void showAbout() {
+	//
+	// try {
+	// FXMLLoader loader = new FXMLLoader();
+	// loader.setLocation(FXML_GUI.class.getResource("view/About.fxml"));
+	// AnchorPane about;
+	// about = (AnchorPane) loader.load();
+	// Stage stage = new Stage();
+	// Scene scene = new Scene(about);
+	// stage.setScene(scene);
+	// stage.show();
+	// }
+	// catch (IOException e) {
+	// e.printStackTrace();
+	// }
+	// }
 }
