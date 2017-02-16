@@ -13,7 +13,6 @@ import javafx.scene.control.TextField;
 
 public class PasswordChangeController {
 	
-	
 	@FXML
 	private TextField oldPasswordText;
 	@FXML
@@ -32,8 +31,12 @@ public class PasswordChangeController {
 			log.info("Unsicheres Passwort!");
 			return;
 		}
-		if(!confirmNewPasswordText.getText().equals(newPasswordText)){
+		if(!(confirmNewPasswordText.getText().equals(newPasswordText))){
 			log.info("Passwort falsch wiederholt!");
+			return;
+		if(!(oldPasswordText.getText().equals(LoginController.passwordText))){
+			log.info("Falsches Passwort!");
+			}
 			return;
 		}
 		
