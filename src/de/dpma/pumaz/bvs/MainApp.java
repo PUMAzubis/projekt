@@ -16,7 +16,7 @@ public class MainApp extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception, ClassNotFoundException, SQLException {
 		
-		log.info("Oberfläche wird gestartet");
+		log.info("Oberfläche wird initalisiert");
 		FXML_GUI fxml_gui = new FXML_GUI();
 		fxml_gui.primaryStage = primaryStage;
 		
