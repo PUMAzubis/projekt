@@ -7,15 +7,13 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.effect.Blend?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="435.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.dpma.pumaz.bvs.view.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.dpma.pumaz.bvs.view.LoginController">
    <children>
-      <Text layoutX="37.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bibliotheksverwaltungssoftware" textAlignment="JUSTIFY">
+      <Text layoutX="23.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bibliotheksverwaltungssoftware" textAlignment="JUSTIFY" AnchorPane.leftAnchor="23.0" AnchorPane.rightAnchor="22.072265625" AnchorPane.topAnchor="10.0">
          <font>
             <Font name="Century Gothic" size="37.0" />
          </font>
@@ -23,28 +21,26 @@
             <Blend />
          </effect>
       </Text>
-      <Text layoutX="486.0" layoutY="422.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Version:" AnchorPane.bottomAnchor="10.0" />
-      <Text layoutX="555.0" layoutY="422.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1.0.0" AnchorPane.bottomAnchor="10.0" />
       <Text layoutX="552.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-      <Text layoutX="36.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ausweisnummer*:">
+      <Text layoutX="37.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ausweisnummer*:">
          <font>
             <Font size="20.0" />
          </font>
       </Text>
-      <Text layoutX="36.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Passwort*:">
+      <Text layoutX="37.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Passwort*:">
          <font>
             <Font size="20.0" />
          </font>
       </Text>
-      <TextField fx:id="identificationNumberText" layoutX="219.0" layoutY="185.0" prefHeight="31.0" prefWidth="218.0">
+      <TextField fx:id="identificationNumberText" layoutX="220.0" layoutY="99.0" prefHeight="31.0" prefWidth="218.0">
          <tooltip>
             <Tooltip text="Bitte Ihre Firmeninterne Ausweisnummer angeben." />
          </tooltip></TextField>
-      <PasswordField fx:id="passwordText" layoutX="219.0" layoutY="246.0" prefHeight="31.0" prefWidth="218.0">
+      <PasswordField fx:id="passwordText" layoutX="220.0" layoutY="149.0" prefHeight="31.0" prefWidth="218.0">
          <tooltip>
             <Tooltip text="Bitte Groß- und Kleinschreibung beachten." />
          </tooltip></PasswordField>
-      <ButtonBar layoutX="36.0" layoutY="336.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="488.0">
+      <ButtonBar layoutX="37.0" layoutY="245.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="488.0">
          <buttons>
             <Button mnemonicParsing="false" text="Passwort vergessen">
                <cursor>
@@ -72,11 +68,6 @@
             </Button>
          </buttons>
       </ButtonBar>
-      <Text fill="#ee0a0a" layoutX="37.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mit * markierte Felder müssen ausgefüllt werden." />
-      <ImageView fitHeight="110.0" fitWidth="200.0" layoutX="6.0">
-         <image>
-            <Image url="@../../../../../../resources/dpma.png" />
-         </image>
-      </ImageView>
+      <Text fill="#ee0a0a" layoutX="33.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mit * markierte Felder müssen ausgefüllt werden." />
    </children>
 </AnchorPane>
