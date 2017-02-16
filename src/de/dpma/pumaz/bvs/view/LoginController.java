@@ -65,4 +65,8 @@ public class LoginController {
 		return str.length() == pos.getIndex();
 	}
 
+	public void handleOpenRegister() {
+
+	}
+
 }
