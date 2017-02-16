@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.dpma.pumaz.bvs.view.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="320.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.dpma.pumaz.bvs.view.LoginController">
    <children>
       <Text layoutX="23.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bibliotheksverwaltungssoftware" textAlignment="JUSTIFY" AnchorPane.leftAnchor="23.0" AnchorPane.rightAnchor="22.072265625" AnchorPane.topAnchor="10.0">
          <font>
@@ -50,7 +50,7 @@
                   <Tooltip text="Falls Sie Ihr Passwort vergessen haben, Klicken Sie hier um es zurückzusetzen." />
                </tooltip>
             </Button>
-          <Button mnemonicParsing="false" text="Registrieren">
+          <Button mnemonicParsing="false" onAction="#handleRegistration" text="Registrieren">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
