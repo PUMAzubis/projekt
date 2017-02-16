@@ -1,0 +1,3 @@
+Mitarbeiter: Anfragen von Büchern
+Mitarbeiter: Abgabezeit anzeigen lassen wenn man sich einloggt
+Biblothekar:  Bücher bestellen
