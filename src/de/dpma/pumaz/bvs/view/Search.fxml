@@ -18,7 +18,6 @@
          </font>
       </Text>
       <Label layoutX="70.0" layoutY="162.0" text="Titel:" />
-<<<<<<< HEAD
       <Label layoutX="70.0" layoutY="252.0" text="ISBN-10:" />
       <TextField layoutX="313.0" layoutY="157.0" text="Titel">
          <tooltip>
@@ -37,14 +36,12 @@
             <Tooltip text="Hier Klicken um die Suche zu starten." />
          </tooltip></Button>
       <Label layoutX="194.0" layoutY="110.0" text="Titel oder ISBN des Buchs eingeben." />
-=======
       <Label layoutX="70.0" layoutY="252.0" text="ISBN:" />
       <TextField layoutX="313.0" layoutY="157.0" text="Titel" />
       <TextField layoutX="313.0" layoutY="247.0" text="0000 0000" />
       <Button layoutX="63.0" layoutY="331.0" mnemonicParsing="false" text="Abbrechen" />
       <Button layoutX="433.0" layoutY="331.0" mnemonicParsing="false" text="Suchen" />
       <Label layoutX="70.0" layoutY="110.0" text="Titel oder ISBN des Buchs eingeben." />
->>>>>>> branch 'master' of https://github.com/PUMAzubis/projekt
       <Label layoutX="68.0" layoutY="206.0" text="Autor:" />
       <TextField layoutX="313.0" layoutY="201.0" text="Autor">
          <tooltip>

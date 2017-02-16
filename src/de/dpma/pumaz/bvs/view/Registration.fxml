@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="507.0" prefWidth="615.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="507.0" prefWidth="615.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.dpma.pumaz.bvs.view.RegistrationController">
    <children>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="507.0" prefWidth="624.0">
          <children>
@@ -41,7 +41,7 @@
                   <Font size="20.0" />
                </font>
             </Text>
-            <Button layoutX="40.0" layoutY="399.0" mnemonicParsing="false" text="Registration abschliessen">
+            <Button layoutX="40.0" layoutY="399.0" mnemonicParsing="false" onAction="#handleRegister" text="Registration abschliessen">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -58,15 +58,15 @@
                </tooltip>
             </Button>
             <Text fill="#ee0a0a" layoutX="40.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mit * markierte Felder müssen ausgefüllt werden." />
-            <TextField layoutX="219.0" layoutY="185.0" prefHeight="31.0" prefWidth="218.0">
+            <TextField fx:id="identificationNumberText" layoutX="219.0" layoutY="185.0" prefHeight="31.0" prefWidth="218.0">
                <tooltip>
                   <Tooltip text="Bitte Ihre Firmeninterne Ausweisnummer angeben." />
                </tooltip></TextField>
-            <TextField layoutX="219.0" layoutY="226.0" prefHeight="31.0" prefWidth="218.0">
+            <TextField fx:id="forenameText" layoutX="219.0" layoutY="226.0" prefHeight="31.0" prefWidth="218.0">
                <tooltip>
                   <Tooltip text="Bitte Ihren Vornamen eingeben." />
                </tooltip></TextField>
-            <TextField layoutX="219.0" layoutY="269.0" prefHeight="31.0" prefWidth="218.0" AnchorPane.leftAnchor="219.0">
+            <TextField fx:id="surnameText" layoutX="219.0" layoutY="269.0" prefHeight="31.0" prefWidth="218.0" AnchorPane.leftAnchor="219.0">
                <tooltip>
                   <Tooltip text="Bitte Ihren Nachnamen eingeben." />
                </tooltip></TextField>
@@ -75,7 +75,7 @@
                   <Image url="@../../../../../../resources/dpma.png" />
                </image>
             </ImageView>
-            <PasswordField layoutX="219.0" layoutY="315.0" prefHeight="31.0" prefWidth="218.0" />
+            <PasswordField fx:id="passwordText" layoutX="219.0" layoutY="315.0" prefHeight="31.0" prefWidth="218.0" />
          </children>
       </AnchorPane>
    </children>

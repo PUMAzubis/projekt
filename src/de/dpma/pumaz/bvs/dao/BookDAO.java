@@ -28,6 +28,8 @@ public class BookDAO {
 	final String SELECT_BUCH_ALL_INSTANCE = "SELECT * FROM `books_single`";
 	final String SELECT_BUCH_ALL_TOGETHER = "SELECT * FROM `books` b1 JOIN `books_single` b2 ON b2.`id_books` = b1.`id`";
 
+	final String SELECT_BUCH_SEARCH = "SELECT * FROM `books` b1 JOIN `books_single` b2 ON b2.`id_books` = b1.`id` WHERE LOWER(b1.`name`) LIKE ? OR LOWER(b1.`author`) LIKE ? OR LOWER(b1.`release_year`) LIKE ? OR LOWER(b1.`isbn`) LIKE ?";
+
 	private final Connection con;
 
 	public BookDAO(Connection con) {
@@ -129,6 +131,33 @@ public class BookDAO {
 
 	public List<Book> allBooksTogether() throws SQLException {
 		PreparedStatement stat = con.prepareStatement(SELECT_BUCH_ALL_INSTANCE);
+		ResultSet result = stat.executeQuery();
+
+		ArrayList<Book> Books = new ArrayList<>();
+		while (result.next()) {
+			Book Book = new Book();
+			Book.setId(result.getInt("id"));
+			Book.setName(result.getString("name"));
+			Book.setAuthor(result.getString("author"));
+			Book.setRelease_year(result.getInt("release_year"));
+			Book.setISBN(result.getString("isbn"));
+			Book.setId_categorys(result.getInt("id_categorys"));
+
+			Book.setBooks_single_id(result.getInt("single_id"));
+			Book.setBooks_single_id_books(result.getInt("id_books"));
+			Book.setBooks_single_id_borrower(result.getInt("id_borrower"));
+			Book.setBooks_single_available(result.getInt("available"));
+			Books.add(Book);
+		}
+		return Books;
+	}
+
+	public List<Book> searchBooks(String searchString) throws SQLException {
+		PreparedStatement stat = con.prepareStatement(SELECT_BUCH_SEARCH);
+		stat.setString(1, ("%" + searchString + "%").toLowerCase());
+		stat.setString(2, ("%" + searchString + "%").toLowerCase());
+		stat.setString(3, ("%" + searchString + "%").toLowerCase());
+		stat.setString(4, ("%" + searchString + "%").toLowerCase());
 		ResultSet result = stat.executeQuery();
 
 		ArrayList<Book> Books = new ArrayList<>();

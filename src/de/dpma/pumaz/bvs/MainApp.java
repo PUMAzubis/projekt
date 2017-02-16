@@ -8,28 +8,28 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 
 public class MainApp extends Application {
-	
+
 	public static DatabaseConnection dbcon = null;
-	
+
 	Logger log = Logger.getLogger(MainApp.class.getName());
-	
+
 	@Override
 	public void start(Stage primaryStage) throws Exception, ClassNotFoundException, SQLException {
-		
+
 		log.info("Oberfläche wird initalisiert");
 		FXML_GUI fxml_gui = new FXML_GUI();
 		fxml_gui.primaryStage = primaryStage;
-		
+
 		fxml_gui.initRootLayout();
 		fxml_gui.showLogin();
 		log.info("Die Oberfläche wurde initalisiert");
 	}
-	
+
 	public static void main(String[] args) {
-		
+
 		try {
 			dbcon = new DatabaseConnection();
-			launch(args);
+			// launch(args);
 			// UserDAO userDao = new UserDAO(dbcon.getConnection());
 			// userDao.insertUser(new User(12345, "Flo", "Seidl", "Kekskuchen",
 			// 0));
@@ -37,18 +37,15 @@ public class MainApp extends Application {
 			// BookDAO bookDao = new BookDAO(dbcon.getConnection());
 			// bookDao.insertBook(new Book("Tolles Buch", "Toller Autor", 2015,
 			// "0000000000", 1));
-			// for (Book b : bookDao.allBooks()) {
+			// for (Book b : bookDao.searchBooks("toll")) {
 			// System.out.println(b.getName());
 			// }
-		}
-		catch (ClassNotFoundException | SQLException e) {
+		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
-		}
-		finally {
+		} finally {
 			try {
 				dbcon.closeConnection();
-			}
-			catch (SQLException e) {
+			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 		}
