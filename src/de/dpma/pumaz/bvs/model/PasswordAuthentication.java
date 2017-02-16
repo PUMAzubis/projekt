@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
 
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
-
+import java.util.logging.Logger;
 /**
  * Hash passwords for storage, and test passwords against password tokens.
  * 
@@ -22,6 +22,7 @@ import javax.crypto.spec.PBEKeySpec;
  */
 public final class PasswordAuthentication {
 
+	Logger log = Logger.getLogger(PasswordAuthentication.class.getName());
 	/**
 	 * Each token produced by this class uses this identifier as a prefix.
 	 */
@@ -72,6 +73,7 @@ public final class PasswordAuthentication {
 	 *         authentication
 	 */
 	public String hash(char[] password) {
+		log.info("Password wird gehashed");
 		byte[] salt = new byte[SIZE / 8];
 		random.nextBytes(salt);
 		byte[] dk = pbkdf2(password, salt, 1 << cost);
@@ -79,6 +81,7 @@ public final class PasswordAuthentication {
 		System.arraycopy(salt, 0, hash, 0, salt.length);
 		System.arraycopy(dk, 0, hash, salt.length, dk.length);
 		Base64.Encoder enc = Base64.getUrlEncoder().withoutPadding();
+		log.info("hash abgeschlossen");
 		return ID + cost + '$' + enc.encodeToString(hash);
 	}
 
