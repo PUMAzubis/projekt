@@ -16,12 +16,13 @@ public class MainApp extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception, ClassNotFoundException, SQLException {
 		
+		log.info("Oberfläche wird initalisiert");
 		FXML_GUI fxml_gui = new FXML_GUI();
 		fxml_gui.primaryStage = primaryStage;
 		
 		fxml_gui.initRootLayout();
 		fxml_gui.showLogin();
-		
+		log.info("Die Oberfläche wurde initalisiert");
 	}
 	
 	public static void main(String[] args) {

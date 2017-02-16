@@ -1,27 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.dpma.pumaz.bvs.view.LoginController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.dpma.pumaz.bvs.view.RootLayoutController">
+   <left>
+   </left>
+   <bottom>
+      <Label alignment="BASELINE_RIGHT" text="Version 1.0.0" textAlignment="RIGHT" BorderPane.alignment="BASELINE_RIGHT">
+         <BorderPane.margin>
+            <Insets right="20.0" />
+         </BorderPane.margin>
+      </Label>
+   </bottom>
    <top>
-      <MenuBar BorderPane.alignment="CENTER">
-        <menus>
-          <Menu mnemonicParsing="false" text="Datei">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Sprache ändern" />
-                  <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Beenden" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Hilfe">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Anleitung" />
-                  <MenuItem mnemonicParsing="false" onAction="#handleAbout" text="Über" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
+      <AnchorPane prefHeight="126.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="110.0" fitWidth="200.0" layoutY="32.0">
+               <image>
+                  <Image url="@../../../../../../resources/dpma.png" />
+               </image>
+            </ImageView>
+            <MenuBar prefHeight="32.0" prefWidth="600.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="Datei">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Sprache ändern" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Beenden" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Hilfe">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Anleitung" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleAbout" text="Über" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </children>
+      </AnchorPane>
    </top>
 </BorderPane>
