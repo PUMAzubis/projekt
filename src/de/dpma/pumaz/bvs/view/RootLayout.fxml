@@ -21,14 +21,14 @@
       </Label>
    </bottom>
    <top>
-      <AnchorPane prefHeight="126.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <AnchorPane>
          <children>
             <ImageView fitHeight="110.0" fitWidth="200.0" layoutY="32.0">
                <image>
                   <Image url="@../../../../../../resources/dpma.png" />
                </image>
             </ImageView>
-            <MenuBar prefHeight="32.0" prefWidth="600.0">
+            <MenuBar AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <menus>
                 <Menu mnemonicParsing="false" text="Datei">
                   <items>
