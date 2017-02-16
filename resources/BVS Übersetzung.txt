@@ -1,0 +1,111 @@
+
+
+About.fxml
+-----------------
+Über - About
+Erstellt von - Created by
+
+Bookprocessing.fxml
+------------------------
+Buchbearbeitung - Edit books
+Titel - Title
+Autor - Author
+ISBN - ISBN
+Erscheinungsjahr - Year of release
+Kategorie - Category
+
+
+EditBook.fxml
+-------------
+Buchbearbeitung - Edit books
+Buch Details - Book details
+ISBN - ISBN
+Titel - Title
+Autor - Author
+Erscheinungsjahr - Year of release
+Kategorie - Category
+Neu - New
+Bearbeiten - Edit
+Löschen - Delete
+
+
+Registration.fxml
+----------------------
+Ausweisnummer - Identification number
+Vorname - First name
+Nachname - Surname
+Passwort - Password
+<<<<<<< HEAD
+Registrieren - Register
+=======
+Registration abschließen - Complete registration
+>>>>>>> branch 'master' of https://github.com/PUMAzubis/projekt.git
+Zurück - Back
+
+
+RootLayout.fxml
+--------------
+Datei - File 
+Hilfe - Help
+Sprache ändern - Change language
+Beenden - Close application
+Anleitung - Instructions
+Über - About
+
+
+
+Employees.fxml
+-----------------
+Vorname - first name
+Nachname -  surname
+Mitarbeiterbearbeitung - Edit employees
+Mitarbeiter details - Employee details
+ID - ID
+Ausweisnummer - Identification number
+Status - Status
+Bearbeiten - Edit
+Neu - New
+Löschen - Delete
+Zurück - Back
+
+
+
+
+Search.fxml
+------------------------
+Suche - Search
+Titel oder ISBN des Buches eingeben - Insert title or ISBN
+Titel - Title
+Autor - Author
+Abbrechen - Cancel
+Suchen - Search
+
+
+Loan.fxml
+----------------------
+Menü - Menu
+Suche - Search
+Verleihen - lend, borrow
+Löschen - Delete
+Bearbeiten - Edit 
+neues buch - New book
+zurück - Back
+
+Login.fxml
+---------------
+Bibliotheksverwaltungssoftware - Library management software
+Ausweisnummer - Identification number
+Passwort - Password
+Mit * markierte Felder müssen ausgefüllt werden - Fields marked with * are required 
+Login - Login
+Registrieren - Register
+Passwort vergessen - Reset Password
+
+PasswordReset.fxml	
+------------
+If you forgot the password to your personal account, please do not hesitate to contact one of your adminstrators via Email.
+
+
+
+
+

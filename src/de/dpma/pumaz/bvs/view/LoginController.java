@@ -1,6 +1,8 @@
 package de.dpma.pumaz.bvs.view;
 
 import java.sql.SQLException;
+import java.text.NumberFormat;
+import java.text.ParsePosition;
 import java.util.logging.Logger;
 
 import de.dpma.pumaz.bvs.MainApp;
@@ -21,23 +23,44 @@ public class LoginController {
 
 	Logger log = Logger.getLogger(LoginController.class.getName());
 
+	// Eingaben prüfen und Nutzer einloggen
 	public void handleLogin() throws SQLException {
+		if (identificationNumberText.getText().isEmpty() || !isNumeric(identificationNumberText.getText())
+				|| identificationNumberText.getText().length() > 5) {
+			// TODO: Alert anzeigen
+			log.info("Keine gültige Ausweisnummer");
+			return;
+		}
+
+		if (passwordText.getText().isEmpty() || passwordText.getText().length() < 8) {
+			// TODO: Alert anzeigen
+			log.info("Kein gültiges Passwort");
+			return;
+		}
+
 		UserDAO UserDao = new UserDAO(MainApp.dbcon.getConnection());
-		System.out.println(identificationNumberText.getText());
 		loginUser = UserDao.findUser(new User(Integer.parseInt(identificationNumberText.getText())));
-		if (loginUser.getForename().isEmpty()) {
-			// TODO: Alert ausgeben, sysout removen
-			System.out.println("Mitarbeiter nicht gefunden");
+		if (loginUser.getForename() == null) {
+			// TODO: Alert anzeigen
+			log.info("Mitarbeiter nicht gefunden");
 		} else {
 			System.out.println("Mitarbeiter gefunden");
 			if (loginUser.checkPassword(passwordText.getText(), loginUser.getPassword())) {
-				// TODO: Weiterleiten, sysout removen
-				System.out.println("Passwort richtig, User einloggen");
+				// TODO: Weiterleiten
+				log.info("Passwort richtig, User einloggen");
 			} else {
-				// TODO: Alert anzeigen, sysout removen
-				System.out.println("Passwort falsch");
+				// TODO: Alert anzeigen
+				log.info("Passwort falsch");
 			}
 		}
+	}
+
+	// Check ob String eine Zahl ist. Um die Ausweisnummer zu prüfen.
+	public static boolean isNumeric(String str) {
+		NumberFormat formatter = NumberFormat.getInstance();
+		ParsePosition pos = new ParsePosition(0);
+		formatter.parse(str, pos);
+		return str.length() == pos.getIndex();
 	}
 
 	public void handleExit() {

@@ -33,11 +33,13 @@ public class User {
 
 	@SuppressWarnings("deprecation")
 	public String hashPassword(String pw) {
+		log.info("Passwort wird gehasht");
 		return pwauth.hash(pw);
 	}
 
 	@SuppressWarnings("deprecation")
 	public boolean checkPassword(String pw, String hash) {
+		log.info("Passwort wird überprüft");
 		return pwauth.authenticate(pw, hash);
 	}
 
