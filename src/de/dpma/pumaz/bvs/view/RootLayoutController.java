@@ -1,6 +1,9 @@
 package de.dpma.pumaz.bvs.view;
 
+import java.sql.SQLException;
+
 import de.dpma.pumaz.bvs.FXML_GUI;
+import de.dpma.pumaz.bvs.MainApp;
 
 public class RootLayoutController {
 	
@@ -21,5 +24,17 @@ public class RootLayoutController {
 		
 		fxml_gui.rootLayout.setMinSize(width, height);
 		fxml_gui.rootLayout.setPrefSize(width, height);
+	}
+	
+	public void handleExit() {
+		
+		try {
+			MainApp.dbcon.closeConnection();
+			System.exit(0);
+		}
+		catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

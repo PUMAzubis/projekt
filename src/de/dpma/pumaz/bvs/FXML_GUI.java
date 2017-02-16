@@ -1,6 +1,7 @@
 package de.dpma.pumaz.bvs;
 
 import java.io.IOException;
+import java.util.logging.Logger;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -10,6 +11,8 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 public class FXML_GUI {
+	
+	Logger log = Logger.getLogger(FXML_GUI.class.getName());
 	
 	public Stage primaryStage;
 	
@@ -23,10 +26,14 @@ public class FXML_GUI {
 	public void initRootLayout() {
 		
 		try {
+			log.info("RootLayout wird initalisiert");
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MainApp.class.getResource("view/RootLayout.fxml"));
+			loader.setLocation(FXML_GUI.class.getResource("view/RootLayout.fxml"));
+			log.info("RootLayout wird");
 			primaryStage.getIcons().add(new Image("file:resources/book.png"));
+			log.info("Icon hinzugefügt");
 			rootLayout = (BorderPane) loader.load();
+			log.info("Icon hinzugefügt");
 			Scene scene = new Scene(rootLayout);
 			// rootLayout.sizeToScene();
 			// primaryStage.setHeight();
@@ -43,7 +50,7 @@ public class FXML_GUI {
 		try {
 			
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MainApp.class.getResource("view/Login.fxml"));
+			loader.setLocation(FXML_GUI.class.getResource("view/Login.fxml"));
 			
 			AnchorPane login;
 			login = (AnchorPane) loader.load();
@@ -58,7 +65,7 @@ public class FXML_GUI {
 	public void showAbout() {
 		
 		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(MainApp.class.getResource("view/About.fxml"));
+		loader.setLocation(FXML_GUI.class.getResource("view/About.fxml"));
 		Stage stage = new Stage();
 		Scene scene = new Scene(rootLayout);
 		stage.setScene(scene);
