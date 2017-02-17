@@ -5,6 +5,8 @@ import java.sql.SQLException;
 import de.dpma.pumaz.bvs.FXML_GUI;
 import de.dpma.pumaz.bvs.MainApp;
 import javafx.fxml.FXML;
+import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 
 public class RootLayoutController {
 	
@@ -43,6 +45,9 @@ public class RootLayoutController {
 	@FXML
 	public void handleAbout() {
 		
-		fxml_gui.showAbout();
+		Stage stage = new Stage();
+		BorderPane borderPane = new BorderPane();
+		fxml_gui = new FXML_GUI(stage, borderPane, "about");
+		
 	}
 }
