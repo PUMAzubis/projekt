@@ -30,6 +30,9 @@ public class BookDAO {
 
 	final String SELECT_BUCH_SEARCH = "SELECT * FROM `books` b1 JOIN `books_single` b2 ON b2.`id_books` = b1.`id` WHERE LOWER(b1.`name`) LIKE ? OR LOWER(b1.`author`) LIKE ? OR LOWER(b1.`release_year`) LIKE ? OR LOWER(b1.`isbn`) LIKE ?";
 
+	final String SELECT_BUCH_CATEGORY = "SELECT `name` FROM `categorys` WHERE `id` = ?";
+	private String cat;
+
 	private final Connection con;
 
 	public BookDAO(Connection con) {
@@ -177,6 +180,19 @@ public class BookDAO {
 			Books.add(Book);
 		}
 		return Books;
+	}
+
+	public String getBookCategoryString(Book b) throws SQLException {
+
+		PreparedStatement stat = con.prepareStatement(SELECT_BUCH_CATEGORY);
+
+		ResultSet result = stat.executeQuery();
+		stat.setInt(1, b.getId_categorys());
+		while (result.next()) {
+			cat = result.getString("name");
+		}
+		return cat;
+
 	}
 
 }
