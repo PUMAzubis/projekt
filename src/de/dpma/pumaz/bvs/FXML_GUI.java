@@ -60,20 +60,20 @@ public class FXML_GUI {
 		
 	}
 	
-	// public void showAbout() {
-	//
-	// try {
-	// FXMLLoader loader = new FXMLLoader();
-	// loader.setLocation(FXML_GUI.class.getResource("view/About.fxml"));
-	// AnchorPane about;
-	// about = (AnchorPane) loader.load();
-	// Stage stage = new Stage();
-	// Scene scene = new Scene(about);
-	// stage.setScene(scene);
-	// stage.show();
-	// }
-	// catch (IOException e) {
-	// e.printStackTrace();
-	// }
-	// }
+	public void showAbout() {
+		
+		try {
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(FXML_GUI.class.getResource("view/About.fxml"));
+			AnchorPane about;
+			about = (AnchorPane) loader.load();
+			Stage stage = new Stage();
+			Scene scene = new Scene(about);
+			stage.setScene(scene);
+			stage.show();
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 }
