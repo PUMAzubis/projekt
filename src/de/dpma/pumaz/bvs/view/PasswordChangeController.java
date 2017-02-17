@@ -34,12 +34,10 @@ public class PasswordChangeController {
 		if(!(confirmNewPasswordText.getText().equals(newPasswordText))){
 			log.info("Passwort falsch wiederholt!");
 			return;
+		}
 		if(!(oldPasswordText.getText().equals(LoginController.passwordText))){
 			log.info("Falsches Passwort!");
-			}
 			return;
-		}
-		
-		
+		}	
 	}
 }

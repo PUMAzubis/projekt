@@ -38,23 +38,23 @@
                         <Font size="20.0" />
                      </font>
                   </Text>
-                  <Button layoutX="86.0" layoutY="182.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="99.0" text="Verleihen" AnchorPane.topAnchor="182.0">
+                  <Button layoutX="86.0" layoutY="182.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="99.0" text="Verleihen" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="66.0" AnchorPane.topAnchor="182.0">
                      <tooltip>
                         <Tooltip text="Hier klicken um das ausgewählte Buch zu verleihen." />
                      </tooltip></Button>
-                  <Button layoutX="86.0" layoutY="226.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="99.0" text="Neues Buch" AnchorPane.topAnchor="226.0">
+                  <Button layoutX="86.0" layoutY="226.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="99.0" text="Neues Buch" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="66.0" AnchorPane.topAnchor="226.0">
                      <tooltip>
                         <Tooltip text="Hier klicken um ein neues Buch anzulegen." />
                      </tooltip></Button>
-                  <Button layoutX="86.0" layoutY="274.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="99.0" text="Bearbeiten">
+                  <Button layoutX="66.0" layoutY="270.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="99.0" text="Bearbeiten" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="66.0">
                      <tooltip>
                         <Tooltip text="Hier Klicken um das ausgewählte Buch zu bearbeiten." />
                      </tooltip></Button>
-                  <Button layoutX="86.0" layoutY="316.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="99.0" text="Löschen">
+                  <Button layoutX="66.0" layoutY="314.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="99.0" text="Löschen" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="66.0">
                      <tooltip>
                         <Tooltip text="Hier klicken um das ausgewählte Buch zu löschen." />
                      </tooltip> </Button>
-                  <Button layoutX="86.0" layoutY="362.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="99.0" text="Zurück">
+                  <Button layoutX="66.0" layoutY="359.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="99.0" text="Zurück" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="66.0">
                      <tooltip>
                         <Tooltip text="Hier Klicken um zurück zum letzten Fenster zu gelangen." />
                      </tooltip>
