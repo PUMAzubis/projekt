@@ -5,15 +5,13 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.Tooltip?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="507.0" prefWidth="615.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.dpma.pumaz.bvs.view.RegistrationController">
    <children>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="507.0" prefWidth="624.0">
+      <AnchorPane layoutY="8.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="499.0" prefWidth="624.0">
          <children>
             <Text layoutX="197.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registrieren" textAlignment="JUSTIFY">
                <font>
@@ -70,11 +68,6 @@
                <tooltip>
                   <Tooltip text="Bitte Ihren Nachnamen eingeben." />
                </tooltip></TextField>
-            <ImageView fitHeight="110.0" fitWidth="200.0" layoutX="6.0">
-               <image>
-                  <Image url="@../../../../../../resources/dpma.png" />
-               </image>
-            </ImageView>
             <PasswordField fx:id="passwordText" layoutX="219.0" layoutY="315.0" prefHeight="31.0" prefWidth="218.0" />
          </children>
       </AnchorPane>

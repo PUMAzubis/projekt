@@ -11,9 +11,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="320.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.dpma.pumaz.bvs.view.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="312.0" prefWidth="600.0" styleClass="background" stylesheets="@theme.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.dpma.pumaz.bvs.view.LoginController">
    <children>
-      <Text layoutX="23.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bibliotheksverwaltungssoftware" textAlignment="JUSTIFY" AnchorPane.leftAnchor="23.0" AnchorPane.rightAnchor="22.072265625" AnchorPane.topAnchor="10.0">
+      <Text layoutX="52.0" layoutY="55.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="header" text="Bibliotheksverwaltungssoftware" AnchorPane.leftAnchor="52.0" AnchorPane.rightAnchor="52.36669921875" AnchorPane.topAnchor="23.666667938232422">
          <font>
             <Font name="Century Gothic" size="37.0" />
          </font>
@@ -22,25 +22,25 @@
          </effect>
       </Text>
       <Text layoutX="552.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-      <Text layoutX="37.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ausweisnummer*:">
+      <Text layoutX="99.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Ausweisnummer*:">
          <font>
             <Font size="20.0" />
          </font>
       </Text>
-      <Text layoutX="37.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Passwort*:">
+      <Text layoutX="99.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Passwort*:">
          <font>
             <Font size="20.0" />
          </font>
       </Text>
-      <TextField fx:id="identificationNumberText" layoutX="220.0" layoutY="99.0" prefHeight="31.0" prefWidth="218.0">
+      <TextField fx:id="identificationNumberText" layoutX="270.0" layoutY="99.0" prefHeight="31.0" prefWidth="218.0">
          <tooltip>
             <Tooltip text="Bitte Ihre Firmeninterne Ausweisnummer angeben." />
          </tooltip></TextField>
-      <PasswordField fx:id="passwordText" layoutX="220.0" layoutY="149.0" prefHeight="31.0" prefWidth="218.0">
+      <PasswordField fx:id="passwordText" layoutX="270.0" layoutY="151.0" prefHeight="31.0" prefWidth="218.0">
          <tooltip>
             <Tooltip text="Bitte Groß- und Kleinschreibung beachten." />
          </tooltip></PasswordField>
-      <ButtonBar layoutX="37.0" layoutY="245.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="488.0">
+      <ButtonBar layoutX="14.0" layoutY="258.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="395.0">
          <buttons>
             <Button mnemonicParsing="false" text="Passwort vergessen">
                <cursor>
@@ -48,14 +48,6 @@
                </cursor>
                <tooltip>
                   <Tooltip text="Falls Sie Ihr Passwort vergessen haben, Klicken Sie hier um es zurückzusetzen." />
-               </tooltip>
-            </Button>
-          <Button mnemonicParsing="false" onAction="#handleRegistration" text="Registrieren">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <tooltip>
-                  <Tooltip text="Falls Sie über keinen Account verfügen, bitte hier Klicken um sich zu Registrieren." />
                </tooltip>
             </Button>
             <Button mnemonicParsing="false" onAction="#handleLogin" text="Login">
@@ -68,6 +60,14 @@
             </Button>
          </buttons>
       </ButtonBar>
-      <Text fill="#ee0a0a" layoutX="33.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mit * markierte Felder müssen ausgefüllt werden." />
+      <Text fill="#ee0a0a" layoutX="117.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Mit * markierte Felder müssen ausgefüllt werden." />
+    <Button layoutX="459.0" layoutY="262.0" mnemonicParsing="false" text="Registrieren">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <tooltip>
+            <Tooltip text="Falls Sie über keinen Account verfügen, bitte hier Klicken um sich zu Registrieren." />
+         </tooltip>
+      </Button>
    </children>
 </AnchorPane>
