@@ -61,7 +61,7 @@
          </buttons>
       </ButtonBar>
       <Text fill="#ee0a0a" layoutX="117.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Mit * markierte Felder müssen ausgefüllt werden." />
-    <Button layoutX="459.0" layoutY="262.0" mnemonicParsing="false" text="Registrieren">
+    <Button layoutX="459.0" layoutY="262.0" mnemonicParsing="false" onAction="#handleRegistration" text="Registrieren">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

@@ -26,8 +26,6 @@ public class LoginController {
 	
 	User loginUser;
 	
-	private FXML_GUI fxml = new FXML_GUI();
-	
 	Logger log = Logger.getLogger(LoginController.class.getName());
 	
 	// Eingaben prüfen und Nutzer einloggen
@@ -78,8 +76,8 @@ public class LoginController {
 	public void handleRegistration() {
 		
 		//
-		BorderPane borderPane = new BorderPane();
 		Stage stage = new Stage();
-		fxml = new FXML_GUI(stage, borderPane, "register");
+		BorderPane borderPane = new BorderPane();
+		fxml_gui = new FXML_GUI(stage, borderPane, "register");
 	}
 }
