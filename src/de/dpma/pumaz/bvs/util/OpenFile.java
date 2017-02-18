@@ -10,9 +10,7 @@ public class OpenFile {
 		
 		File Idea = new File("");
 		String buildPath = Idea.getAbsolutePath();
-		System.out.println(Idea.getAbsolutePath());
 		File Idea1 = new File(buildPath + "/resources/Ideen.txt");
-		System.out.println(Idea1.getAbsolutePath());
 		// text file, should be opening in default text editor
 		
 		// first check if Desktop is supported by Platform or not
