@@ -1,0 +1,106 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url(Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url(Raleway-Regular.ttf);
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto;
+}
+
+.header {
+    background: rgba(34, 34, 255, 0.67);
+    font-family: Raleway;
+    padding: 5px 10px;
+    font-size: 35px;
+    color: #fff;
+    font-weight: bold;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    position: relative;
+    z-index: 100
+}
+
+.main {
+    display: flex;
+}
+
+.nav {
+    background: rgb(255, 204, 52);
+    width: 350px;
+    position: fixed;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset
+}
+
+.nav ul {
+    padding-left: 30px;
+    list-style-type: square;
+    margin: 10px 0;
+    font-size: 20px;
+    color: #212121
+}
+
+.nav ul > ul {
+    display: none;
+}
+
+.nav ul ul {
+    padding-left: 20px;
+    margin: 0;
+    font-size: 15px;
+}
+
+.nav li a {
+    text-decoration: blink;
+    color: inherit;
+    cursor: pointer
+}
+
+.nav li a:hover {
+    text-decoration: underline
+}
+
+.content {
+    background: rgba(186, 186, 186, 0.17);
+    width: calc(100% - 360px);
+    padding-left: 10px;
+    margin-left: auto;
+    padding-bottom: 10px
+}
+
+.content h1, .content h2 {
+    font-family: Raleway;
+    margin: 0;
+    padding: 0;
+    margin-top: 7px
+}
+
+.content h2 {
+    color: #444444
+}
+
+.text {
+    padding: 3px 0
+}
+
+.text p {
+    margin: 0;
+    font-size: 17px;
+}
+
+.mrgleft {
+    margin-left: 20px;
+    background: #ebebeb;
+    padding: 0 3px 3px 3px;
+    margin-right: 10px;
+}
+
+.active {
+    color: rgba(34, 34, 255, 0.67);
+    text-decoration: underline
+}

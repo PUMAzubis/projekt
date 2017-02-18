@@ -6,11 +6,11 @@ import java.io.IOException;
 
 public class OpenFile {
 	
-	public static void main(String[] args) throws IOException {
+	public OpenFile(String eing) {
 		
 		File Idea = new File("");
 		String buildPath = Idea.getAbsolutePath();
-		File Idea1 = new File(buildPath + "/resources/Ideen.txt");
+		File Idea1 = new File(buildPath + "/resources/" + eing);
 		// text file, should be opening in default text editor
 		
 		// first check if Desktop is supported by Platform or not
@@ -20,7 +20,13 @@ public class OpenFile {
 		}
 		Desktop desktop = Desktop.getDesktop();
 		if (Idea1.exists())
-			desktop.open(Idea1);
+			try {
+				desktop.open(Idea1);
+			}
+			catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 	}
 	
 }
