@@ -10,16 +10,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.dpma.pumaz.bvs.view.RootLayoutController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.dpma.pumaz.bvs.view.RootLayoutController">
    <left>
    </left>
-   <bottom>
-      <Label alignment="BASELINE_RIGHT" text="Version 1.0.0" textAlignment="RIGHT" BorderPane.alignment="BASELINE_RIGHT">
-         <BorderPane.margin>
-            <Insets right="20.0" />
-         </BorderPane.margin>
-      </Label>
-   </bottom>
    <top>
       <AnchorPane prefHeight="126.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
@@ -28,7 +21,7 @@
                   <Image url="@../../../../../../resources/dpma.png" />
                </image>
             </ImageView>
-            <MenuBar prefHeight="32.0" prefWidth="600.0">
+            <MenuBar prefHeight="32.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <menus>
                 <Menu mnemonicParsing="false" text="Datei">
                   <items>
@@ -38,7 +31,7 @@
                 </Menu>
                 <Menu mnemonicParsing="false" text="Hilfe">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="Anleitung" />
+                    <MenuItem mnemonicParsing="false" onAction="#handleHelp" text="Anleitung" />
                         <MenuItem mnemonicParsing="false" onAction="#handleAbout" text="Über" />
                   </items>
                 </Menu>
@@ -47,4 +40,21 @@
          </children>
       </AnchorPane>
    </top>
+   <bottom>
+      <AnchorPane BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="BOTTOM_RIGHT" layoutX="511.0" layoutY="140.0" text="Version 1.0.0" textAlignment="RIGHT" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <graphic>
+                  <AnchorPane />
+               </graphic>
+               <padding>
+                  <Insets bottom="5.0" right="5.0" top="5.0" />
+               </padding>
+            </Label>
+         </children>
+      </AnchorPane>
+   </bottom>
+   <center>
+      <AnchorPane BorderPane.alignment="CENTER" />
+   </center>
 </BorderPane>
