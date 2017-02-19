@@ -37,9 +37,6 @@ public class LoginController {
 	// Eingaben prüfen und Nutzer einloggen
 	public void handleLogin() throws SQLException {
 		
-		// fxml_gui = new FXML_GUI(stage, borderPane, "booklist");
-		root.handleGUI("booklist");
-		
 		if (identificationNumberText.getText().isEmpty() || !isNumeric(identificationNumberText.getText())
 				|| identificationNumberText.getText().length() > 5) {
 			// TODO: Alert anzeigen
@@ -64,6 +61,7 @@ public class LoginController {
 			if (loginUser.checkPassword(passwordText.getText(), loginUser.getPassword())) {
 				// TODO: Weiterleiten
 				log.info("Passwort richtig, User einloggen");
+				root.handleGUI("booklist");
 			}
 			else {
 				// TODO: Alert anzeigen
