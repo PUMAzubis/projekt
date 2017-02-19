@@ -21,27 +21,19 @@ public class FXML_GUI {
 	
 	MainApp mainApp;
 	
-	RootLayoutController rootLC;
+	RootLayoutController root;
+	
+	// SetSizeOfRootLayout ssorl;
 	
 	public FXML_GUI() {
 		
 	}
 	
-	public FXML_GUI(Stage primaryStage, BorderPane rootLayout, String check) {
+	public FXML_GUI(Stage primaryStage, BorderPane rootLayout) {
 		
 		this.primaryStage = primaryStage;
 		this.rootLayout = rootLayout;
 		initRootLayout();
-		if (check.equals("about")) {
-			showAbout();
-		}
-		else if (check.equals("register")) {
-			showRegistration();
-		}
-		else {
-			log.warning(check + "wurde nicht gefunden");
-		}
-		
 	}
 	
 	public void initRootLayout() {
@@ -71,7 +63,7 @@ public class FXML_GUI {
 			
 			AnchorPane login;
 			login = (AnchorPane) loader.load();
-			primaryStage.setHeight(login.getPrefHeight() + rootLayout.getHeight() + 50);
+			setSizeOfRootLayout(login.getPrefHeight(), login.getPrefWidth());
 			rootLayout.setCenter(login);
 		}
 		catch (IOException e) {
@@ -80,17 +72,16 @@ public class FXML_GUI {
 		
 	}
 	
-	private void showRegistration() {
+	public void showRegistration() {
 		
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(FXML_GUI.class.getResource("view/Registration.fxml"));
-			primaryStage.getIcons().add(new Image("file:resources/book.png"));
+			
 			AnchorPane register;
 			register = (AnchorPane) loader.load();
+			setSizeOfRootLayout(register.getPrefHeight(), register.getPrefWidth());
 			rootLayout.setCenter(register);
-			primaryStage.setHeight(register.getPrefHeight() + rootLayout.getHeight() + 50);
-			primaryStage.show();
 		}
 		catch (IOException e) {
 			e.printStackTrace();
@@ -101,13 +92,12 @@ public class FXML_GUI {
 		
 		try {
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(FXML_GUI.class.getResource("view/About.fxml"));
+			loader.setLocation(MainApp.class.getResource("view/About.fxml"));
 			AnchorPane about;
 			about = (AnchorPane) loader.load();
-			Stage stage = new Stage();
+			// Stage stage = new Stage();
 			Scene scene = new Scene(about);
-			stage.setScene(scene);
-			stage.showAndWait();
+			primaryStage.setScene(scene);
 		}
 		catch (IOException e) {
 			e.printStackTrace();
@@ -119,28 +109,31 @@ public class FXML_GUI {
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(FXML_GUI.class.getResource("view/BookList.fxml"));
-			AnchorPane about;
-			about = (AnchorPane) loader.load();
-			Stage stage = new Stage();
-			Scene scene = new Scene(about);
-			stage.setScene(scene);
-			stage.show();
+			AnchorPane bookList;
+			bookList = (AnchorPane) loader.load();
+			setSizeOfRootLayout(bookList.getPrefHeight(), bookList.getPrefWidth());
+			rootLayout.setCenter(bookList);
 		}
 		catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 	
-	// public void showEditBook() {
-	//
-	// try {
-	// FXMLLoader loader = new FXMLLoader();
-	// loader.setLocation(FXML_GUI.class.getResource("view/EditBook.fxml"));
-	// }
-	// catch (IOException e) {
-	// e.printStackTrace();
-	// }
-	// }
+	public void showEditBook() {
+		
+		try {
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(FXML_GUI.class.getResource("view/EditBook.fxml"));
+			AnchorPane editBook;
+			editBook = (AnchorPane) loader.load();
+			setSizeOfRootLayout(editBook.getPrefHeight(), editBook.getPrefWidth());
+			rootLayout.setCenter(editBook);
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	//
 	// public void showEditEmployees() {
 	//
@@ -185,4 +178,14 @@ public class FXML_GUI {
 	// e.printStackTrace();
 	// }
 	// }
+	
+	public void setSizeOfRootLayout(double height, double width) {
+		
+		primaryStage.setMaxWidth(width + 20);
+		primaryStage.setMinWidth(width + 20);
+		primaryStage.setMaxHeight(height + 173 + 50);
+		primaryStage.setMinHeight(height + 173 + 50);
+		// BUG/TODO beim öffnen mehrerer Fenster vergrößert sich der abstant
+		// immer noch
+	}
 }

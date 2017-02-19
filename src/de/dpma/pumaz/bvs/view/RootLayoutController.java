@@ -1,6 +1,7 @@
 package de.dpma.pumaz.bvs.view;
 
 import java.sql.SQLException;
+import java.util.logging.Logger;
 
 import de.dpma.pumaz.bvs.FXML_GUI;
 import de.dpma.pumaz.bvs.MainApp;
@@ -11,28 +12,45 @@ import javafx.stage.Stage;
 
 public class RootLayoutController {
 	
-	private int height;
-	
-	private int width;
-	
 	FXML_GUI fxml_gui;
+	
+	Stage stage = new Stage();
+	
+	BorderPane borderPane = new BorderPane();
+	
+	Logger log = Logger.getLogger(this.getClass().getName());
+	
+	public void handleGUI(String check) {
+		
+		fxml_gui = new FXML_GUI(stage, borderPane);
+		
+		if (check.equals("login")) {
+			fxml_gui.showLogin();
+		}
+		else if (check.equals("about")) {
+			fxml_gui.showAbout();
+		}
+		else if (check.equals("register")) {
+			// rootLayout.setCenter(null);
+			fxml_gui.showRegistration();
+		}
+		else if (check.equals("booklist")) {
+			fxml_gui.showBookList();
+		}
+		else if (check.equals("newBook")) {
+			// fxml_gui.showNewBook();
+		}
+		else if (check.equals("editBook")) {
+			fxml_gui.showEditBook();
+		}
+		else {
+			log.warning(check + "wurde nicht gefunden");
+		}
+	}
 	
 	@FXML
 	public void initialize() {
 		
-	}
-	
-	public void getSizes(int height, int width) {
-		
-		this.height = height;
-		this.width = width;
-		
-	}
-	
-	public void reziseHandling() {
-		
-		fxml_gui.rootLayout.setMinSize(width, height);
-		fxml_gui.rootLayout.setPrefSize(width, height);
 	}
 	
 	@FXML
@@ -51,10 +69,10 @@ public class RootLayoutController {
 	@FXML
 	public void handleAbout() {
 		
-		Stage stage = new Stage();
-		BorderPane borderPane = new BorderPane();
-		fxml_gui = new FXML_GUI(stage, borderPane, "about");
-		
+		handleGUI("about");
+		// Stage stage = new Stage();
+		// BorderPane borderPane = new BorderPane();
+		// fxml_gui = new FXML_GUI(stage, borderPane);
 	}
 	
 	@FXML

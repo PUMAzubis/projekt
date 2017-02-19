@@ -14,14 +14,14 @@
    <left>
    </left>
    <top>
-      <AnchorPane prefHeight="126.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <AnchorPane BorderPane.alignment="CENTER">
          <children>
             <ImageView fitHeight="110.0" fitWidth="200.0" layoutY="32.0">
                <image>
                   <Image url="@../../../../../../resources/dpma.png" />
                </image>
             </ImageView>
-            <MenuBar prefHeight="32.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <MenuBar AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <menus>
                 <Menu mnemonicParsing="false" text="Datei">
                   <items>
@@ -41,14 +41,14 @@
       </AnchorPane>
    </top>
    <bottom>
-      <AnchorPane BorderPane.alignment="CENTER">
+      <AnchorPane BorderPane.alignment="BOTTOM_LEFT">
          <children>
-            <Label alignment="BOTTOM_RIGHT" layoutX="511.0" layoutY="140.0" text="Version 1.0.0" textAlignment="RIGHT" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <Label alignment="BOTTOM_LEFT" contentDisplay="TEXT_ONLY" layoutX="511.0" layoutY="140.0" text="Version 1.0.0" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0">
                <graphic>
                   <AnchorPane />
                </graphic>
                <padding>
-                  <Insets bottom="5.0" right="5.0" top="5.0" />
+                  <Insets top="5.0" />
                </padding>
             </Label>
          </children>

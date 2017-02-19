@@ -28,12 +28,17 @@ public class LoginController {
 	
 	FXML_GUI fxml_gui;
 	
+	RootLayoutController root = new RootLayoutController();
+	
 	User loginUser;
 	
 	Logger log = Logger.getLogger(LoginController.class.getName());
 	
 	// Eingaben prüfen und Nutzer einloggen
 	public void handleLogin() throws SQLException {
+		
+		// fxml_gui = new FXML_GUI(stage, borderPane, "booklist");
+		root.handleGUI("booklist");
 		
 		if (identificationNumberText.getText().isEmpty() || !isNumeric(identificationNumberText.getText())
 				|| identificationNumberText.getText().length() > 5) {
@@ -57,8 +62,8 @@ public class LoginController {
 		else {
 			System.out.println("Mitarbeiter gefunden");
 			if (loginUser.checkPassword(passwordText.getText(), loginUser.getPassword())) {
+				// TODO: Weiterleiten
 				log.info("Passwort richtig, User einloggen");
-				fxml_gui = new FXML_GUI(stage, borderPane, "booklist");
 			}
 			else {
 				// TODO: Alert anzeigen
@@ -80,6 +85,7 @@ public class LoginController {
 	public void handleRegistration() {
 		
 		//
-		fxml_gui = new FXML_GUI(stage, borderPane, "register");
+		root.handleGUI("register");
+		// fxml_gui = new FXML_GUI(stage, borderPane, "register");
 	}
 }

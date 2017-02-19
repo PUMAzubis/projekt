@@ -53,6 +53,8 @@ public class BookListController {
 	
 	FXML_GUI fxml_gui;
 	
+	RootLayoutController root = new RootLayoutController();
+	
 	/**
 	 * The constructor. The constructor is called before the initialize()
 	 * method.
@@ -91,13 +93,15 @@ public class BookListController {
 	@FXML
 	public void handleNewBook() {
 		
-		fxml_gui = new FXML_GUI(stage, borderPane, "newBook");
+		root.handleGUI("newBook");
+		// fxml_gui = new FXML_GUI(stage, borderPane, "newBook");
 	}
 	
 	@FXML
 	public void handleEditBook() {
 		
-		fxml_gui = new FXML_GUI(stage, borderPane, "editBook");
+		root.handleGUI("editBook");
+		// fxml_gui = new FXML_GUI(stage, borderPane, "editBook");
 	}
 	
 	// @FXML
