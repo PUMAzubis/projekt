@@ -22,6 +22,10 @@ public class LoginController {
 	@FXML
 	private TextField passwordText;
 	
+	Stage stage = new Stage();
+	
+	BorderPane borderPane = new BorderPane();
+	
 	FXML_GUI fxml_gui;
 	
 	User loginUser;
@@ -53,8 +57,8 @@ public class LoginController {
 		else {
 			System.out.println("Mitarbeiter gefunden");
 			if (loginUser.checkPassword(passwordText.getText(), loginUser.getPassword())) {
-				// TODO: Weiterleiten
 				log.info("Passwort richtig, User einloggen");
+				fxml_gui = new FXML_GUI(stage, borderPane, "booklist");
 			}
 			else {
 				// TODO: Alert anzeigen
@@ -76,8 +80,6 @@ public class LoginController {
 	public void handleRegistration() {
 		
 		//
-		Stage stage = new Stage();
-		BorderPane borderPane = new BorderPane();
 		fxml_gui = new FXML_GUI(stage, borderPane, "register");
 	}
 }
