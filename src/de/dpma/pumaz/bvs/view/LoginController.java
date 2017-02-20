@@ -58,7 +58,7 @@ public class LoginController {
 		loginUser = UserDao.findUser(new User(Integer.parseInt(identificationNumberText.getText())));
 		if (loginUser.getForename() == null) {
 			root.handleDialog("Kein Benutzer gefunden",
-					"Es wurde kein Benutzer anahnd der von Ihnen übergebenen Daten gefunden. Bitte überprüfen Sie diese und versuchen Sie es erneut.",
+					"Es wurde kein Benutzer anhand der von Ihnen übergebenen Daten gefunden. Bitte überprüfen Sie diese und versuchen Sie es erneut.",
 					"warning");
 			log.info("Mitarbeiter nicht gefunden");
 		} else {
