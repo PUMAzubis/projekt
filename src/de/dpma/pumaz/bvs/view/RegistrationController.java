@@ -25,7 +25,7 @@ public class RegistrationController {
 	private TextField passwordText;
 	@FXML
 	private Label workIDLabel;
-	@FXML 
+	@FXML
 	private Label firstnameLabel;
 	@FXML
 	private Label lastnameLabel;
@@ -35,8 +35,10 @@ public class RegistrationController {
 	private Label hintLabel;
 	@FXML
 	private Button backButton;
-	@FXML 
+	@FXML
 	private Button completeButton;
+
+	RootLayoutController root = new RootLayoutController();
 
 	User searchUser;
 
@@ -46,25 +48,33 @@ public class RegistrationController {
 	public void handleRegister() throws SQLException {
 		if (identificationNumberText.getText().isEmpty() || !isNumeric(identificationNumberText.getText())
 				|| identificationNumberText.getText().length() > 5) {
-			// TODO: Alert anzeigen
+			root.handleDialog("Ausweisnummer ungültig",
+					"Es wurde keine gültige Ausweisnummer angegeben. Bitte geben Sie eine valide Ausweisnummer an und versuchen Sie es erneut.",
+					"warning");
 			log.info("Keine gültige Ausweisnummer");
 			return;
 		}
 
 		if (passwordText.getText().isEmpty() || passwordText.getText().length() < 8) {
-			// TODO: Alert anzeigen
+			root.handleDialog("Passwort unsicher",
+					"Das von Ihnen angegebene Passwort erfüllt nicht unsere Sicherheitsstandards. Bitte geben Sie ein Passwort an, welches mindestens 8 Zeichen lang ist und versuchen Sie es erneut.",
+					"warning");
 			log.info("Unsicheres Passwort");
 			return;
 		}
 
 		if (forenameText.getText().isEmpty() || forenameText.getText().length() < 2) {
-			// TODO: Alert anzeigen
+			root.handleDialog("Vorname ungültig",
+					"Der von Ihnen gewählte Vorname ist ungültig. Bitte überprüfen Sie die Eingabe und versuchen Sie es erneut.",
+					"warning");
 			log.info("Ungültiger Vorname");
 			return;
 		}
 
 		if (surnameText.getText().isEmpty() || surnameText.getText().length() < 2) {
-			// TODO: Alert anzeigen
+			root.handleDialog("Nachname ungültig",
+					"Der von Ihnen gewählte Nachname ist ungültig. Bitte überprüfen Sie die Eingabe und versuchen Sie es erneut.",
+					"warning");
 			log.info("Ungültiger Nachname");
 			return;
 		}
@@ -72,13 +82,15 @@ public class RegistrationController {
 		UserDAO UserDao = new UserDAO(MainApp.dbcon.getConnection());
 		searchUser = UserDao.findUser(new User(Integer.parseInt(identificationNumberText.getText())));
 		if (searchUser.getForename() != null) {
-			// TODO: Alert anzeigen
+			root.handleDialog("Mitarbeiter bereits vorhanden",
+					"Es wurde bereits ein Mitarbeiter mit dieser Ausweisnummer registriert. Bitte wählen Sie eine andere und versuchen Sie es erneut.",
+					"warning");
 			log.info("Mitarbeiter mit gleicher Ausweisnummer wurde gefunden, Registrierung nicht möglich");
 		} else {
 			System.out.println("Mitarbeiter mit gleicher Ausweisnummer nicht gefunden, Registrierung fortfahren");
 			UserDao.insertUser(new User(Integer.parseInt(identificationNumberText.getText()), forenameText.getText(),
 					surnameText.getText(), passwordText.getText(), 0));
-			// TODO: Alert anzeigen
+			root.handleDialog("Mitarbeiter erfolgreich angelegt", "", "info");
 			log.info("Mitarbeiter angelegt");
 		}
 	}

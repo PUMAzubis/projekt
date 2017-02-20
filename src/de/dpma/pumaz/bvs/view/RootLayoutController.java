@@ -80,15 +80,18 @@ public class RootLayoutController {
 	public void handleDialog(String title, String content, String type) {
 		if (type.equalsIgnoreCase("warning")) {
 			Alert alert = new Alert(AlertType.WARNING);
-			// Stage stage = (Stage)
-			// alert.getDialogPane().getScene().getWindow();
-			// stage.getIcons().add(new
-			// Image(this.getClass().getResource("/resources/book.png").toString()));
-			// alert.initOwner(stage);
-			fxml_gui = new FXML_GUI(stage, borderPane, "VJHSASDFGUH");
+			fxml_gui = new FXML_GUI(stage, borderPane, "Dummy String");
 			alert.setTitle("Warnung");
 			alert.setHeaderText(title);
 			alert.setContentText(content);
+			alert.initOwner(stage);
+			alert.showAndWait();
+		} else if (type.equalsIgnoreCase("info")) {
+			Alert alert = new Alert(AlertType.INFORMATION);
+			fxml_gui = new FXML_GUI(stage, borderPane, "Dummy String");
+			alert.setTitle("Information");
+			alert.setHeaderText(title);
+			alert.setContentText(null);
 			alert.initOwner(stage);
 			alert.showAndWait();
 		}
