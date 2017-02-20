@@ -17,32 +17,32 @@ import javafx.scene.control.Tooltip;
 public class RegistrationController {
 
 	@FXML 
-	private Tooltip textFieldAusweissToolTip;
+	private Tooltip textFieldWorkerIdToolTip;
 	@FXML 
-	private Tooltip textFieldVornameToolTip;
+	private Tooltip textFieldFirstNameToolTip;
 	@FXML 
-	private Tooltip textFieldNachnameToolTip;
+	private Tooltip textFieldLastNameToolTip;
 	@FXML 
-	private Tooltip textFieldPasswortToolTip;
+	private Tooltip textFieldPasswordToolTip;
 	@FXML 
-	private Tooltip buttonRegistrierenabschliessenToolTip;
+	private Tooltip buttonRegisterToolTip;
 	@FXML 
-	private Tooltip buttonzurueckToolTip;
+	private Tooltip buttonBackToolTip;
 	
 	@FXML
-	private TextField identificationNumberText;
+	private TextField workerIdTextField;
 	@FXML
-	private TextField forenameText;
+	private TextField firstNameTextField;
 	@FXML
-	private TextField surnameText;
+	private TextField lastNameTextField;
 	@FXML
-	private TextField passwordText;
+	private TextField passwordTextField;
 	@FXML
-	private Label workIDLabel;
+	private Label workIdLabel;
 	@FXML 
-	private Label firstnameLabel;
+	private Label firstNameLabel;
 	@FXML
-	private Label lastnameLabel;
+	private Label lastNameLabel;
 	@FXML
 	private Label passwordLabel;
 	@FXML
@@ -61,8 +61,8 @@ public class RegistrationController {
 
 	// Registrierungsangaben prüfen und Registrierung durchführen
 	public void handleRegister() throws SQLException {
-		if (identificationNumberText.getText().isEmpty() || !isNumeric(identificationNumberText.getText())
-				|| identificationNumberText.getText().length() > 5) {
+		if (workerIdTextField.getText().isEmpty() || !isNumeric(workerIdTextField.getText())
+				|| workerIdTextField.getText().length() > 5) {
 			root.handleDialog("Ausweisnummer ungültig",
 					"Es wurde keine gültige Ausweisnummer angegeben. Bitte geben Sie eine valide Ausweisnummer an und versuchen Sie es erneut.",		
 					 					"warning");
@@ -71,7 +71,7 @@ public class RegistrationController {
 			return;
 		}
 
-		if (passwordText.getText().isEmpty() || passwordText.getText().length() < 8) {
+		if (passwordTextField.getText().isEmpty() || passwordTextField.getText().length() < 8) {
 			root.handleDialog("Passwort unsicher",
 					"Das von Ihnen angegebene Passwort erfüllt nicht unsere Sicherheitsstandards. Bitte geben Sie ein Passwort an, welches mindestens 8 Zeichen lang ist und versuchen Sie es erneut.",		
 					 				"warning");
@@ -79,7 +79,7 @@ public class RegistrationController {
 			return;
 		}
 
-		if (forenameText.getText().isEmpty() || forenameText.getText().length() < 2) {
+		if (firstNameTextField.getText().isEmpty() || firstNameTextField.getText().length() < 2) {
 			root.handleDialog("Vorname ungültig",
 					"Der von Ihnen gewählte Vorname ist ungültig. Bitte überprüfen Sie die Eingabe und versuchen Sie es erneut.",		
 									"warning");
@@ -87,7 +87,7 @@ public class RegistrationController {
 			return;
 		}
 
-		if (surnameText.getText().isEmpty() || surnameText.getText().length() < 2) {
+		if (lastNameTextField.getText().isEmpty() || lastNameTextField.getText().length() < 2) {
 			root.handleDialog("Nachname ungültig",
 					"Der von Ihnen gewählte Nachname ist ungültig. Bitte überprüfen Sie die Eingabe und versuchen Sie es erneut.",		
 					 					"warning");
@@ -97,7 +97,7 @@ public class RegistrationController {
 		}
 
 		UserDAO UserDao = new UserDAO(MainApp.dbcon.getConnection());
-		searchUser = UserDao.findUser(new User(Integer.parseInt(identificationNumberText.getText())));
+		searchUser = UserDao.findUser(new User(Integer.parseInt(workerIdTextField.getText())));
 		if (searchUser.getForename() != null) {
 			root.handleDialog("Mitarbeiter bereits vorhanden",
 					"Es wurde bereits ein Mitarbeiter mit dieser Ausweisnummer registriert. Bitte wählen Sie eine andere und versuchen Sie es erneut.",		
@@ -105,8 +105,8 @@ public class RegistrationController {
 			log.info("Mitarbeiter mit gleicher Ausweisnummer wurde gefunden, Registrierung nicht möglich");
 		} else {
 			System.out.println("Mitarbeiter mit gleicher Ausweisnummer nicht gefunden, Registrierung fortfahren");
-			UserDao.insertUser(new User(Integer.parseInt(identificationNumberText.getText()), forenameText.getText(),
-					surnameText.getText(), passwordText.getText(), 0));
+			UserDao.insertUser(new User(Integer.parseInt(workerIdTextField.getText()), firstNameTextField.getText(),
+					lastNameTextField.getText(), passwordTextField.getText(), 0));
 			root.handleDialog("Mitarbeiter erfolgreich angelegt", "", "info");
 			log.info("Mitarbeiter angelegt");
 		}

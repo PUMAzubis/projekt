@@ -10,10 +10,10 @@ import javafx.stage.Stage;
 public class PasswordResetController {
 	
 	@FXML 
-	private Tooltip buttonbackToolTip;
+	private Tooltip buttonBackToolTip;
 	
 	@FXML
-	private Button back;
+	private Button backButton;
 	
 	Stage stage = new Stage();
 	

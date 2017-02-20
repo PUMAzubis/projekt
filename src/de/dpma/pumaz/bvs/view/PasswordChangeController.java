@@ -17,21 +17,21 @@ import javafx.scene.control.Tooltip;
 public class PasswordChangeController {
 	
 	@FXML 
-	private Tooltip TextFieldaltpwToolTip;
+	private Tooltip textFieldOldPasswordToolTip;
 	@FXML
-	private Tooltip TextFieldneupwToolTip;
+	private Tooltip textFieldNewPasswordToolTip;
 	@FXML
-	private Tooltip TextFieldneupwbestaetigungToolTip;
+	private Tooltip textFieldNewPasswordConfirmToolTip;
 	@FXML
-	private Tooltip ButtonzurueckToolTip;
+	private Tooltip buttonBackToolTip;
 	@FXML
-	private Tooltip ButtonbestatigenToolTip;
+	private Tooltip buttonConfirmToolTip;
 	@FXML
-	private TextField oldPasswordText;
+	private TextField oldPasswordTextField;
 	@FXML
-	private TextField newPasswordText;
+	private TextField newPasswordTextField;
 	@FXML
-	private TextField confirmNewPasswordText;
+	private TextField confirmNewPasswordTextField;
 	@FXML
 	private Label oldPasswordLabel;
 	@FXML

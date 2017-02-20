@@ -29,30 +29,30 @@
                         <Image url="@../../../../../../resources/book.png" />
                      </image>
                   </ImageView>
-                  <TextField layoutX="66.0" layoutY="103.0" AnchorPane.bottomAnchor="331.0" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="103.0">
+                  <TextField fx:id="searchTextField" layoutX="66.0" layoutY="103.0" AnchorPane.bottomAnchor="331.0" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="103.0">
                      <tooltip>
-                        <Tooltip text="Hier den Titel, ISBN, Jahr, oder Autor des Buches eingeben" />
+                        <Tooltip fx:id="textFieldSearchToolTip" text="Hier den Titel, ISBN, Jahr, oder Autor des Buches eingeben" />
                      </tooltip></TextField>
-                  <Text layoutX="7.0" layoutY="126.203125" strokeType="OUTSIDE" strokeWidth="0.0" text="Suche:" AnchorPane.bottomAnchor="333.77734375">
+                  <Text fx:id="searchLabel" layoutX="7.0" layoutY="126.203125" strokeType="OUTSIDE" strokeWidth="0.0" text="Suche:" AnchorPane.bottomAnchor="333.77734375">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Text>
-                  <Button layoutX="86.0" layoutY="180.0" mnemonicParsing="false" onAction="#handleLendBook" prefHeight="31.0" prefWidth="99.0" text="Verleihen" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="66.0">
+                  <Button fx:id="lendBookButton" layoutX="86.0" layoutY="180.0" mnemonicParsing="false" onAction="#handleLendBook" prefHeight="31.0" prefWidth="99.0" text="Verleihen" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="66.0">
                      <tooltip>
-                        <Tooltip fx:id="buttonlendToolTip" text="Hier klicken um das ausgewählte Buch zu verleihen." />
+                        <Tooltip fx:id="buttonLendToolTip" text="Hier klicken um das ausgewählte Buch zu verleihen." />
                      </tooltip></Button>
-                  <Button layoutX="66.0" layoutY="300.0" mnemonicParsing="false" onAction="#handleNewBook" prefHeight="31.0" prefWidth="99.0" text="Neues Buch" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="66.0">
+                  <Button fx:id="newBookButton" layoutX="66.0" layoutY="300.0" mnemonicParsing="false" onAction="#handleNewBook" prefHeight="31.0" prefWidth="99.0" text="Neues Buch" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="66.0">
                      <tooltip>
-                        <Tooltip fx:id="buttonnewbookToolTip" text="Hier klicken um ein neues Buch anzulegen." />
+                        <Tooltip fx:id="buttonNewBookToolTip" text="Hier klicken um ein neues Buch anzulegen." />
                      </tooltip></Button>
-                  <Button layoutX="66.0" layoutY="240.0" mnemonicParsing="false" onAction="#handleEditBook" prefHeight="31.0" prefWidth="99.0" text="Bearbeiten" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="66.0">
+                  <Button fx:id="editBookButtom" layoutX="66.0" layoutY="240.0" mnemonicParsing="false" onAction="#handleEditBook" prefHeight="31.0" prefWidth="99.0" text="Bearbeiten" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="66.0">
                      <tooltip>
-                        <Tooltip fx:id="buttoneditToolTip" text="Hier Klicken um das ausgewählte Buch zu bearbeiten." />
+                        <Tooltip fx:id="buttonEditToolTip" text="Hier Klicken um das ausgewählte Buch zu bearbeiten." />
                      </tooltip></Button>
-                  <Button layoutX="66.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleDeleteBook" prefHeight="31.0" prefWidth="99.0" text="Löschen" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="66.0">
+                  <Button fx:id="deleteBookButton" layoutX="66.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleDeleteBook" prefHeight="31.0" prefWidth="99.0" text="Löschen" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="66.0">
                      <tooltip>
-                        <Tooltip fx:id="buttondeleteToolTip" text="Hier klicken um das ausgewählte Buch zu löschen." />
+                        <Tooltip fx:id="buttonDeleteToolTip" text="Hier klicken um das ausgewählte Buch zu löschen." />
                      </tooltip> </Button>
                </children>
             </AnchorPane>

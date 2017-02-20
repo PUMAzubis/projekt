@@ -9,95 +9,112 @@ import de.dpma.pumaz.bvs.model.Book;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.Tooltip;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 public class BookListController {
-
+	
 	@FXML
-	private Tooltip textfieldsucheToolTip;
-
+	private Tooltip textFieldSearchToolTip;
+	
 	@FXML
-	private Tooltip buttonlendToolTip;
-
+	private Tooltip buttonLendToolTip;
+	
 	@FXML
-	private Tooltip buttoneditToolTip;
-
+	private Tooltip buttonEditToolTip;
+	
 	@FXML
-	private Tooltip buttonnewbookToolTip;
-
+	private Tooltip buttonNewBookToolTip;
+	
 	@FXML
-	private Tooltip buttondeleteToolTip;
-
+	private Tooltip buttonDeleteToolTip;
+	
 	@FXML
 	private TableView<Book> bookTable;
-
+	
 	@FXML
 	private TableColumn<Book, String> nameColumn;
-
+	
 	@FXML
 	private TableColumn<Book, String> authorColumn;
-
+	
 	@FXML
 	private TableColumn<Book, String> releaseYearColumn;
-
+	
 	@FXML
 	private TableColumn<Book, String> isbnColumn;
-
+	
 	@FXML
 	private TableColumn<Book, String> categoryColumn;
-
+	
+	@FXML
+	private TextField searchTextField;
+	
+	@FXML
+	private Button lendBookButton;
+	
+	@FXML
+	private Button editBookButtom;
+	
+	@FXML
+	private Button newBookButton;
+	
+	@FXML
+	private Button deleteBookButton;
+	
 	@FXML
 	private Label nameColumnLabel;
-
+	
 	@FXML
 	private Label authorColumnLabel;
-
+	
 	@FXML
 	private Label releaseColumnLabel;
-
+	
 	@FXML
 	private Label isbnColumnLabel;
-
+	
 	@FXML
 	private Label categoryColumnLabel;
-
+	
 	@FXML
-	private Label birthdayLabel;
-
+	private Label searchLabel;
+	
 	Stage stage = new Stage();
-
+	
 	BorderPane borderPane = new BorderPane();
-
+	
 	FXML_GUI fxml_gui;
-
+	
 	RootLayoutController root = new RootLayoutController();
-
+	
 	private ObservableList<Book> bookData = FXCollections.observableArrayList();
-
+	
 	/**
 	 * The constructor. The constructor is called before the initialize()
 	 * method.
 	 */
 	public BookListController() {
-
+		
 	}
-
+	
 	/**
 	 * Initializes the controller class. This method is automatically called
 	 * after the fxml file has been loaded.
 	 */
 	@FXML
 	private void initialize() throws SQLException {
-
+		
 		BookDAO bookDao = new BookDAO(MainApp.dbcon.getConnection());
 		bookData.addAll(bookDao.allBooksTogether());
 		bookTable.setItems(bookData);
-
+		
 		// Initialize the person table with the two columns.
 		nameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
 		authorColumn.setCellValueFactory(cellData -> cellData.getValue().authorProperty());
@@ -106,35 +123,36 @@ public class BookListController {
 		categoryColumn.setCellValueFactory(cellData -> {
 			try {
 				return cellData.getValue().categoryName();
-			} catch (SQLException e) {
+			}
+			catch (SQLException e) {
 				e.printStackTrace();
 				return null;
 			}
 		});
 	}
-
+	
 	@FXML
 	public void handleNewBook() {
-
+		
 		root.handleGUI("newBook");
 	}
-
+	
 	@FXML
 	public void handleEditBook() {
-
+		
 		root.handleGUI("editBook");
 	}
-
+	
 	@FXML
 	public void handleLendBook() {
-
+		
 	}
-
+	
 	@FXML
 	public void handleDeleteBook() {
-
+		
 	}
-
+	
 	// @FXML
 	// private void handleDeletePerson() {
 	// int selectedIndex = personTable.getSelectionModel().getSelectedIndex();
