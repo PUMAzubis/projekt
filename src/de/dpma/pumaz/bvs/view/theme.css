@@ -8,6 +8,10 @@
     src: url('Raleway-Regular.ttf');
 }
 
+.background-main {
+    -fx-background-color: #d4d4d4;
+}
+
 .background {
     -fx-background-color: #fbfbfb;
 }
