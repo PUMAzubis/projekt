@@ -12,16 +12,21 @@ import javafx.stage.Stage;
 
 public class BookListController {
 	
-	@FXML 
+	@FXML
 	private Tooltip textfieldsucheToolTip;
-	@FXML 
+	
+	@FXML
 	private Tooltip buttonlendToolTip;
-	@FXML 
+	
+	@FXML
 	private Tooltip buttoneditToolTip;
-	@FXML 
+	
+	@FXML
 	private Tooltip buttonnewbookToolTip;
-	@FXML 
+	
+	@FXML
 	private Tooltip buttondeleteToolTip;
+	
 	@FXML
 	private TableView<Book> bookTable;
 	
@@ -105,22 +110,24 @@ public class BookListController {
 	public void handleNewBook() {
 		
 		root.handleGUI("newBook");
-		// fxml_gui = new FXML_GUI(stage, borderPane, "newBook");
 	}
 	
 	@FXML
 	public void handleEditBook() {
 		
 		root.handleGUI("editBook");
-		// fxml_gui = new FXML_GUI(stage, borderPane, "editBook");
 	}
-	@FXML		
-	 	public void handleLendBook(){		
-	 	}		
-	 			
-	 	@FXML		
-	 	public void handleDelete(){		
-	 	}
+	
+	@FXML
+	public void handleLendBook() {
+		
+	}
+	
+	@FXML
+	public void handleDeleteBook() {
+		
+	}
+	
 	// @FXML
 	// private void handleDeletePerson() {
 	// int selectedIndex = personTable.getSelectionModel().getSelectedIndex();
