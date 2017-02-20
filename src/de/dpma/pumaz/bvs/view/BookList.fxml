@@ -40,19 +40,19 @@
                   </Text>
                   <Button layoutX="86.0" layoutY="180.0" mnemonicParsing="false" onAction="#handleLendBook" prefHeight="31.0" prefWidth="99.0" text="Verleihen" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="66.0">
                      <tooltip>
-                        <Tooltip text="Hier klicken um das ausgewählte Buch zu verleihen." />
+                        <Tooltip fx:id="buttonlendToolTip" text="Hier klicken um das ausgewählte Buch zu verleihen." />
                      </tooltip></Button>
                   <Button layoutX="66.0" layoutY="300.0" mnemonicParsing="false" onAction="#handleNewBook" prefHeight="31.0" prefWidth="99.0" text="Neues Buch" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="66.0">
                      <tooltip>
-                        <Tooltip text="Hier klicken um ein neues Buch anzulegen." />
+                        <Tooltip fx:id="buttonnewbookToolTip" text="Hier klicken um ein neues Buch anzulegen." />
                      </tooltip></Button>
                   <Button layoutX="66.0" layoutY="240.0" mnemonicParsing="false" onAction="#handleEditBook" prefHeight="31.0" prefWidth="99.0" text="Bearbeiten" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="66.0">
                      <tooltip>
-                        <Tooltip text="Hier Klicken um das ausgewählte Buch zu bearbeiten." />
+                        <Tooltip fx:id="buttoneditToolTip" text="Hier Klicken um das ausgewählte Buch zu bearbeiten." />
                      </tooltip></Button>
                   <Button layoutX="66.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleDeleteBook" prefHeight="31.0" prefWidth="99.0" text="Löschen" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="66.0">
                      <tooltip>
-                        <Tooltip text="Hier klicken um das ausgewählte Buch zu löschen." />
+                        <Tooltip fx:id="buttondeleteToolTip" text="Hier klicken um das ausgewählte Buch zu löschen." />
                      </tooltip> </Button>
                </children>
             </AnchorPane>
