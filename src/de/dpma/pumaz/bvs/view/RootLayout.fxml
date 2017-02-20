@@ -39,14 +39,14 @@
                 </Menu>
               </menus>
             </MenuBar>
-            <ImageView fitHeight="91.0" fitWidth="161.0" layoutX="250.0" layoutY="42.0">
+            <ImageView fitHeight="89.0" fitWidth="167.0" layoutX="236.0" layoutY="43.0">
                <image>
-                  <Image url="@../../../../../../../../Desktop/BVS/germany-flag-1783774_640.png" />
+                  <Image url="@../../../../../../resources/germany-flag-1783774_640.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="92.0" fitWidth="168.0" layoutX="438.0" layoutY="41.0">
+            <ImageView fitHeight="86.0" fitWidth="156.0" layoutX="428.0" layoutY="44.0">
                <image>
-                  <Image url="@../../../../../../../../Desktop/BVS/union-jack-1027898_640%20(1).jpg" />
+                  <Image url="@../../../../../../resources/union-jack-1027898_640%20(1).jpg" />
                </image>
             </ImageView>
          </children>
