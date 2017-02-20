@@ -13,37 +13,26 @@ public class BookListController {
 	
 	@FXML
 	private TableView<Book> bookTable;
-	
 	@FXML
 	private TableColumn<Book, String> nameColumn;
-	
 	@FXML
 	private TableColumn<Book, String> authorColumn;
-	
 	@FXML
 	private TableColumn<Book, String> releaseYearColumn;
-	
 	@FXML
 	private TableColumn<Book, String> isbnColumn;
-	
 	@FXML
 	private TableColumn<Book, String> categoryColumn;
-	
 	@FXML
 	private Label nameColumnLabel;
-	
 	@FXML
 	private Label authorColumnLabel;
-	
 	@FXML
 	private Label releaseColumnLabel;
-	
 	@FXML
 	private Label isbnColumnLabel;
-	
 	@FXML
 	private Label categoryColumnLabel;
-	
 	@FXML
 	private Label birthdayLabel;
 	
@@ -104,6 +93,13 @@ public class BookListController {
 		// fxml_gui = new FXML_GUI(stage, borderPane, "editBook");
 	}
 	
+	@FXML
+	public void handleLendBook(){
+	}
+	
+	@FXML
+	public void handleDelete(){
+	}
 	// @FXML
 	// private void handleDeletePerson() {
 	// int selectedIndex = personTable.getSelectionModel().getSelectedIndex();
