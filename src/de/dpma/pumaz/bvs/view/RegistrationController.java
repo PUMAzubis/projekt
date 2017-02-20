@@ -9,6 +9,8 @@ import de.dpma.pumaz.bvs.MainApp;
 import de.dpma.pumaz.bvs.dao.UserDAO;
 import de.dpma.pumaz.bvs.model.User;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class RegistrationController {
@@ -21,6 +23,20 @@ public class RegistrationController {
 	private TextField surnameText;
 	@FXML
 	private TextField passwordText;
+	@FXML
+	private Label workIDLabel;
+	@FXML 
+	private Label firstnameLabel;
+	@FXML
+	private Label lastnameLabel;
+	@FXML
+	private Label passwordLabel;
+	@FXML
+	private Label hintLabel;
+	@FXML
+	private Button backButton;
+	@FXML 
+	private Button completeButton;
 
 	User searchUser;
 

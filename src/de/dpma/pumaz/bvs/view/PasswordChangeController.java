@@ -9,6 +9,8 @@ import de.dpma.pumaz.bvs.MainApp;
 import de.dpma.pumaz.bvs.dao.UserDAO;
 import de.dpma.pumaz.bvs.model.User;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class PasswordChangeController {
@@ -20,6 +22,18 @@ public class PasswordChangeController {
 	private TextField newPasswordText;
 	@FXML
 	private TextField confirmNewPasswordText;
+	@FXML
+	private Label oldPasswordLabel;
+	@FXML
+	private Label newPasswordLabel;
+	@FXML
+	private Label confirmNewPasswordLabel;
+	@FXML
+	private Label hintLabel;
+	@FXML
+	private Button backButton;
+	@FXML 
+	private Button savebutton;
 	
 	Logger log = Logger.getLogger(PasswordChangeController.class.getName());
 	
