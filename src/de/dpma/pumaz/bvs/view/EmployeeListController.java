@@ -57,7 +57,25 @@ private Button deleteButton;
 
 @FXML
 private Button cancelButton;
-	
+	private EmployeeListController() {
+		ButtonbearbeitenToolTip.setText("Click to edit employee");
+		ButtonneuToolTip.setText("Click to add a new employee");
+		ButtonloeschenToolTip.setText("Click to delete employee");
+		ButtonzurueckToolTip.setText("Click to get back");
+		firstnameColumnLabel.setText("First name");
+		lastnameColumnLabel.setText("Last name");
+		headerLabel.setText("Employee List");
+		detailsLabel.setText("Details");
+		idLabel.setText("Identification number");
+		firstnameLabel.setText("First name");
+		lastnameLabel.setText("Last name");
+		workIDLabel.setText("Identification number");
+		statusLabel.setText("Status");
+		editButton.setText("Edit");
+		newButton.setText("New");
+		deleteButton.setText("Delete");
+		cancelButton.setText("Cancel");
+	}
 	Stage stage = new Stage();		
 			
 	FXML_GUI fxml_gui;		
