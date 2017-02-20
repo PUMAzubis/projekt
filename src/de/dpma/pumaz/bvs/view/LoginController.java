@@ -53,12 +53,17 @@ public class LoginController {
 		if (identificationNumberText.getText().isEmpty() || !isNumeric(identificationNumberText.getText())
 				|| identificationNumberText.getText().length() > 5) {
 			// TODO: Alert anzeigen
+			root.handleDialog("Ausweisnummer ungültig",
+					"Es wurde keine gültiges Passwort angegeben. Bitte geben Sie ein valides Passwort an und versuchen Sie es erneut.",		
+					 			"warning");
 			log.info("Keine gültige Ausweisnummer");
 			return;
 		}
 		
 		if (passwordText.getText().isEmpty() || passwordText.getText().length() < 8) {
-			// TODO: Alert anzeigen
+			root.handleDialog("Passwort ungültig",
+					"Es wurde keine gültiges Passwort angegeben. Bitte geben Sie ein valides Passwort an und versuchen Sie es erneut.",		
+					 				"warning");
 			log.info("Kein gültiges Passwort");
 			return;
 		}
@@ -66,7 +71,9 @@ public class LoginController {
 		UserDAO UserDao = new UserDAO(MainApp.dbcon.getConnection());
 		loginUser = UserDao.findUser(new User(Integer.parseInt(identificationNumberText.getText())));
 		if (loginUser.getForename() == null) {
-			// TODO: Alert anzeigen
+			root.handleDialog("Kein Benutzer gefunden",
+					"Es wurde kein Benutzer anhand der von Ihnen übergebenen Daten gefunden. Bitte überprüfen Sie diese und versuchen Sie es erneut.",		
+					 					"warning");
 			log.info("Mitarbeiter nicht gefunden");
 		}
 		else {
@@ -75,9 +82,10 @@ public class LoginController {
 				// TODO: Weiterleiten
 				log.info("Passwort richtig, User einloggen");
 				root.handleGUI("booklist");
-			}
-			else {
-				// TODO: Alert anzeigen
+			} else {
+				root.handleDialog("Kein Benutzer gefunden",
+						"Es wurde kein Benutzer anahnd der von Ihnen übergebenen Daten gefunden. Bitte überprüfen Sie diese und versuchen Sie es erneut.",
+						"warning");
 				log.info("Passwort falsch");
 			}
 		}

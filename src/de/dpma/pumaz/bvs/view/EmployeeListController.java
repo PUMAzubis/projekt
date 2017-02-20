@@ -4,7 +4,11 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tooltip;
-
+import javafx.stage.Stage;
+import java.sql.SQLException;		
+import java.util.logging.Logger;		
+		
+import de.dpma.pumaz.bvs.FXML_GUI;
 public class EmployeeListController {
 
 @FXML 
@@ -53,8 +57,24 @@ private Button deleteButton;
 
 @FXML
 private Button cancelButton;
-
-
+	
+	Stage stage = new Stage();		
+			
+	FXML_GUI fxml_gui;		
+			
+	Logger log = Logger.getLogger(EmployeeListController.class.getName());		
+		
+	public void handleEdit() throws SQLException{		
+	}		
+			
+	public void handleNew() throws SQLException{		
+	}		
+			
+	public void handleDelete() throws SQLException{		
+	}		
+			
+	public void handleBack() throws SQLException{		
+	}
 
 
 }

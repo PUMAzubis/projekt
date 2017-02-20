@@ -114,7 +114,13 @@ public class BookListController {
 		root.handleGUI("editBook");
 		// fxml_gui = new FXML_GUI(stage, borderPane, "editBook");
 	}
-	
+	@FXML		
+	 	public void handleLendBook(){		
+	 	}		
+	 			
+	 	@FXML		
+	 	public void handleDelete(){		
+	 	}
 	// @FXML
 	// private void handleDeletePerson() {
 	// int selectedIndex = personTable.getSelectionModel().getSelectedIndex();
