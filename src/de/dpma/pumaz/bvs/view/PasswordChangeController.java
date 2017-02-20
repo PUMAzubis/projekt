@@ -33,23 +33,39 @@ public class PasswordChangeController {
 	@FXML
 	private Button backButton;
 	@FXML 
-	private Button savebutton;
+	private Button saveButton;
 	
 	Logger log = Logger.getLogger(PasswordChangeController.class.getName());
 	
 	public void handlePasswordChange()throws SQLException {
-		if(oldPasswordText.getText().isEmpty() || newPasswordText.getText().isEmpty() || confirmNewPasswordText.getText().isEmpty()){
-			log.info("Passwortfelder müssen ausgefüllt werden!");
-			return;
-		}
-		if(newPasswordText.getText().length() < 8 || newPasswordText.getText().isEmpty()){
-			log.info("Unsicheres Passwort!");
-			return;
-		}
-		if(!confirmNewPasswordText.getText().equals(newPasswordText)){
-			log.info("Passwort falsch wiederholt!");
-			return;
-		}
+//		if(oldPasswordText.getText().isEmpty() || newPasswordText.getText().isEmpty() || confirmNewPasswordText.getText().isEmpty()){
+//			log.info("Passwortfelder müssen ausgefüllt werden!");
+//			return;
+//		}
+//		if(newPasswordText.getText().length() < 8 || newPasswordText.getText().isEmpty()){
+//			log.info("Unsicheres Passwort!");
+//			return;
+//		}
+//		if(!confirmNewPasswordText.getText().equals(newPasswordText)){
+//			log.info("Passwort falsch wiederholt!");
+//			return;
+//		}
 		
 	}
+	
+	public void handleOldPasswordText() throws SQLException{
+	}
+	
+	public void handleNewPasswordText() throws SQLException{
+	}
+	
+	public void handleConfirmNewPasswordText() throws SQLException{
+	}
+	
+	public void handleConfirm() throws SQLException{
+	}
+	
+	public void handleBack() throws SQLException{
+	}
+	
 }
