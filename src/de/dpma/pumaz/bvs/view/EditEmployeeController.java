@@ -53,4 +53,10 @@ public class EditEmployeeController {
 	
 	public void handleEditPassword() throws SQLException{
 	}
+	
+	public void handleSave() throws SQLException{
+	}
+	
+	public void handleCancel() throws SQLException{
+	}
 }
