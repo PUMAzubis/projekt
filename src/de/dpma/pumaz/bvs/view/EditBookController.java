@@ -36,25 +36,18 @@ public class EditBookController {
 	
 	@FXML
 	private Label headerLabel;
-	
 	@FXML
 	private Label authorLabel;
-	
 	@FXML
 	private Label releaseLabel;
-	
 	@FXML
 	private Label isbnLabel;
-	
 	@FXML
 	private Label categoryLabel;
-	
 	@FXML
 	private Button saveButton;
-	
 	@FXML
 	private Button cancelButton;
-	
 	@FXML
 	private Label hintLabel;
 	
@@ -68,6 +61,30 @@ public class EditBookController {
 	 	private TextField yearText;		
 	 	@FXML		
 	 	private TextField categoryText;		
+	 	public EditBookController() {
+	 		categoryText.setText("Category");
+	 		yearText.setText("Year of release");
+	 		ISBNText.setText("ISBN");
+	 		authorText.setText("Author");
+	 		titleText.setText("Title");
+	 		hintLabel.setText("Fields marked with an asterisk* are obligatory.");
+	 		cancelButton.setText("Cancel");
+	 		saveButton.setText("Save");
+	 		categoryLabel.setText("Category");
+	 		isbnLabel.setText("ISBN");
+	 		releaseLabel.setText("Year of release");
+	 		authorLabel.setText("Author");
+	 		headerLabel.setText("Edit Book");
+	 		titleLabel.setText("Title");
+	 		textfieldtitleToolTip.setText("Type in books title");
+	 		textfieldauthorToolTip.setText("Type in books author");
+	 		textfieldisbnToolTip.setText("Type in books ISBN");
+	 		textfieldreleaseToolTip.setText("Type in books year of release");
+	 		textfieldcategorieToolTip.setText("Type in books category");
+	 		buttonsafeToolTip.setText("Press to save");
+	 		buttoncancelToolTip.setText("Press to cancel");
+	 		
+	 	}
 	 			
 	 	Stage stage = new Stage();		
 	 			
