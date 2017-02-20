@@ -9,6 +9,7 @@ import de.dpma.pumaz.bvs.util.OpenFile;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.DialogPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -81,6 +82,11 @@ public class RootLayoutController {
 		if (type.equalsIgnoreCase("warning")) {
 			Alert alert = new Alert(AlertType.WARNING);
 			fxml_gui = new FXML_GUI(stage, borderPane, "Dummy String");
+
+			DialogPane dialogPane = alert.getDialogPane();
+			dialogPane.getStylesheets().add(getClass().getResource("dialog.css").toExternalForm());
+			dialogPane.getStyleClass().add("myDialog");
+
 			alert.setTitle("Warnung");
 			alert.setHeaderText(title);
 			alert.setContentText(content);

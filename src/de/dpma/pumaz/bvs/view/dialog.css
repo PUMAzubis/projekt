@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('Roboto-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Raleway-Regular';
+    src: url('Raleway-Regular.ttf');
+}
+
+.myDialog{
+    -fx-background-color: #fbfbfb;
+}
+.myDialog > *.button-bar > *.container{
+    -fx-background-color: #fbfbfb;
+}
+.myDialog > *.label.content{
+
+}
+.myDialog:header *.header-panel{
+    -fx-background-color: #d4d4d4;
+}
+.myDialog:header *.header-panel *.label{
+    -fx-font-size: 15pt;
+    -fx-font-family: "Raleway";
+	-fx-opacity: 1;
+}
+
+.button {
+    -fx-padding: 5 22 5 22;   
+    -fx-border-color: #ffcc34;
+    -fx-border-width: 2;
+    -fx-background-radius: 0;
+    -fx-background-color: #ffcc34;
+    -fx-font-family: "Roboto";
+    -fx-font-size: 11pt;
+    -fx-text-fill: #000;
+    -fx-background-insets: 0 0 0 0, 0, 1, 2;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 2, 0, 0, 0);
+}
+
+.button:hover {
+    -fx-background-color: #6969fd;
+}
+
+.button:pressed, .button:default:hover:pressed {
+  -fx-border-color: #6969fd;
+}
