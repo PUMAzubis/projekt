@@ -1,7 +1,13 @@
 package de.dpma.pumaz.bvs.view;
 
+import java.sql.SQLException;
+
 import de.dpma.pumaz.bvs.FXML_GUI;
+import de.dpma.pumaz.bvs.MainApp;
+import de.dpma.pumaz.bvs.dao.BookDAO;
 import de.dpma.pumaz.bvs.model.Book;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -11,123 +17,124 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 public class BookListController {
-	
+
 	@FXML
 	private Tooltip textfieldsucheToolTip;
-	
+
 	@FXML
 	private Tooltip buttonlendToolTip;
-	
+
 	@FXML
 	private Tooltip buttoneditToolTip;
-	
+
 	@FXML
 	private Tooltip buttonnewbookToolTip;
-	
+
 	@FXML
 	private Tooltip buttondeleteToolTip;
-	
+
 	@FXML
 	private TableView<Book> bookTable;
-	
+
 	@FXML
 	private TableColumn<Book, String> nameColumn;
-	
+
 	@FXML
 	private TableColumn<Book, String> authorColumn;
-	
+
 	@FXML
 	private TableColumn<Book, String> releaseYearColumn;
-	
+
 	@FXML
 	private TableColumn<Book, String> isbnColumn;
-	
+
 	@FXML
 	private TableColumn<Book, String> categoryColumn;
-	
+
 	@FXML
 	private Label nameColumnLabel;
-	
+
 	@FXML
 	private Label authorColumnLabel;
-	
+
 	@FXML
 	private Label releaseColumnLabel;
-	
+
 	@FXML
 	private Label isbnColumnLabel;
-	
+
 	@FXML
 	private Label categoryColumnLabel;
-	
+
 	@FXML
 	private Label birthdayLabel;
-	
+
 	Stage stage = new Stage();
-	
+
 	BorderPane borderPane = new BorderPane();
-	
+
 	FXML_GUI fxml_gui;
-	
+
 	RootLayoutController root = new RootLayoutController();
-	
+
+	private ObservableList<Book> bookData = FXCollections.observableArrayList();
+
 	/**
 	 * The constructor. The constructor is called before the initialize()
 	 * method.
 	 */
 	public BookListController() {
-		
+
 	}
-	
+
 	/**
 	 * Initializes the controller class. This method is automatically called
 	 * after the fxml file has been loaded.
 	 */
 	@FXML
-	private void initialize() {
-		
-		// // Initialize the person table with the two columns.
-		// nameColumn.setCellValueFactory(cellData ->
-		// cellData.getValue().nameProperty());
-		// authorColumn.setCellValueFactory(cellData ->
-		// cellData.getValue().authorProperty());
-		// releaseYearColumn.setCellValueFactory(cellData ->
-		// cellData.getValue().release_yearProperty());
-		// isbnColumn.setCellValueFactory(cellData ->
-		// cellData.getValue().ISBNProperty());
-		// categoryColumn.setCellValueFactory(cellData -> {
-		// try {
-		// return cellData.getValue().categoryName();
-		// }
-		// catch (SQLException e) {
-		// e.printStackTrace();
-		// return null;
-		// }
-		// });
+	private void initialize() throws SQLException {
+
+		BookDAO bookDao = new BookDAO(MainApp.dbcon.getConnection());
+		bookData.addAll(bookDao.allBooksTogether());
+		bookTable.setItems(bookData);
+
+		// Initialize the person table with the two columns.
+		nameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
+		authorColumn.setCellValueFactory(cellData -> cellData.getValue().authorProperty());
+		releaseYearColumn.setCellValueFactory(cellData -> cellData.getValue().release_yearProperty());
+		isbnColumn.setCellValueFactory(cellData -> cellData.getValue().ISBNProperty());
+		categoryColumn.setCellValueFactory(cellData -> {
+			try {
+				return cellData.getValue().categoryName();
+			} catch (SQLException e) {
+				e.printStackTrace();
+				return null;
+			}
+		});
 	}
-	
+
 	@FXML
 	public void handleNewBook() {
-		
+
 		root.handleGUI("newBook");
 	}
-	
+
 	@FXML
 	public void handleEditBook() {
-		
+
 		root.handleGUI("editBook");
 	}
-	
+
 	@FXML
 	public void handleLendBook() {
-		
+
 	}
-	
+
 	@FXML
 	public void handleDeleteBook() {
-		
+
 	}
-	
+
 	// @FXML
 	// private void handleDeletePerson() {
 	// int selectedIndex = personTable.getSelectionModel().getSelectedIndex();
