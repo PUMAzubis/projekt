@@ -8,25 +8,25 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 
 public class MainApp extends Application {
-	
+
 	public static DatabaseConnection dbcon = null;
-	
+
 	Logger log = Logger.getLogger(MainApp.class.getName());
-	
+
 	@Override
 	public void start(Stage primaryStage) throws Exception, ClassNotFoundException, SQLException {
-		
+
 		log.info("Oberfläche wird initalisiert");
 		FXML_GUI fxml_gui = new FXML_GUI();
 		fxml_gui.primaryStage = primaryStage;
-		
-		fxml_gui.initRootLayout();
+
+		fxml_gui.initRootLayout(false);
 		fxml_gui.showLogin();
 		log.info("Die Oberfläche wurde initalisiert");
 	}
-	
+
 	public static void main(String[] args) {
-		
+
 		try {
 			dbcon = new DatabaseConnection();
 			launch(args);
@@ -40,15 +40,12 @@ public class MainApp extends Application {
 			// for (Book b : bookDao.searchBooks("toll")) {
 			// System.out.println(b.getName());
 			// }
-		}
-		catch (ClassNotFoundException | SQLException e) {
+		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
-		}
-		finally {
+		} finally {
 			try {
 				dbcon.closeConnection();
-			}
-			catch (SQLException e) {
+			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 		}

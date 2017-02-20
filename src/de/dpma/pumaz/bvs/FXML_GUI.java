@@ -12,32 +12,41 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 public class FXML_GUI {
-	
+
 	Logger log = Logger.getLogger(FXML_GUI.class.getName());
-	
+
 	public Stage primaryStage;
-	
+
 	public BorderPane rootLayout;
-	
+
 	MainApp mainApp;
-	
+
 	RootLayoutController root;
-	
+
 	// SetSizeOfRootLayout ssorl;
-	
+
 	public FXML_GUI() {
-		
+
 	}
-	
+
 	public FXML_GUI(Stage primaryStage, BorderPane rootLayout) {
-		
+
 		this.primaryStage = primaryStage;
 		this.rootLayout = rootLayout;
-		initRootLayout();
+
+		initRootLayout(false);
 	}
-	
-	public void initRootLayout() {
-		
+
+	public FXML_GUI(Stage primaryStage, BorderPane rootLayout, String check) {
+
+		this.primaryStage = primaryStage;
+		this.rootLayout = rootLayout;
+
+		initRootLayout(true);
+	}
+
+	public void initRootLayout(boolean bool) {
+
 		try {
 			log.info("RootLayout wird initalisiert");
 			FXMLLoader loader = new FXMLLoader();
@@ -46,50 +55,50 @@ public class FXML_GUI {
 			rootLayout = (BorderPane) loader.load();
 			Scene scene = new Scene(rootLayout);
 			primaryStage.setScene(scene);
-			primaryStage.show();
+			if (!bool) {
+				primaryStage.show();
+			}
+
 			log.info("RootLayout sollte dargestellt sein");
-		}
-		catch (IOException e) {
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void showLogin() {
-		
+
 		try {
-			
+
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(FXML_GUI.class.getResource("view/Login.fxml"));
-			
+
 			AnchorPane login;
 			login = (AnchorPane) loader.load();
 			setSizeOfRootLayout(login.getPrefHeight(), login.getPrefWidth());
 			rootLayout.setCenter(login);
-		}
-		catch (IOException e) {
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
+
 	}
-	
+
 	public void showRegistration() {
-		
+
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(FXML_GUI.class.getResource("view/Registration.fxml"));
-			
+
 			AnchorPane register;
 			register = (AnchorPane) loader.load();
 			setSizeOfRootLayout(register.getPrefHeight(), register.getPrefWidth());
 			rootLayout.setCenter(register);
-		}
-		catch (IOException e) {
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void showAbout() {
-		
+
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(MainApp.class.getResource("view/About.fxml"));
@@ -98,14 +107,13 @@ public class FXML_GUI {
 			// Stage stage = new Stage();
 			Scene scene = new Scene(about);
 			primaryStage.setScene(scene);
-		}
-		catch (IOException e) {
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void showBookList() {
-		
+
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(FXML_GUI.class.getResource("view/BookList.fxml"));
@@ -113,14 +121,13 @@ public class FXML_GUI {
 			bookList = (AnchorPane) loader.load();
 			setSizeOfRootLayout(bookList.getPrefHeight(), bookList.getPrefWidth());
 			rootLayout.setCenter(bookList);
-		}
-		catch (IOException e) {
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void showEditBook() {
-		
+
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(FXML_GUI.class.getResource("view/EditBook.fxml"));
@@ -128,12 +135,11 @@ public class FXML_GUI {
 			editBook = (AnchorPane) loader.load();
 			setSizeOfRootLayout(editBook.getPrefHeight(), editBook.getPrefWidth());
 			rootLayout.setCenter(editBook);
-		}
-		catch (IOException e) {
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	//
 	// public void showEditEmployees() {
 	//
@@ -178,14 +184,13 @@ public class FXML_GUI {
 	// e.printStackTrace();
 	// }
 	// }
-	
+
 	public void setSizeOfRootLayout(double height, double width) {
-		
+
 		primaryStage.setMaxWidth(width + 20);
 		primaryStage.setMinWidth(width + 20);
 		primaryStage.setMaxHeight(height + 173 + 50);
 		primaryStage.setMinHeight(height + 173 + 50);
-		// BUG/TODO beim öffnen mehrerer Fenster vergrößert sich der abstant
-		// immer noch
 	}
+
 }
