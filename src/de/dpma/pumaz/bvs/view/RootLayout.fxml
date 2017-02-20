@@ -10,17 +10,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.dpma.pumaz.bvs.view.RootLayoutController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="background-main" stylesheets="@theme.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.dpma.pumaz.bvs.view.RootLayoutController">
    <left>
    </left>
    <top>
-      <AnchorPane BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="150.0" prefWidth="609.0" BorderPane.alignment="CENTER">
          <children>
             <ImageView fitHeight="110.0" fitWidth="200.0" layoutY="32.0">
                <image>
                   <Image url="@../../../../../../resources/dpma.png" />
                </image>
             </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="211.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="438.0" pickOnBounds="true" preserveRatio="true" />
             <MenuBar AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <menus>
                 <Menu mnemonicParsing="false" text="Datei">
@@ -37,6 +39,16 @@
                 </Menu>
               </menus>
             </MenuBar>
+            <ImageView fitHeight="91.0" fitWidth="161.0" layoutX="250.0" layoutY="42.0">
+               <image>
+                  <Image url="@../../../../../../../../Desktop/BVS/germany-flag-1783774_640.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="92.0" fitWidth="168.0" layoutX="438.0" layoutY="41.0">
+               <image>
+                  <Image url="@../../../../../../../../Desktop/BVS/union-jack-1027898_640%20(1).jpg" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </top>
