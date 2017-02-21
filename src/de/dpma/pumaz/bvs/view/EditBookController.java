@@ -78,55 +78,55 @@ public class EditBookController {
 	@FXML
 	private TextField categoryTextField;
 	
-	
-	
 	public EditBookController() {
-		categoryTextField.setText("Category");
-		yearTextField.setText("Year of release");
-		isbnTextField.setText("ISBN");
-		authorTextField.setText("Author");
-		titleTextField.setText("Title");
-		hintLabel.setText("Fields marked with an asterisk* are obligatory.");
-		cancelButton.setText("Cancel");
-		saveButton.setText("Save");
-		categoryLabel.setText("Category");
-		isbnLabel.setText("ISBN");
-		releaseLabel.setText("Year of release");
-		authorLabel.setText("Author");
-		headerLabel.setText("Edit Book");
-		titleLabel.setText("Title");
-		textFieldTitleToolTip.setText("Type in books title");
-		textFieldAuthorToolTip.setText("Type in books author");
-		textFieldIsbnToolTip.setText("Type in books ISBN");
-		textFieldReleaseToolTip.setText("Type in books year of release");
-		textFieldCategorieToolTip.setText("Type in books category");
-		buttonSafeToolTip.setText("Press to save");
-		buttonCancelToolTip.setText("Press to cancel");
+		// categoryTextField.setText("Category");
+		// yearTextField.setText("Year of release");
+		// isbnTextField.setText("ISBN");
+		// authorTextField.setText("Author");
+		// titleTextField.setText("Title");
+		// hintLabel.setText("Fields marked with an asterisk* are obligatory.");
+		// cancelButton.setText("Cancel");
+		// saveButton.setText("Save");
+		// categoryLabel.setText("Category");
+		// isbnLabel.setText("ISBN");
+		// releaseLabel.setText("Year of release");
+		// authorLabel.setText("Author");
+		// headerLabel.setText("Edit Book");
+		// titleLabel.setText("Title");
+		// textFieldTitleToolTip.setText("Type in books title");
+		// textFieldAuthorToolTip.setText("Type in books author");
+		// textFieldIsbnToolTip.setText("Type in books ISBN");
+		// textFieldReleaseToolTip.setText("Type in books year of release");
+		// textFieldCategorieToolTip.setText("Type in books category");
+		// buttonSafeToolTip.setText("Press to save");
+		// buttonCancelToolTip.setText("Press to cancel");
+		//
+		//
+		// categoryTextField.setText("Kategorie");
+		// yearTextField.setText("Erscheinungsjahr");
+		// isbnTextField.setText("ISBN");
+		// authorTextField.setText("Autor");
+		// titleTextField.setText("Titel");
+		// hintLabel.setText("Mit * markierte Felder sind Pflichtfelder.");
+		// cancelButton.setText("Abbrechen");
+		// saveButton.setText("Speichern");
+		// categoryLabel.setText("Kategorie");
+		// isbnLabel.setText("ISBN");
+		// releaseLabel.setText("Erscheinungsjahr");
+		// authorLabel.setText("Autor");
+		// headerLabel.setText("Buch bearbeiten");
+		// titleLabel.setText("Titel");
+		// textFieldTitleToolTip.setText("Titel des Buches eingeben");
+		// textFieldAuthorToolTip.setText("Autor des Buches eingeben");
+		// textFieldIsbnToolTip.setText("ISBN des Buches eingeben");
+		// textFieldReleaseToolTip.setText("Erscheinungsjahr des Buches
+		// eingeben");
+		// textFieldCategorieToolTip.setText("Kategorie des Buches eingeben");
+		// buttonSafeToolTip.setText("Drücken um Änderung zu speichern");
+		// buttonCancelToolTip.setText("Drücken um abzubrechen");
 		
+	}
 	
-	categoryTextField.setText("Kategorie");
-	yearTextField.setText("Erscheinungsjahr");
-	isbnTextField.setText("ISBN");
-	authorTextField.setText("Autor");
-	titleTextField.setText("Titel");
-	hintLabel.setText("Mit * markierte Felder sind Pflichtfelder.");
-	cancelButton.setText("Abbrechen");
-	saveButton.setText("Speichern");
-	categoryLabel.setText("Kategorie");
-	isbnLabel.setText("ISBN");
-	releaseLabel.setText("Erscheinungsjahr");
-	authorLabel.setText("Autor");
-	headerLabel.setText("Buch bearbeiten");
-	titleLabel.setText("Titel");
-	textFieldTitleToolTip.setText("Titel des Buches eingeben");
-	textFieldAuthorToolTip.setText("Autor des Buches eingeben");
-	textFieldIsbnToolTip.setText("ISBN des Buches eingeben");
-	textFieldReleaseToolTip.setText("Erscheinungsjahr des Buches eingeben");
-	textFieldCategorieToolTip.setText("Kategorie des Buches eingeben");
-	buttonSafeToolTip.setText("Drücken um Änderung zu speichern");
-	buttonCancelToolTip.setText("Drücken um abzubrechen");
-	
-}
 	Stage stage = new Stage();
 	
 	FXML_GUI fxml_gui;
@@ -159,19 +159,19 @@ public class EditBookController {
 	}
 	
 	public void handleEditYear() throws SQLException {
-	
+		
 	}
 	
 	public void handleEditCategory() throws SQLException {
-	
+		
 	}
 	
 	public void handleSave() throws SQLException {
-	
+		
 	}
 	
 	public void handleCancel() throws SQLException {
-	
+		
 	}
 	
 	public static boolean isNumeric(String str) {

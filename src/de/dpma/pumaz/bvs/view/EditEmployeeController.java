@@ -64,7 +64,7 @@ public class EditEmployeeController {
 	@FXML
 	private TextField passwordTextField;
 	
-	@FXML 
+	@FXML
 	private Label headerLabel;
 	
 	Stage stage = new Stage();
@@ -74,47 +74,49 @@ public class EditEmployeeController {
 	Logger log = Logger.getLogger(EditEmployeeController.class.getName());
 	
 	public EditEmployeeController() {
-		textFieldFirstNameToolTip.setText("Type in your first name");
-		textFieldLastNameToolTip.setText("Type in your last name");
-		textFieldWorkerIdToolTip.setText("Type in your identification number");
-		textFieldPasswordToolTip.setText("Type in your desired password");
-		buttonSafeToolTip.setText("Click to save");
-		buttonCancelToolTip.setText("Click to cancel");
-		firstNameLabel.setText("First name");
-		lastNameLabel.setText("Last name");
-		workerIdLabel.setText("Identification number");
-		passwordLabel.setText("Password");
-		hintLabel.setText("Fields marked with an asterisk* are obligatory.");
-		saveButton.setText("Save");
-		cancelButton.setText("Cancel");
-		firstNameTextField.setText("First name");
-		lastNameTextField.setText("Last name");
-		workerIdTextField.setText("Identification number");
-		passwordTextField.setText("Password");
-		headerLabel.setText("Edit Employees");
-		
-		
-		
-		
-		
-		textFieldFirstNameToolTip.setText("Vornamen eingeben");
-		textFieldLastNameToolTip.setText("Nachnamen eingeben");
-		textFieldWorkerIdToolTip.setText("Ausweisnummer eingeben");
-		textFieldPasswordToolTip.setText("Passwort eingeben");
-		buttonSafeToolTip.setText("Drücken um zu speichern");
-		buttonCancelToolTip.setText("Drücken um abzubrechen");
-		firstNameLabel.setText("Vorname*:");
-		lastNameLabel.setText("Nachname*:");
-		workerIdLabel.setText("Ausweisnummer*:");
-		passwordLabel.setText("Passwort*:");
-		hintLabel.setText("Mit * markierte Felder müssen ausgefüllt werden.");
-		saveButton.setText("Speichern");
-		cancelButton.setText("Abbrechen");
-		firstNameTextField.setText("Vorname");
-		lastNameTextField.setText("Nachname");
-		workerIdTextField.setText("Ausweisnummer");
-		passwordTextField.setText("Passwort");
-		headerLabel.setText("Mitarbeiter bearbeiten");
+		// textFieldFirstNameToolTip.setText("Type in your first name");
+		// textFieldLastNameToolTip.setText("Type in your last name");
+		// textFieldWorkerIdToolTip.setText("Type in your identification
+		// number");
+		// textFieldPasswordToolTip.setText("Type in your desired password");
+		// buttonSafeToolTip.setText("Click to save");
+		// buttonCancelToolTip.setText("Click to cancel");
+		// firstNameLabel.setText("First name");
+		// lastNameLabel.setText("Last name");
+		// workerIdLabel.setText("Identification number");
+		// passwordLabel.setText("Password");
+		// hintLabel.setText("Fields marked with an asterisk* are obligatory.");
+		// saveButton.setText("Save");
+		// cancelButton.setText("Cancel");
+		// firstNameTextField.setText("First name");
+		// lastNameTextField.setText("Last name");
+		// workerIdTextField.setText("Identification number");
+		// passwordTextField.setText("Password");
+		// headerLabel.setText("Edit Employees");
+		//
+		//
+		//
+		//
+		//
+		// textFieldFirstNameToolTip.setText("Vornamen eingeben");
+		// textFieldLastNameToolTip.setText("Nachnamen eingeben");
+		// textFieldWorkerIdToolTip.setText("Ausweisnummer eingeben");
+		// textFieldPasswordToolTip.setText("Passwort eingeben");
+		// buttonSafeToolTip.setText("Drücken um zu speichern");
+		// buttonCancelToolTip.setText("Drücken um abzubrechen");
+		// firstNameLabel.setText("Vorname*:");
+		// lastNameLabel.setText("Nachname*:");
+		// workerIdLabel.setText("Ausweisnummer*:");
+		// passwordLabel.setText("Passwort*:");
+		// hintLabel.setText("Mit * markierte Felder müssen ausgefüllt
+		// werden.");
+		// saveButton.setText("Speichern");
+		// cancelButton.setText("Abbrechen");
+		// firstNameTextField.setText("Vorname");
+		// lastNameTextField.setText("Nachname");
+		// workerIdTextField.setText("Ausweisnummer");
+		// passwordTextField.setText("Passwort");
+		// headerLabel.setText("Mitarbeiter bearbeiten");
 	}
 	
 	public void handleEditFistName() throws SQLException {

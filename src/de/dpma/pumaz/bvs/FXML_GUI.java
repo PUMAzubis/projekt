@@ -198,17 +198,21 @@ public class FXML_GUI {
 			e.printStackTrace();
 		}
 	}
-	//
-	// public void showPasswordChange() {
-	//
-	// try {
-	// FXMLLoader loader = new FXMLLoader();
-	// loader.setLocation(FXML_GUI.class.getResource("view/PasswordChange"));
-	// }
-	// catch (IOException e) {
-	// e.printStackTrace();
-	// }
-	// }
+	
+	public void showPasswordChange() {
+		
+		try {
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(FXML_GUI.class.getResource("view/PasswordChange"));
+			
+			AnchorPane passwordChange;
+			passwordChange = (AnchorPane) loader.load();
+			setSizeOfRootLayout(passwordChange.getPrefWidth(), passwordChange.getPrefWidth());
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 	
 	public void setSizeOfRootLayout(double height, double width) {
 		

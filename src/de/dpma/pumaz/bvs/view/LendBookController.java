@@ -37,24 +37,24 @@ public class LendBookController {
 	private TextField workerIdTextField;
 	
 	public LendBookController() {
-		buttonBackToolTip.setText("Click to get back to the last page");
-		buttonLendToolTip.setText("Click to lend book to a user");
-		textFieldWorkerIdToolTip.setText("Type in identification number");
-		headerLabel.setText("Lend book");
-		workerIdLabel.setText("Identification number");
-		cancelButton.setText("Cancel");
-		lendBookButton.setText("Lend");
-		workerIdTextField.setText("Identification number");
-		
-		
-		buttonBackToolTip.setText("Drücken um zurück zu gelangen");
-		buttonLendToolTip.setText("Drücken um Buch zu verleihen");
-		textFieldWorkerIdToolTip.setText("Ausweisnummer eingeben");
-		headerLabel.setText("Verleihen");
-		workerIdLabel.setText("Ausweisnummer");
-		cancelButton.setText("Abbrechen");
-		lendBookButton.setText("Verleihen");
-		workerIdTextField.setText("Ausweisnummer");
+		// buttonBackToolTip.setText("Click to get back to the last page");
+		// buttonLendToolTip.setText("Click to lend book to a user");
+		// textFieldWorkerIdToolTip.setText("Type in identification number");
+		// headerLabel.setText("Lend book");
+		// workerIdLabel.setText("Identification number");
+		// cancelButton.setText("Cancel");
+		// lendBookButton.setText("Lend");
+		// workerIdTextField.setText("Identification number");
+		//
+		//
+		// buttonBackToolTip.setText("Drücken um zurück zu gelangen");
+		// buttonLendToolTip.setText("Drücken um Buch zu verleihen");
+		// textFieldWorkerIdToolTip.setText("Ausweisnummer eingeben");
+		// headerLabel.setText("Verleihen");
+		// workerIdLabel.setText("Ausweisnummer");
+		// cancelButton.setText("Abbrechen");
+		// lendBookButton.setText("Verleihen");
+		// workerIdTextField.setText("Ausweisnummer");
 		
 	}
 	

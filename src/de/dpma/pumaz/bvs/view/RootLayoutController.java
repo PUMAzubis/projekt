@@ -84,6 +84,9 @@ public class RootLayoutController {
 		else if (check.equals("editBook")) {
 			fxml_gui.showEditBook();
 		}
+		else if (check.equals("lendBook")) {
+			fxml_gui.showLendBook();
+		}
 		else if (check.equals("back")) {
 			fxml_gui.primaryStage.close();
 		}
@@ -145,6 +148,11 @@ public class RootLayoutController {
 		else if (type.equalsIgnoreCase("info")) {
 			Alert alert = new Alert(AlertType.INFORMATION);
 			fxml_gui = new FXML_GUI(stage, borderPane, "Dummy String");
+			
+			DialogPane dialogPane = alert.getDialogPane();
+			dialogPane.getStylesheets().add(getClass().getResource("dialog.css").toExternalForm());
+			dialogPane.getStyleClass().add("myDialog");
+			
 			alert.setTitle("Information");
 			alert.setHeaderText(title);
 			alert.setContentText(null);
