@@ -23,7 +23,7 @@ public class EditEmployeeController {
 	private Tooltip textFieldWorkerIdToolTip;
 	
 	@FXML
-	private Tooltip textFieldPasswortToolTip;
+	private Tooltip textFieldPasswordToolTip;
 	
 	@FXML
 	private Tooltip buttonSafeToolTip;
@@ -69,6 +69,26 @@ public class EditEmployeeController {
 	FXML_GUI fxml_gui;
 	
 	Logger log = Logger.getLogger(EditEmployeeController.class.getName());
+	
+	public EditEmployeeController() {
+		textFieldFirstNameToolTip.setText("Type in your first name");
+		textFieldLastNameToolTip.setText("Type in your last name");
+		textFieldWorkerIdToolTip.setText("Type in your identification number");
+		textFieldPasswordToolTip.setText("Type in your desired password");
+		buttonSafeToolTip.setText("Click to save");
+		buttonCancelToolTip.setText("Click to cancel");
+		firstNameLabel.setText("First name");
+		lastNameLabel.setText("Last name");
+		workerIdLabel.setText("Identification number");
+		passwordLabel.setText("Password");
+		hintLabel.setText("Fields marked with an asterisk* are obligatory.");
+		saveButton.setText("Save");
+		cancelButton.setText("Cancel");
+		firstNameTextField.setText("First name");
+		lastNameTextField.setText("Last name");
+		workerIdTextField.setText("Identification number");
+		passwordTextField.setText("Password");
+	}
 	
 	public void handleEditFistName() throws SQLException {
 		

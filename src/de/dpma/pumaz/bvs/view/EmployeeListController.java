@@ -69,6 +69,26 @@ public class EmployeeListController {
 	
 	Logger log = Logger.getLogger(EmployeeListController.class.getName());
 	
+	private EmployeeListController() {
+		buttonEditToolTip.setText("Click to edit employee");
+		buttonNewToolTip.setText("Click to add a new employee");
+		buttonDeleteToolTip.setText("Click to delete employee");
+		buttonBackToolTip.setText("Click to get back");
+		firstNameColumnLabel.setText("First name");
+		lastNameColumnLabel.setText("Last name");
+		headerLabel.setText("Employee List");
+		detailsLabel.setText("Details");
+		idLabel.setText("Identification number");
+		firstNameLabel.setText("First name");
+		lastNameLabel.setText("Last name");
+		workerIdLabel.setText("Identification number");
+		statusLabel.setText("Status");
+		editButton.setText("Edit");
+		newButton.setText("New");
+		deleteButton.setText("Delete");
+		cancelButton.setText("Cancel");
+	}
+	
 	public void handleEdit() throws SQLException {
 	
 	}
@@ -84,5 +104,4 @@ public class EmployeeListController {
 	public void handleBack() throws SQLException {
 	
 	}
-	
 }
