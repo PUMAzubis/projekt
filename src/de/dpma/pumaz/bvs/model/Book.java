@@ -1,11 +1,7 @@
 package de.dpma.pumaz.bvs.model;
 
-import java.sql.SQLException;
 import java.util.logging.Logger;
 
-import de.dpma.pumaz.bvs.MainApp;
-import de.dpma.pumaz.bvs.dao.BookDAO;
-import javafx.beans.binding.StringBinding;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -13,20 +9,22 @@ import javafx.beans.property.StringProperty;
 
 public class Book {
 
-	private IntegerProperty id;
-	private StringProperty name;
-	private StringProperty author;
-	private IntegerProperty release_year;
-	private StringProperty ISBN;
-	private IntegerProperty id_categorys;
+	private IntegerProperty id = new SimpleIntegerProperty();
+	private StringProperty name = new SimpleStringProperty();
+	private StringProperty author = new SimpleStringProperty();
+	private StringProperty release_year = new SimpleStringProperty();
 
-	private IntegerProperty count;
-	private IntegerProperty available_count;
+	private StringProperty ISBN = new SimpleStringProperty();
+	private IntegerProperty id_categorys = new SimpleIntegerProperty();
 
-	private IntegerProperty books_single_id;
-	private IntegerProperty books_single_id_books;
-	private IntegerProperty books_single_id_borrower;
-	private IntegerProperty books_single_available;
+	private StringProperty count = new SimpleStringProperty();
+	private StringProperty available_count = new SimpleStringProperty();
+	private StringProperty categoryname = new SimpleStringProperty();
+
+	private IntegerProperty books_single_id = new SimpleIntegerProperty();
+	private IntegerProperty books_single_id_books = new SimpleIntegerProperty();
+	private IntegerProperty books_single_id_borrower = new SimpleIntegerProperty();
+	private IntegerProperty books_single_available = new SimpleIntegerProperty();
 
 	Logger log = Logger.getLogger(Book.class.getName());
 
@@ -37,24 +35,24 @@ public class Book {
 	}
 
 	// Standard Buch Constructor
-	public Book(String name, String author, int release_year, String ISBN, int id_categorys) {
+	public Book(String name, String author, String release_year, String ISBN, int id_categorys) {
 		this.name = new SimpleStringProperty(name);
 		this.author = new SimpleStringProperty(author);
-		this.release_year = new SimpleIntegerProperty(release_year);
+		this.release_year = new SimpleStringProperty(release_year);
 		this.ISBN = new SimpleStringProperty(ISBN);
 		this.id_categorys = new SimpleIntegerProperty(id_categorys);
 	}
 
 	// Standard Buch Constructor mit Anzahlangaben
-	public Book(String name, String author, int release_year, String ISBN, int id_categorys, int count,
-			int available_count) {
+	public Book(String name, String author, String release_year, String ISBN, int id_categorys, String count,
+			String available_count) {
 		this.name = new SimpleStringProperty(name);
 		this.author = new SimpleStringProperty(author);
-		this.release_year = new SimpleIntegerProperty(release_year);
+		this.release_year = new SimpleStringProperty(release_year);
 		this.ISBN = new SimpleStringProperty(ISBN);
 		this.id_categorys = new SimpleIntegerProperty(id_categorys);
-		this.count = new SimpleIntegerProperty(count);
-		this.available_count = new SimpleIntegerProperty(available_count);
+		this.count = new SimpleStringProperty(count);
+		this.available_count = new SimpleStringProperty(available_count);
 	}
 
 	// Single Buch Constructor
@@ -62,11 +60,6 @@ public class Book {
 		this.books_single_id_books = new SimpleIntegerProperty(books_single_id_books);
 		this.books_single_id_borrower = new SimpleIntegerProperty(books_single_id_borrower);
 		this.books_single_available = new SimpleIntegerProperty(books_single_available);
-	}
-
-	public StringProperty categoryName() throws SQLException {
-		BookDAO bookDao = new BookDAO(MainApp.dbcon.getConnection());
-		return new SimpleStringProperty(bookDao.getBookCategoryString(this));
 	}
 
 	public int getBooks_single_id() {
@@ -117,28 +110,44 @@ public class Book {
 		return this.books_single_available;
 	}
 
-	public int getCount() {
+	public String getCount() {
 		return count.get();
 	}
 
-	public void setCount(int count) {
+	public void setCount(String count) {
 		this.count.set(count);
 	}
 
-	public IntegerProperty countProperty() {
+	public StringProperty countProperty() {
 		return this.count;
 	}
 
-	public int getAvailable_count() {
+	public String getAvailable_count() {
 		return available_count.get();
 	}
 
-	public void setAvailable_count(int available_count) {
+	public void setAvailable_count(String available_count) {
 		this.available_count.set(available_count);
 	}
 
-	public IntegerProperty available_countProperty() {
+	public StringProperty available_countProperty() {
 		return this.available_count;
+	}
+
+	public String getCategoryName() {
+		return categoryname.get();
+	}
+
+	public void setCategoryName(String categoryname) {
+		this.categoryname.set(categoryname);
+	}
+
+	public StringProperty categoryName() {
+		return this.categoryname;
+	}
+
+	public StringProperty overviewCountProperty() {
+		return new SimpleStringProperty(this.available_count.get() + " / " + this.count.get());
 	}
 
 	public int getId() {
@@ -177,16 +186,16 @@ public class Book {
 		return this.author;
 	}
 
-	public int getRelease_year() {
+	public String getRelease_year() {
 		return release_year.get();
 	}
 
-	public void setRelease_year(int release_year) {
+	public void setRelease_year(String release_year) {
 		this.release_year.set(release_year);
 	}
 
-	public StringBinding release_yearProperty() {
-		return this.release_year.asString();
+	public StringProperty release_yearProperty() {
+		return this.release_year;
 	}
 
 	public String getISBN() {
