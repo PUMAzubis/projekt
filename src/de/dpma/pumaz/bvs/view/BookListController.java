@@ -61,10 +61,10 @@ public class BookListController {
 	private TableColumn<Book, String> availableColumn;
 	
 	@FXML
-	private TextField searchTextField;
-	
-	@FXML
 	private Button lendBookButton;
+
+	@FXML
+	private TextField searchTextField;
 	
 	@FXML
 	private Button editBookButtom;

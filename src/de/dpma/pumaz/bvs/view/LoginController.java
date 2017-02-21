@@ -12,6 +12,7 @@ import de.dpma.pumaz.bvs.model.User;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Tooltip;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -150,5 +151,21 @@ public class LoginController {
 	public void handleRegistration() {
 		
 		root.handleGUI("register");
+	}
+	
+	public void handleKeyPressed(KeyEvent event) {
+		
+		switch (event.getCode()) {
+		case ENTER:
+			try {
+				handleLogin();
+			}
+			catch (SQLException e) {
+				e.printStackTrace();
+			}
+			break;
+		default:
+			break;
+		}
 	}
 }
