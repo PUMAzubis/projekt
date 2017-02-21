@@ -17,42 +17,41 @@ import javafx.stage.Stage;
 
 public class RootLayoutController {
 	
-	
 	@FXML
 	private MenuItem instructionsMenuItem;
 	
 	@FXML
 	private MenuItem aboutMenuItem;
+	
 	@FXML
 	private MenuItem changeLanguageMenuItem;
 	
 	@FXML
 	private MenuItem exitMenuItem;
-	@FXML 
+	
+	@FXML
 	private Menu helpMenu;
 	
 	@FXML
 	private Menu fileMenu;
 	
 	public RootLayoutController() {
-		instructionsMenuItem.setText("Instructions");
-		aboutMenuItem.setText("About");
-		changeLanguageMenuItem.setText("Change language");
-		exitMenuItem.setText("Exit");
-		helpMenu.setText("Help");
-		fileMenu.setText("File");
-		
-		
-		
-		instructionsMenuItem.setText("Anleitung");
-		aboutMenuItem.setText("Über");
-		changeLanguageMenuItem.setText("Sprache ändern");
-		exitMenuItem.setText("Beenden");
-		helpMenu.setText("Hilfe");
-		fileMenu.setText("Datei");
+		// instructionsMenuItem.setText("Instructions");
+		// aboutMenuItem.setText("About");
+		// changeLanguageMenuItem.setText("Change language");
+		// exitMenuItem.setText("Exit");
+		// helpMenu.setText("Help");
+		// fileMenu.setText("File");
+		//
+		//
+		//
+		// instructionsMenuItem.setText("Anleitung");
+		// aboutMenuItem.setText("Über");
+		// changeLanguageMenuItem.setText("Sprache ändern");
+		// exitMenuItem.setText("Beenden");
+		// helpMenu.setText("Hilfe");
+		// fileMenu.setText("Datei");
 	}
-	
-
 	
 	FXML_GUI fxml_gui;
 	
