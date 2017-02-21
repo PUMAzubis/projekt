@@ -62,7 +62,7 @@ public class BookListController {
 	
 	@FXML
 	private Button lendBookButton;
-
+	
 	@FXML
 	private TextField searchTextField;
 	
@@ -212,6 +212,7 @@ public class BookListController {
 	@FXML
 	public void handleLendBook() {
 		
+		root.handleGUI("lendBook");
 	}
 	
 	@FXML
