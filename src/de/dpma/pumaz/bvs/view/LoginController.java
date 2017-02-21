@@ -10,6 +10,7 @@ import de.dpma.pumaz.bvs.MainApp;
 import de.dpma.pumaz.bvs.dao.UserDAO;
 import de.dpma.pumaz.bvs.model.User;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Tooltip;
 import javafx.scene.layout.BorderPane;
@@ -37,6 +38,47 @@ public class LoginController {
 	
 	@FXML
 	private TextField passwordTextField;
+	
+	@FXML
+	private Label headerLabel;
+	
+	@FXML 
+	private Label passwordLabel;
+	
+	@FXML
+	private Label workerIdLabel;
+	
+	@FXML 
+	private Label hintLabel;
+	
+	public LoginController() {
+		hintLabel.setText("Fields marked with * are obligatory");
+		workerIdLabel.setText("Identification number");
+		passwordLabel.setText("Password");
+		headerLabel.setText("Library management software");
+		passwordTextField.setText("Password");
+		workerIdTextField.setText("Identification number");
+		buttonRegisterToolTip.setText("Click to register");
+		buttonPasswordForgotToolTip.setText("Click if you forgot your password");
+		buttonLoginToolTip.setText("Click to login");
+		textFieldPasswordToolTip.setText("Type in your password");
+		textFieldWorkerIdToolTip.setText("Type in your identification number");
+		
+		hintLabel.setText("Felder mit * markiert sind Pflichtfelder");
+		workerIdLabel.setText("Ausweisnummer");
+		passwordLabel.setText("Passwort");
+		headerLabel.setText("Bibliotheksverwaltungssystem");
+		passwordTextField.setText("Passwort");
+		workerIdTextField.setText("Ausweisnummer");
+		buttonRegisterToolTip.setText("Drücken um zu registrieren");
+		buttonPasswordForgotToolTip.setText("Drücken um Passwort zurückzusetzen");
+		buttonLoginToolTip.setText("Drücken um einzuloggen");
+		textFieldPasswordToolTip.setText("Passwort eingeben");
+		textFieldWorkerIdToolTip.setText("Ausweisnummer eingeben");
+		
+	}
+	
+	
 	
 	Stage stage = new Stage();
 	

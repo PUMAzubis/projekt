@@ -64,6 +64,9 @@ public class EditEmployeeController {
 	@FXML
 	private TextField passwordTextField;
 	
+	@FXML 
+	private Label headerLabel;
+	
 	Stage stage = new Stage();
 	
 	FXML_GUI fxml_gui;
@@ -88,6 +91,30 @@ public class EditEmployeeController {
 		lastNameTextField.setText("Last name");
 		workerIdTextField.setText("Identification number");
 		passwordTextField.setText("Password");
+		headerLabel.setText("Edit Employees");
+		
+		
+		
+		
+		
+		textFieldFirstNameToolTip.setText("Vornamen eingeben");
+		textFieldLastNameToolTip.setText("Nachnamen eingeben");
+		textFieldWorkerIdToolTip.setText("Ausweisnummer eingeben");
+		textFieldPasswordToolTip.setText("Passwort eingeben");
+		buttonSafeToolTip.setText("Drücken um zu speichern");
+		buttonCancelToolTip.setText("Drücken um abzubrechen");
+		firstNameLabel.setText("Vorname*:");
+		lastNameLabel.setText("Nachname*:");
+		workerIdLabel.setText("Ausweisnummer*:");
+		passwordLabel.setText("Passwort*:");
+		hintLabel.setText("Mit * markierte Felder müssen ausgefüllt werden.");
+		saveButton.setText("Speichern");
+		cancelButton.setText("Abbrechen");
+		firstNameTextField.setText("Vorname");
+		lastNameTextField.setText("Nachname");
+		workerIdTextField.setText("Ausweisnummer");
+		passwordTextField.setText("Passwort");
+		headerLabel.setText("Mitarbeiter bearbeiten");
 	}
 	
 	public void handleEditFistName() throws SQLException {

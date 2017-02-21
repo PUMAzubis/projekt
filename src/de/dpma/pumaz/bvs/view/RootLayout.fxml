@@ -23,16 +23,16 @@
             </ImageView>
             <MenuBar AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <menus>
-                <Menu mnemonicParsing="false" text="Datei">
+                <Menu fx:id="fileMenu" mnemonicParsing="false" text="Datei">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="Sprache ändern" />
-                        <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Beenden" />
+                    <MenuItem fx:id="changeLanguageMenuItem" mnemonicParsing="false" text="Sprache ändern" />
+                        <MenuItem fx:id="exitMenuItem" mnemonicParsing="false" onAction="#handleExit" text="Beenden" />
                   </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Hilfe">
+                <Menu fx:id="helpMenu" mnemonicParsing="false" text="Hilfe">
                   <items>
-                    <MenuItem mnemonicParsing="false" onAction="#handleHelp" text="Anleitung" />
-                        <MenuItem mnemonicParsing="false" onAction="#handleAbout" text="Über" />
+                    <MenuItem fx:id="instructionsMenuItem" mnemonicParsing="false" onAction="#handleHelp" text="Anleitung" />
+                        <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false" onAction="#handleAbout" text="Über" />
                   </items>
                 </Menu>
               </menus>

@@ -51,6 +51,53 @@ public class RegistrationController {
 	private Button backButton;
 	@FXML 
 	private Button completeButton;
+	@FXML
+	private Label headerLabel;
+	
+	public RegistrationController() {
+
+textFieldWorkerIdToolTip.setText("Type in your identification number");
+textFieldFirstNameToolTip.setText("Type in your first name");
+textFieldLastNameToolTip.setText("Type in your last name");
+textFieldPasswordToolTip.setText("Type in your password");
+buttonRegisterToolTip.setText("Click to complete your registration");
+buttonBackToolTip.setText("Click to get back to the last window");
+workerIdTextField.setText("Identification number");
+firstNameTextField.setText("First name");
+lastNameTextField.setText("Last name");
+passwordTextField.setText("Password");
+workIdLabel.setText("Identification number");
+firstNameLabel.setText("First name");
+lastNameLabel.setText("Last name");
+passwordLabel.setText("Password");
+hintLabel.setText("Fields marked with * are required ");
+backButton.setText("Back");
+completeButton.setText("Complete");
+headerLabel.setText("Registration");
+
+
+
+
+
+textFieldWorkerIdToolTip.setText("Ausweisnummer eingeben");
+textFieldFirstNameToolTip.setText("Vorname eingeben");
+textFieldLastNameToolTip.setText("Nachname eingeben");
+textFieldPasswordToolTip.setText("Passwort eingeben");
+buttonRegisterToolTip.setText("Drücken um Registration abzuschliessen");
+buttonBackToolTip.setText("Drücken um zurück zu gelangen");
+workerIdTextField.setText("Ausweisnummer");
+firstNameTextField.setText("Vorname");
+lastNameTextField.setText("Nachname");
+passwordTextField.setText("Passwort");
+workIdLabel.setText("Ausweisnummer");
+firstNameLabel.setText("Vorname");
+lastNameLabel.setText("Nachname");
+passwordLabel.setText("Passwort");
+hintLabel.setText("Mit * markierte Felder sind Pflichtfelder ");
+backButton.setText("Zurück");
+completeButton.setText("Abschließen");
+headerLabel.setText("Registrieren");
+	}
 	
 	RootLayoutController root = new RootLayoutController();		
 	

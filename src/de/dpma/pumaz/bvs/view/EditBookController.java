@@ -78,6 +78,8 @@ public class EditBookController {
 	@FXML
 	private TextField categoryTextField;
 	
+	
+	
 	public EditBookController() {
 		categoryTextField.setText("Category");
 		yearTextField.setText("Year of release");
@@ -101,8 +103,30 @@ public class EditBookController {
 		buttonSafeToolTip.setText("Press to save");
 		buttonCancelToolTip.setText("Press to cancel");
 		
-	}
 	
+	categoryTextField.setText("Kategorie");
+	yearTextField.setText("Erscheinungsjahr");
+	isbnTextField.setText("ISBN");
+	authorTextField.setText("Autor");
+	titleTextField.setText("Titel");
+	hintLabel.setText("Mit * markierte Felder sind Pflichtfelder.");
+	cancelButton.setText("Abbrechen");
+	saveButton.setText("Speichern");
+	categoryLabel.setText("Kategorie");
+	isbnLabel.setText("ISBN");
+	releaseLabel.setText("Erscheinungsjahr");
+	authorLabel.setText("Autor");
+	headerLabel.setText("Buch bearbeiten");
+	titleLabel.setText("Titel");
+	textFieldTitleToolTip.setText("Titel des Buches eingeben");
+	textFieldAuthorToolTip.setText("Autor des Buches eingeben");
+	textFieldIsbnToolTip.setText("ISBN des Buches eingeben");
+	textFieldReleaseToolTip.setText("Erscheinungsjahr des Buches eingeben");
+	textFieldCategorieToolTip.setText("Kategorie des Buches eingeben");
+	buttonSafeToolTip.setText("Drücken um Änderung zu speichern");
+	buttonCancelToolTip.setText("Drücken um abzubrechen");
+	
+}
 	Stage stage = new Stage();
 	
 	FXML_GUI fxml_gui;

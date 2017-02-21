@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="570.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="570.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.dpma.pumaz.bvs.view.EmployeeListController">
    <children>
       <ImageView fitHeight="110.0" fitWidth="200.0">
          <image>
@@ -25,46 +25,46 @@
                <children>
                   <TableView prefHeight="458.0" prefWidth="296.0">
                     <columns>
-                      <TableColumn prefWidth="144.0" text="Vorname" />
-                      <TableColumn minWidth="0.0" prefWidth="151.0" text="Nachname" />
+                      <TableColumn fx:id="firstNameColumnLabel" prefWidth="144.0" text="Vorname" />
+                      <TableColumn fx:id="lastNameColumnLabel" minWidth="0.0" prefWidth="151.0" text="Nachname" />
                     </columns>
                   </TableView>
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="298.0">
                <children>
-                  <Label layoutX="14.0" layoutY="4.0" text="Mitarbeiter Details" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="157.0" AnchorPane.topAnchor="4.0" />
-                  <Label layoutX="14.0" layoutY="37.0" text="ID:" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="157.0" AnchorPane.topAnchor="50.0" />
-                  <Label layoutX="14.0" layoutY="77.0" text="Vorname:" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="157.0" AnchorPane.topAnchor="100.0" />
-                  <Label layoutX="14.0" layoutY="119.0" text="Nachname:" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="157.0" AnchorPane.topAnchor="150.0" />
-                  <Label layoutX="14.0" layoutY="160.0" text="Ausweisnummer:" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="157.0" AnchorPane.topAnchor="200.0" />
-                  <Label layoutX="14.0" layoutY="244.0" prefHeight="21.0" prefWidth="123.0" text="Status:" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="157.0" AnchorPane.topAnchor="250.0" />
+                  <Label fx:id="smallHeaderLabel" layoutX="14.0" layoutY="4.0" text="Mitarbeiter Details" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="157.0" AnchorPane.topAnchor="4.0" />
+                  <Label fx:id="idLabel" layoutX="14.0" layoutY="37.0" text="ID:" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="157.0" AnchorPane.topAnchor="50.0" />
+                  <Label fx:id="firstNameLabel" layoutX="14.0" layoutY="77.0" text="Vorname:" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="157.0" AnchorPane.topAnchor="100.0" />
+                  <Label fx:id="lastNameLabel" layoutX="14.0" layoutY="119.0" text="Nachname:" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="157.0" AnchorPane.topAnchor="150.0" />
+                  <Label fx:id="workerIdLabel" layoutX="14.0" layoutY="160.0" text="Ausweisnummer:" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="157.0" AnchorPane.topAnchor="200.0" />
+                  <Label fx:id="statusLabel" layoutX="14.0" layoutY="244.0" prefHeight="21.0" prefWidth="123.0" text="Status:" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="157.0" AnchorPane.topAnchor="250.0" />
                   <Label layoutX="159.0" layoutY="50.0" prefHeight="21.0" prefWidth="123.0" text="0123456789" />
                   <Label layoutX="159.0" layoutY="100.0" prefHeight="21.0" prefWidth="123.0" text="Label" />
                   <Label layoutX="159.0" layoutY="150.0" prefHeight="21.0" prefWidth="123.0" text="Label" />
                   <Label layoutX="159.0" layoutY="200.0" prefHeight="21.0" prefWidth="123.0" text="0000" />
                   <Label layoutX="159.0" layoutY="250.0" prefHeight="21.0" prefWidth="123.0" text="Label" />
-                  <Button layoutX="14.0" layoutY="311.0" mnemonicParsing="false" text="Bearbeiten">
+                  <Button fx:id="editButton" layoutX="14.0" layoutY="311.0" mnemonicParsing="false" text="Bearbeiten">
                      <tooltip>
-                        <Tooltip text="Drücken um Mitarbeiter zu bearbeiten" />
+                        <Tooltip fx:id="buttonEditToolTip" text="Drücken um Mitarbeiter zu bearbeiten" />
                      </tooltip></Button>
-                  <Button layoutX="14.0" layoutY="387.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="92.0" text="Löschen">
+                  <Button fx:id="deleteButton" layoutX="14.0" layoutY="387.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="92.0" text="Löschen">
                      <tooltip>
-                        <Tooltip text="Drücken um Mitarbeiter zu löschen" />
+                        <Tooltip fx:id="buttonDeleteToolTip" text="Drücken um Mitarbeiter zu löschen" />
                      </tooltip></Button>
-                  <Button layoutX="159.0" layoutY="311.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="92.0" text="Neu">
+                  <Button fx:id="newButton" layoutX="159.0" layoutY="311.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="92.0" text="Neu">
                      <tooltip>
-                        <Tooltip text="Drücken um neuen Mitarbeiter anzulegen" />
+                        <Tooltip fx:id="buttonNewToolTip" text="Drücken um neuen Mitarbeiter anzulegen" />
                      </tooltip></Button>
-                  <Button layoutX="159.0" layoutY="387.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="92.0" text="Zurück">
+                  <Button fx:id="cancelButton" layoutX="159.0" layoutY="387.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="92.0" text="Zurück">
                      <tooltip>
-                        <Tooltip text="Drücken um zurück zu gelangen" />
+                        <Tooltip fx:id="buttonBackToolTip" text="Drücken um zurück zu gelangen" />
                      </tooltip></Button>
                </children>
             </AnchorPane>
         </items>
       </SplitPane>
-      <Text layoutX="166.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mitarbeiterbearbeitung" wrappingWidth="419.99999637529254">
+      <Text fx:id="headerLabel" layoutX="166.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mitarbeiterbearbeitung" wrappingWidth="419.99999637529254">
          <font>
             <Font name="Century Gothic" size="37.0" />
          </font>

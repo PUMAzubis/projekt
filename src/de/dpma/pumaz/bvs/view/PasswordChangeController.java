@@ -44,6 +44,44 @@ public class PasswordChangeController {
 	private Button backButton;
 	@FXML 
 	private Button saveButton;
+	@FXML
+	private Label headerLabel;
+	
+	public PasswordChangeController() {
+
+textFieldOldPasswordToolTip.setText("Type in your old password");
+textFieldNewPasswordToolTip.setText("Type in your new password");
+textFieldNewPasswordConfirmToolTip.setText("Confirm your new password by typing it in again");
+buttonBackToolTip.setText("Click to get back to the last window");
+buttonConfirmToolTip.setText("Click to confirm");
+oldPasswordTextField.setText("Old password");
+newPasswordTextField.setText("New password");
+confirmNewPasswordTextField.setText("Confirm new password");
+oldPasswordLabel.setText("Old password");
+newPasswordLabel.setText("New password");
+confirmNewPasswordLabel.setText("Confirm new password");
+hintLabel.setText("Fields marked with * are required ");
+backButton.setText("Back");
+saveButton.setText("Save");
+headerLabel.setText("Change Password");
+
+
+textFieldOldPasswordToolTip.setText("Altes Passwort eingeben");
+textFieldNewPasswordToolTip.setText("Neues Passwort eingeben");
+textFieldNewPasswordConfirmToolTip.setText("Neues Passwort bestätigen, durch wiederholte Eingabe");
+buttonBackToolTip.setText("Drücken um zurück zu gelangen");
+buttonConfirmToolTip.setText("Drücken um zu bestätigen");
+oldPasswordTextField.setText("Altes Passwort eingeben");
+newPasswordTextField.setText("Neues Passwort eingeben");
+confirmNewPasswordTextField.setText("Neues Passwort bestätigen");
+oldPasswordLabel.setText("Altes Passwort");
+newPasswordLabel.setText("Neues Passwort");
+confirmNewPasswordLabel.setText("Neues Passwort bestätigen");
+hintLabel.setText("Mit * markierte Felder sind Pflichtfelder");
+backButton.setText("Zurück");
+saveButton.setText("Speichern");
+headerLabel.setText("Passwort ändern");
+	}
 	
 	Logger log = Logger.getLogger(PasswordChangeController.class.getName());
 	
