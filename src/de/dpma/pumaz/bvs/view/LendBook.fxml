@@ -8,18 +8,18 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="263.0" prefWidth="402.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.dpma.pumaz.bvs.view.LendBookController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="263.0" prefWidth="402.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.dpma.pumaz.bvs.view.LendBookController">
    <children>
       <Text fx:id="headerLabel" layoutX="68.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Buch verleihen" wrappingWidth="269.99999637529254">
          <font>
             <Font name="Century Gothic" size="37.0" />
          </font>
       </Text>
-      <Button fx:id="cancelButton" layoutX="26.0" layoutY="200.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="85.0" text="Zurück" AnchorPane.leftAnchor="26.0">
+      <Button fx:id="cancelButton" layoutX="26.0" layoutY="200.0" mnemonicParsing="false" onAction="#handleBack" prefHeight="31.0" prefWidth="85.0" text="Zurück" AnchorPane.leftAnchor="26.0">
          <tooltip>
             <Tooltip fx:id="buttonBackToolTip" text="Drücken um zurück zu gelangen" />
          </tooltip></Button>
-      <Button fx:id="lendBookButton" layoutX="281.0" layoutY="200.0" mnemonicParsing="false" text="Verleihen" AnchorPane.rightAnchor="38.0">
+      <Button fx:id="lendBookButton" layoutX="281.0" layoutY="200.0" mnemonicParsing="false" onAction="#handleLend" text="Verleihen" AnchorPane.rightAnchor="38.0">
          <tooltip>
             <Tooltip fx:id="buttonLendToolTip" text="Drücken um zu verleihen" />
          </tooltip></Button>

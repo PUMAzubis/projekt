@@ -9,32 +9,32 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="389.0" prefWidth="615.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.dpma.pumaz.bvs.view.RegistrationController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="389.0" prefWidth="615.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.dpma.pumaz.bvs.view.RegistrationController">
    <children>
       <AnchorPane layoutY="-6.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="394.0" prefWidth="615.0" styleClass="background" stylesheets="@theme.css">
          <children>
-            <Text fx:id="headerLabel" layoutX="235.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="header" text="Registrieren" textAlignment="JUSTIFY">
+            <Text fx:id="headerText" layoutX="215.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="header" text="Registrieren" textAlignment="JUSTIFY" AnchorPane.leftAnchor="214.0" AnchorPane.rightAnchor="214.0">
                <font>
                   <Font name="Century Gothic" size="37.0" />
                </font>
             </Text>
             <Text layoutX="552.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text fx:id="workIdLabel" layoutX="62.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ausweisnummer*:" AnchorPane.leftAnchor="62.0">
+            <Text fx:id="workerIdText" layoutX="62.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ausweisnummer*:" AnchorPane.leftAnchor="62.0">
                <font>
                   <Font size="20.0" />
                </font>
             </Text>
-            <Text fx:id="firstNameLabel" layoutX="62.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vorname*:" AnchorPane.leftAnchor="62.0">
+            <Text fx:id="firstNameText" layoutX="62.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vorname*:" AnchorPane.leftAnchor="62.0">
                <font>
                   <Font size="20.0" />
                </font>
             </Text>
-            <Text fx:id="lastNameLabel" layoutX="62.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nachname*:" AnchorPane.leftAnchor="62.0">
+            <Text fx:id="lastNameText" layoutX="62.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nachname*:" AnchorPane.leftAnchor="62.0">
                <font>
                   <Font size="20.0" />
                </font>
             </Text>
-            <Text fx:id="passwordLabel" layoutX="62.0" layoutY="249.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Passwort*:" AnchorPane.leftAnchor="62.0">
+            <Text fx:id="passwordText" layoutX="62.0" layoutY="249.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Passwort*:" AnchorPane.leftAnchor="62.0">
                <font>
                   <Font size="20.0" />
                </font>
@@ -47,7 +47,7 @@
                   <Tooltip fx:id="buttonRegisterToolTip" text="Hier Klicken um Ihre Registration abzuschliessen." />
                </tooltip>
             </Button>
-            <Button fx:id="backButton" layoutX="493.0" layoutY="344.0" mnemonicParsing="false" text="Zurück">
+            <Button fx:id="backButton" layoutX="493.0" layoutY="344.0" mnemonicParsing="false" onAction="#handleBack" text="Zurück">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>

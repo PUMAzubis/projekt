@@ -153,19 +153,25 @@ public class LoginController {
 		root.handleGUI("register");
 	}
 	
+	@FXML
+	public void handlePasswordForgott() {
+		
+		root.handleGUI("passwordForgott");
+	}
+	
 	public void handleKeyPressed(KeyEvent event) {
 		
 		switch (event.getCode()) {
-		case ENTER:
-			try {
-				handleLogin();
-			}
-			catch (SQLException e) {
-				e.printStackTrace();
-			}
-			break;
-		default:
-			break;
+			case ENTER:
+				try {
+					handleLogin();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+				break;
+			default:
+				break;
 		}
 	}
 }

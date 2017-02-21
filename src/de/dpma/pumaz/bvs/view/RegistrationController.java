@@ -10,9 +10,9 @@ import de.dpma.pumaz.bvs.dao.UserDAO;
 import de.dpma.pumaz.bvs.model.User;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Tooltip;
+import javafx.scene.text.Text;
 
 public class RegistrationController {
 	
@@ -47,28 +47,28 @@ public class RegistrationController {
 	private TextField passwordTextField;
 	
 	@FXML
-	private Label workIdLabel;
+	private Text workerIdText;
 	
 	@FXML
-	private Label firstNameLabel;
+	private Text firstNameText;
 	
 	@FXML
-	private Label lastNameLabel;
+	private Text lastNameText;
 	
 	@FXML
-	private Label passwordLabel;
+	private Text passwordText;
 	
 	@FXML
-	private Label hintLabel;
+	private Text hintText;
+	
+	@FXML
+	private Text headerText;
 	
 	@FXML
 	private Button backButton;
 	
 	@FXML
 	private Button completeButton;
-	
-	@FXML
-	private Label headerLabel;
 	
 	public RegistrationController() {
 		//
@@ -83,14 +83,14 @@ public class RegistrationController {
 		// firstNameTextField.setText("First name");
 		// lastNameTextField.setText("Last name");
 		// passwordTextField.setText("Password");
-		// workIdLabel.setText("Identification number");
-		// firstNameLabel.setText("First name");
-		// lastNameLabel.setText("Last name");
-		// passwordLabel.setText("Password");
-		// hintLabel.setText("Fields marked with * are required ");
+		// workerIdText.setText("Identification number");
+		// firstNameText.setText("First name");
+		// lastNameText.setText("Last name");
+		// passwordText.setText("Password");
+		// hintText.setText("Fields marked with * are required ");
 		// backButton.setText("Back");
 		// completeButton.setText("Complete");
-		// headerLabel.setText("Registration");
+		// headerText.setText("Registration");
 		//
 		//
 		//
@@ -107,14 +107,14 @@ public class RegistrationController {
 		// firstNameTextField.setText("Vorname");
 		// lastNameTextField.setText("Nachname");
 		// passwordTextField.setText("Passwort");
-		// workIdLabel.setText("Ausweisnummer");
-		// firstNameLabel.setText("Vorname");
-		// lastNameLabel.setText("Nachname");
-		// passwordLabel.setText("Passwort");
-		// hintLabel.setText("Mit * markierte Felder sind Pflichtfelder ");
+		// workerIdText.setText("Ausweisnummer");
+		// firstNameText.setText("Vorname");
+		// lastNameText.setText("Nachname");
+		// passwordText.setText("Passwort");
+		// hintText.setText("Mit * markierte Felder sind Pflichtfelder ");
 		// backButton.setText("Zurück");
 		// completeButton.setText("Abschließen");
-		// headerLabel.setText("Registrieren");
+		// headerText.setText("Registrieren");
 	}
 	
 	RootLayoutController root = new RootLayoutController();
@@ -185,5 +185,10 @@ public class RegistrationController {
 		ParsePosition pos = new ParsePosition(0);
 		formatter.parse(str, pos);
 		return str.length() == pos.getIndex();
+	}
+	
+	public void handleBack() {
+		
+		root.handleGUI("back");
 	}
 }

@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="374.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.dpma.pumaz.bvs.view.EditBookController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="374.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.dpma.pumaz.bvs.view.EditBookController">
    <children>
       <Text fx:id="headerLabel" layoutX="163.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Buchbearbeitung">
          <font>
@@ -40,11 +40,11 @@
          <tooltip>
             <Tooltip fx:id="textfieldcategorieToolTip" text="Kategorie des Buches eingeben" />
          </tooltip></TextField>
-      <Button fx:id="saveButton" layoutX="320.0" layoutY="327.0" mnemonicParsing="false" text="Speichern">
+      <Button fx:id="saveButton" layoutX="320.0" layoutY="327.0" mnemonicParsing="false" onAction="#handleSave" text="Speichern">
          <tooltip>
             <Tooltip fx:id="buttonsafeToolTip" text="Drücken um Änderung zu speichern" />
          </tooltip></Button>
-      <Button fx:id="cancelButton" layoutX="492.0" layoutY="327.0" mnemonicParsing="false" text="Abbrechen">
+      <Button fx:id="cancelButton" layoutX="492.0" layoutY="327.0" mnemonicParsing="false" onAction="#handleCancel" text="Abbrechen">
          <tooltip>
             <Tooltip fx:id="buttoncancelToolTip" text="Drücken um abzubrechen" />
          </tooltip></Button>

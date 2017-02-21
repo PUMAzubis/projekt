@@ -188,7 +188,7 @@ public class FXML_GUI {
 		
 		try {
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(FXML_GUI.class.getResource("view/LendBook"));
+			loader.setLocation(FXML_GUI.class.getResource("view/LendBook.fxml"));
 			AnchorPane lendBook;
 			lendBook = (AnchorPane) loader.load();
 			setSizeOfRootLayout(lendBook.getPrefHeight(), lendBook.getPrefWidth());
@@ -203,11 +203,28 @@ public class FXML_GUI {
 		
 		try {
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(FXML_GUI.class.getResource("view/PasswordChange"));
+			loader.setLocation(FXML_GUI.class.getResource("view/PasswordChange.fxml"));
 			
 			AnchorPane passwordChange;
 			passwordChange = (AnchorPane) loader.load();
 			setSizeOfRootLayout(passwordChange.getPrefWidth(), passwordChange.getPrefWidth());
+			rootLayout.setCenter(passwordChange);
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void showPasswordForgott() {
+		
+		try {
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(FXML_GUI.class.getResource("view/PasswordChange.fxml"));
+			
+			AnchorPane passwordForgott;
+			passwordForgott = (AnchorPane) loader.load();
+			setSizeOfRootLayout(passwordForgott.getPrefWidth(), passwordForgott.getPrefWidth());
+			rootLayout.setCenter(passwordForgott);
 		}
 		catch (IOException e) {
 			e.printStackTrace();
@@ -221,5 +238,4 @@ public class FXML_GUI {
 		primaryStage.setMaxHeight(height + 173 + 50);
 		primaryStage.setMinHeight(height + 173 + 50);
 	}
-	
 }

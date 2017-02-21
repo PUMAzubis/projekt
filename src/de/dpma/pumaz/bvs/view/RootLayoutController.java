@@ -87,6 +87,9 @@ public class RootLayoutController {
 		else if (check.equals("lendBook")) {
 			fxml_gui.showLendBook();
 		}
+		else if (check.equals("passwordForgott")) {
+			fxml_gui.showPasswordForgott();
+		}
 		else if (check.equals("back")) {
 			fxml_gui.primaryStage.close();
 		}
