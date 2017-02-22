@@ -164,22 +164,16 @@ public class BookListController {
 	@FXML
 	private void initialize() throws SQLException {
 		
-		// BookDAO bookDao = new BookDAO(MainApp.dbcon.getConnection());
-		// bookData = FXCollections.observableArrayList((bookDao.allBooks()));
-		// bookTable.setItems(bookData);
-		//
-		// nameColumn.setCellValueFactory(cellData ->
-		// cellData.getValue().nameProperty());
-		// authorColumn.setCellValueFactory(cellData ->
-		// cellData.getValue().authorProperty());
-		// releaseYearColumn.setCellValueFactory(cellData ->
-		// cellData.getValue().release_yearProperty());
-		// isbnColumn.setCellValueFactory(cellData ->
-		// cellData.getValue().ISBNProperty());
-		// categoryColumn.setCellValueFactory(cellData ->
-		// cellData.getValue().categoryName());
-		// availableColumn.setCellValueFactory(cellData ->
-		// cellData.getValue().overviewCountProperty());
+		BookDAO bookDao = new BookDAO(MainApp.dbcon.getConnection());
+		bookData = FXCollections.observableArrayList((bookDao.allBooks()));
+		bookTable.setItems(bookData);
+		
+		nameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
+		authorColumn.setCellValueFactory(cellData -> cellData.getValue().authorProperty());
+		releaseYearColumn.setCellValueFactory(cellData -> cellData.getValue().release_yearProperty());
+		isbnColumn.setCellValueFactory(cellData -> cellData.getValue().ISBNProperty());
+		categoryColumn.setCellValueFactory(cellData -> cellData.getValue().categoryName());
+		availableColumn.setCellValueFactory(cellData -> cellData.getValue().overviewCountProperty());
 	}
 	
 	@FXML
