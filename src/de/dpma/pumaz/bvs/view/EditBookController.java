@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Tooltip;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class EditBookController {
@@ -40,7 +41,7 @@ public class EditBookController {
 	private Label titleLabel;
 	
 	@FXML
-	private Label headerLabel;
+	private Text headerText;
 	
 	@FXML
 	private Label authorLabel;

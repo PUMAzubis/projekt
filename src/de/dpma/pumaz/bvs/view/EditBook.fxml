@@ -12,7 +12,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="374.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.dpma.pumaz.bvs.view.EditBookController">
    <children>
-      <Text fx:id="headerLabel" layoutX="163.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Buchbearbeitung">
+      <Text fx:id="headerText" layoutX="163.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Buchbearbeitung">
          <font>
             <Font name="Century Gothic" size="37.0" />
          </font>
@@ -22,19 +22,19 @@
       <Label fx:id="isbnLabel" layoutX="65.0" layoutY="167.0" prefHeight="21.0" prefWidth="46.0" text="ISBN:" AnchorPane.leftAnchor="65.0" AnchorPane.rightAnchor="489.0" AnchorPane.topAnchor="167.0" />
       <Label fx:id="releaseLabel" layoutX="65.0" layoutY="207.0" prefHeight="21.0" prefWidth="127.0" text="Erscheinungsjahr:" AnchorPane.leftAnchor="65.0" AnchorPane.rightAnchor="408.0" AnchorPane.topAnchor="207.0" />
       <Label fx:id="categoryLabel" layoutX="65.0" layoutY="247.0" prefHeight="21.0" prefWidth="74.0" text="Kategorie:" AnchorPane.leftAnchor="65.0" AnchorPane.rightAnchor="461.0" AnchorPane.topAnchor="247.0" />
-      <TextField fx:id="titleText" layoutX="321.0" layoutY="82.0" prefHeight="31.0" prefWidth="265.0">
+      <TextField fx:id="titleTextField" layoutX="321.0" layoutY="82.0" prefHeight="31.0" prefWidth="265.0">
          <tooltip>
             <Tooltip fx:id="textfieldtitleToolTip" text="Titel des Buches eingeben" />
          </tooltip></TextField>
-      <TextField fx:id="authorText" layoutX="320.0" layoutY="122.0" prefHeight="31.0" prefWidth="265.0">
+      <TextField fx:id="authorTextField" layoutX="320.0" layoutY="122.0" prefHeight="31.0" prefWidth="265.0">
          <tooltip>
             <Tooltip fx:id="textfieldauthorToolTip" text="Autor des Buches eingeben" />
          </tooltip></TextField>
-      <TextField fx:id="ISBNText" layoutX="320.0" layoutY="162.0" prefHeight="31.0" prefWidth="265.0">
+      <TextField fx:id="isbnTextField" layoutX="320.0" layoutY="162.0" prefHeight="31.0" prefWidth="265.0">
          <tooltip>
             <Tooltip fx:id="textfieldisbnToolTip" text="ISBN des Buches eingeben" />
          </tooltip></TextField>
-      <TextField fx:id="yearText" layoutX="320.0" layoutY="202.0" prefHeight="31.0" prefWidth="265.0">
+      <TextField fx:id="yearTextField" layoutX="320.0" layoutY="202.0" prefHeight="31.0" prefWidth="265.0">
          <tooltip>
             <Tooltip fx:id="textfieldreleaseToolTip" text="Erscheinungsjahr des Buches eingeben" />
          </tooltip></TextField>
