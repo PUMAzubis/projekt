@@ -37,6 +37,7 @@
     -fx-text-fill: #000;
     -fx-background-insets: 0 0 0 0, 0, 1, 2;
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 2, 0, 0, 0);
+    -fx-cursor: hand;
 }
 
 .button:hover {
