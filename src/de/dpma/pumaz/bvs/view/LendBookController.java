@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Tooltip;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class LendBookController {
@@ -22,7 +23,7 @@ public class LendBookController {
 	private Tooltip textFieldWorkerIdToolTip;
 	
 	@FXML
-	private Label headerLabel;
+	private Text headerText;
 	
 	@FXML
 	private Label workerIdLabel;
