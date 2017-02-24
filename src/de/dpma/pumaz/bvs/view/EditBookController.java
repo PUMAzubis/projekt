@@ -9,7 +9,9 @@ import de.dpma.pumaz.bvs.FXML_GUI;
 import de.dpma.pumaz.bvs.model.Book;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -19,104 +21,106 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class EditBookController {
-
+	
 	@FXML
 	private Tooltip textFieldTitleToolTip;
-
+	
 	@FXML
 	private Tooltip textFieldAuthorToolTip;
-
+	
 	@FXML
 	private Tooltip textFieldIsbnToolTip;
-
+	
 	@FXML
 	private Tooltip textFieldReleaseToolTip;
-
+	
 	@FXML
 	private Tooltip textFieldCategorieToolTip;
-
+	
 	@FXML
 	private Tooltip buttonSafeToolTip;
-
+	
 	@FXML
 	private Tooltip buttonCancelToolTip;
-
+	
 	@FXML
 	private Label titleLabel;
-
+	
 	@FXML
 	private Text headerText;
-
+	
 	@FXML
 	private Label authorLabel;
-
+	
 	@FXML
 	private Label releaseLabel;
-
+	
 	@FXML
 	private Label isbnLabel;
-
+	
 	@FXML
 	private Label categoryLabel;
-
+	
 	@FXML
 	private Label availableLabel;
-
+	
 	@FXML
 	private Button saveButton;
-
+	
 	@FXML
 	private Button cancelButton;
-
+	
 	@FXML
 	private Label hintLabel;
-
+	
 	@FXML
 	private TextField titleTextField = new TextField();
-
+	
 	@FXML
 	private TextField authorTextField = new TextField();
-
+	
 	@FXML
 	private TextField isbnTextField = new TextField();
-
+	
 	@FXML
 	private TextField yearTextField = new TextField();
-
+	
 	@FXML
 	private TextField availableTextField = new TextField();
-
+	
 	@FXML
 	private ComboBox categoryComboBox = new ComboBox();
-
+	
 	ObservableList<String> categoryComboBoxList = FXCollections.observableArrayList("Patente", "Marken", "Lernbücher",
 			"Zeitschriften");
-
+	
 	BookListController bookList = new BookListController();
-
+	
 	Stage stage = new Stage();
-
+	
 	FXML_GUI fxml_gui;
-
+	
 	RootLayoutController root = new RootLayoutController();
-
+	
 	Logger log = Logger.getLogger(EditBookController.class.getName());
-
+	
 	Book editBook;
-
+	
+	ActionEvent event;
+	
 	public EditBookController() {
-
+		
 	}
-
+	
 	@FXML
 	public void initialize() throws SQLException {
-
+		
 	}
-
+	
 	public void inputContent(Book book) {
-
+		
 		this.editBook = book;
-
+		
 		categoryComboBox.setValue(book.getCategoryName());
 		categoryComboBox.setItems(categoryComboBoxList);
 		titleTextField.setText(book.getName());
@@ -124,83 +128,89 @@ public class EditBookController {
 		isbnTextField.setText(book.getISBN());
 		yearTextField.setText(book.getRelease_year());
 		availableTextField.setText(book.getAvailable_count());
-
+		
 	}
-
+	
 	@FXML
 	public void handleSave() throws SQLException {
-
+		
 		// TODO Alert
 		if (titleTextField.getText().isEmpty() || isNumeric(titleTextField.getText())) {
 			root.handleDialog("Titel ungültig",
 					"Es wurde kein gültiger Titel eingegeben. Bitte geben Sie einen validen Titel an und versuchen Sie es erneut.",
 					"warning");
 			log.warning("Bitte Titel eingeben!");
-		} else if (authorTextField.getText().isEmpty() || isNumeric(authorTextField.getText())) {
+		}
+		else if (authorTextField.getText().isEmpty() || isNumeric(authorTextField.getText())) {
 			root.handleDialog("Autor ungültig",
 					"Es wurde kein gültiger Autor eingegeben. Bitte geben Sie einen validen Autor an und versuchen Sie es erneut.",
 					"warning");
 			log.warning("Bitte Author eingeben!");
-		} else if (isbnTextField.getText().isEmpty() || !isNumeric(isbnTextField.getText())
+		}
+		else if (isbnTextField.getText().isEmpty() || !isNumeric(isbnTextField.getText())
 				|| isbnTextField.getText().length() <= 9) {
 			root.handleDialog("ISBN ungültig",
 					"Es wurde keine gültige ISBN eingegeben. Bitte geben Sie eine valide ISBN an und versuchen Sie es erneut.",
 					"warning");
 			log.warning("Bitte ISBN eingeben!");
-		} else if (yearTextField.getText().isEmpty() || !isNumeric(yearTextField.getText())) {
+		}
+		else if (yearTextField.getText().isEmpty() || !isNumeric(yearTextField.getText())) {
 			root.handleDialog("Erscheinungsjahr ungültig",
 					"Es wurde keine gültige ISBN eingegeben. Bitte geben Sie eine valide ISBN an und versuchen Sie es erneut.",
 					"warning");
 			log.warning("Bitte Jahr eingeben!");
-		} else if (availableTextField.getText().isEmpty() || !isNumeric(availableTextField.getText())) {
+		}
+		else if (availableTextField.getText().isEmpty() || !isNumeric(availableTextField.getText())) {
 			root.handleDialog("Verfügbarkeit ungültig",
 					"Es wurde keine gültige Verfügbarkeit eingegeben. Bitte geben Sie eine valide Verfügbarkeit an und versuchen Sie es erneut.",
 					"warning");
 			log.warning("Bitte Verfügbarkeit eingeben!");
-		} else {
+		}
+		else {
 			this.editBook.setName(titleTextField.getText());
 			this.editBook.setAuthor(authorTextField.getText());
 			this.editBook.setISBN(isbnTextField.getText());
 			this.editBook.setRelease_year(yearTextField.getText());
-
+			
 			this.editBook
 					.setId_categorys(BookListController.bookDao.getCategoryId(categoryComboBox.getValue().toString()));
-
+			
 			bookList.bookDao.updateBook(this.editBook);
-
+			
 			if (Integer.parseInt(availableTextField.getText()) > Integer.parseInt(this.editBook.getAvailable_count())) {
 				for (int i = 0; i < (Integer.parseInt(availableTextField.getText())
 						- Integer.parseInt(this.editBook.getAvailable_count())); i++) {
 					bookList.bookDao.insertBookInstance(new Book(this.editBook.getId()));
 				}
-			} else if (Integer.parseInt(availableTextField.getText()) < Integer
+			}
+			else if (Integer.parseInt(availableTextField.getText()) < Integer
 					.parseInt(this.editBook.getAvailable_count())) {
 				bookList.bookDao.deleteBookInstance(this.editBook.getId(),
 						(Integer.parseInt(this.editBook.getAvailable_count())
 								- Integer.parseInt(availableTextField.getText())));
 			}
-
+			((Node) (event.getSource())).getScene().getWindow().hide();
 			bookList.initialize();
 			root.handleDialog("Buch erfolgreich erstellt", "", "info");
 		}
 	}
-
+	
 	@FXML
-	public void handleCancel() throws SQLException {
-
-		root.handleGUI("back");
+	public void handleCancel(ActionEvent event) throws SQLException {
+		
+		((Node) (event.getSource())).getScene().getWindow().hide();
 	}
-
+	
 	public static boolean isNumeric(String str) {
-
+		
 		NumberFormat formatter = NumberFormat.getInstance();
 		ParsePosition pos = new ParsePosition(0);
 		formatter.parse(str, pos);
 		return str.length() == pos.getIndex();
 	}
-
+	
 	public void handleLanguage() {
-
+		
 		categoryLabel.setText("Category");
 		yearTextField.setText("Year of release");
 		isbnTextField.setText("ISBN");
@@ -222,7 +232,7 @@ public class EditBookController {
 		textFieldCategorieToolTip.setText("Type in books category");
 		buttonSafeToolTip.setText("Press to save");
 		buttonCancelToolTip.setText("Press to cancel");
-
+		
 		categoryLabel.setText("Kategorie");
 		yearTextField.setText("Erscheinungsjahr");
 		isbnTextField.setText("ISBN");
@@ -245,5 +255,5 @@ public class EditBookController {
 		buttonSafeToolTip.setText("Drücken um Änderung zu speichern");
 		buttonCancelToolTip.setText("Drücken um abzubrechen");
 	}
-
+	
 }
