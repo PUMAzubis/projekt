@@ -9,18 +9,18 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="374.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.dpma.pumaz.bvs.view.EditBookController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="421.0" prefWidth="600.0" styleClass="background" stylesheets="@theme.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.dpma.pumaz.bvs.view.EditBookController">
    <children>
-      <Text fx:id="headerText" layoutX="163.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Buchbearbeitung">
+      <Text fx:id="headerText" layoutX="163.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="header" text="Buchbearbeitung">
          <font>
             <Font name="Century Gothic" size="37.0" />
          </font>
       </Text>
-      <Label fx:id="titleLabel" layoutX="65.0" layoutY="87.0" prefHeight="21.0" prefWidth="55.0" text="Titel*:" AnchorPane.leftAnchor="65.0" AnchorPane.rightAnchor="480.0" AnchorPane.topAnchor="87.0" />
+      <Label fx:id="titleLabel" layoutX="65.0" layoutY="87.0" prefHeight="21.0" prefWidth="55.0" styleClass="text" text="Titel*:" AnchorPane.leftAnchor="65.0" AnchorPane.rightAnchor="480.0" AnchorPane.topAnchor="87.0" />
       <Label fx:id="authorLabel" layoutX="65.0" layoutY="127.0" prefHeight="21.0" prefWidth="55.0" text="Autor*:" AnchorPane.leftAnchor="65.0" AnchorPane.rightAnchor="480.0" AnchorPane.topAnchor="127.0" />
-      <Label fx:id="isbnLabel" layoutX="65.0" layoutY="167.0" prefHeight="21.0" prefWidth="46.0" text="ISBN:" AnchorPane.leftAnchor="65.0" AnchorPane.rightAnchor="489.0" AnchorPane.topAnchor="167.0" />
-      <Label fx:id="releaseLabel" layoutX="65.0" layoutY="207.0" prefHeight="21.0" prefWidth="127.0" text="Erscheinungsjahr:" AnchorPane.leftAnchor="65.0" AnchorPane.rightAnchor="408.0" AnchorPane.topAnchor="207.0" />
-      <Label fx:id="categoryLabel" layoutX="65.0" layoutY="247.0" prefHeight="21.0" prefWidth="74.0" text="Kategorie:" AnchorPane.leftAnchor="65.0" AnchorPane.rightAnchor="461.0" AnchorPane.topAnchor="247.0" />
+      <Label fx:id="isbnLabel" layoutX="65.0" layoutY="208.0" prefHeight="21.0" prefWidth="46.0" text="ISBN:" AnchorPane.leftAnchor="65.0" AnchorPane.rightAnchor="489.0" AnchorPane.topAnchor="208.0" />
+      <Label fx:id="releaseLabel" layoutX="65.0" layoutY="247.0" prefHeight="21.0" prefWidth="127.0" text="Erscheinungsjahr:" AnchorPane.leftAnchor="65.0" AnchorPane.rightAnchor="408.0" AnchorPane.topAnchor="247.0" />
+      <Label fx:id="categoryLabel" layoutX="65.0" layoutY="168.0" prefHeight="21.0" prefWidth="74.0" text="Kategorie:" AnchorPane.leftAnchor="65.0" AnchorPane.rightAnchor="461.0" AnchorPane.topAnchor="168.0" />
       <TextField fx:id="titleTextField" layoutX="321.0" layoutY="82.0" prefHeight="31.0" prefWidth="265.0">
          <tooltip>
             <Tooltip fx:id="textfieldtitleToolTip" text="Titel des Buches eingeben" />
@@ -29,23 +29,29 @@
          <tooltip>
             <Tooltip fx:id="textfieldauthorToolTip" text="Autor des Buches eingeben" />
          </tooltip></TextField>
-      <TextField fx:id="isbnTextField" layoutX="320.0" layoutY="162.0" prefHeight="31.0" prefWidth="265.0">
+      <TextField fx:id="isbnTextField" layoutX="318.0" layoutY="203.0" prefHeight="31.0" prefWidth="265.0">
          <tooltip>
             <Tooltip fx:id="textfieldisbnToolTip" text="ISBN des Buches eingeben" />
          </tooltip></TextField>
-      <TextField fx:id="yearTextField" layoutX="320.0" layoutY="202.0" prefHeight="31.0" prefWidth="265.0">
+      <TextField fx:id="yearTextField" layoutX="318.0" layoutY="242.0" prefHeight="31.0" prefWidth="265.0">
          <tooltip>
             <Tooltip fx:id="textfieldreleaseToolTip" text="Erscheinungsjahr des Buches eingeben" />
          </tooltip></TextField>
-      <Button fx:id="saveButton" layoutX="307.0" layoutY="327.0" mnemonicParsing="false" onAction="#handleSave" text="Speichern">
+      <Button fx:id="saveButton" layoutX="337.0" layoutY="374.0" mnemonicParsing="false" onAction="#handleSave" text="Speichern">
          <tooltip>
             <Tooltip fx:id="buttonsafeToolTip" text="Drücken um Änderung zu speichern" />
          </tooltip></Button>
-      <Button fx:id="cancelButton" layoutX="479.0" layoutY="327.0" mnemonicParsing="false" onAction="#handleCancel" text="Abbrechen">
+      <Button fx:id="cancelButton" layoutX="467.0" layoutY="374.0" mnemonicParsing="false" onAction="#handleCancel" text="Abbrechen">
          <tooltip>
             <Tooltip fx:id="buttoncancelToolTip" text="Drücken um abzubrechen" />
          </tooltip></Button>
-      <Label fx:id="hintLabel" layoutX="65.0" layoutY="290.0" text="Mit * markierte Felder müssen ausgefüllt werden." textFill="RED" />
-      <ComboBox fx:id="categoryComboBox" layoutX="318.0" layoutY="242.0" prefHeight="31.0" prefWidth="265.0" />
+      <Label fx:id="hintLabel" layoutX="65.0" layoutY="334.0" styleClass="text" text="Mit * markierte Felder müssen ausgefüllt werden." textFill="RED" />
+      <ComboBox fx:id="categoryComboBox" layoutX="320.0" layoutY="163.0" prefHeight="31.0" prefWidth="265.0" />
+      <TextField fx:id="availableTextField" layoutX="318.0" layoutY="283.0" prefHeight="31.0" prefWidth="265.0">
+         <tooltip>
+            <Tooltip fx:id="textfieldreleaseToolTip1" text="Erscheinungsjahr des Buches eingeben" />
+         </tooltip>
+      </TextField>
+      <Label fx:id="availableLabel" layoutX="65.0" layoutY="289.0" prefHeight="21.0" prefWidth="119.0" text="Verfügbar*:" />
    </children>
 </AnchorPane>
