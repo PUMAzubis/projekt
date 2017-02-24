@@ -20,7 +20,7 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="465.0" prefWidth="252.0">
                <children>
-                  <Text layoutX="107.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="header" text="Menü" textAlignment="CENTER" wrappingWidth="94.291015625">
+                  <Text fx:id="headerText" layoutX="107.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="header" text="Menü" textAlignment="CENTER" wrappingWidth="94.291015625">
                      <font>
                         <Font name="System Bold" size="30.0" />
                      </font>
@@ -35,19 +35,19 @@
                         <Tooltip text="Hier den Titel, ISBN, Jahr, oder Autor des Buches eingeben" />
                      </tooltip></TextField>
                   <Label fx:id="searchLabel" layoutX="14.0" layoutY="118.0" style="-fx-font-size: 18px;" styleClass="text" text="Suchen:" />
-                  <Button layoutX="86.0" layoutY="180.0" mnemonicParsing="false" onAction="#handleLendBook" prefHeight="31.0" prefWidth="99.0" style="-fx-cursor: pointer;" text="Verleihen" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="66.0">
+                  <Button fx:id="lendBookButton" layoutX="86.0" layoutY="180.0" mnemonicParsing="false" onAction="#handleLendBook" prefHeight="31.0" prefWidth="99.0" style="-fx-cursor: pointer;" text="Verleihen" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="66.0">
                      <tooltip>
                         <Tooltip text="Hier klicken um das ausgewählte Buch zu verleihen." />
                      </tooltip></Button>
-                  <Button layoutX="66.0" layoutY="300.0" mnemonicParsing="false" onAction="#handleNewBook" prefHeight="31.0" prefWidth="99.0" text="Neues Buch" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="66.0">
+                  <Button fx:id="newBookButton" layoutX="66.0" layoutY="300.0" mnemonicParsing="false" onAction="#handleNewBook" prefHeight="31.0" prefWidth="99.0" text="Neues Buch" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="66.0">
                      <tooltip>
                         <Tooltip text="Hier klicken um ein neues Buch anzulegen." />
                      </tooltip></Button>
-                  <Button layoutX="66.0" layoutY="240.0" mnemonicParsing="false" onAction="#handleEditBook" prefHeight="31.0" prefWidth="99.0" text="Bearbeiten" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="66.0">
+                  <Button fx:id="editBookButtom" layoutX="66.0" layoutY="240.0" mnemonicParsing="false" onAction="#handleEditBook" prefHeight="31.0" prefWidth="99.0" text="Bearbeiten" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="66.0">
                      <tooltip>
                         <Tooltip text="Hier Klicken um das ausgewählte Buch zu bearbeiten." />
                      </tooltip></Button>
-                  <Button layoutX="66.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleDeleteBook" prefHeight="31.0" prefWidth="99.0" text="Löschen" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="66.0">
+                  <Button fx:id="deleteBookButton" layoutX="66.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleDeleteBook" prefHeight="31.0" prefWidth="99.0" text="Löschen" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="66.0">
                      <tooltip>
                         <Tooltip text="Hier klicken um das ausgewählte Buch zu löschen." />
                      </tooltip> </Button>
@@ -55,9 +55,9 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="465.0" prefWidth="795.0">
                <children>
-                  <ScrollPane layoutY="2.0" prefHeight="467.0" prefWidth="863.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="2.0">
+                  <ScrollPane layoutY="2.0" prefHeight="467.0" prefWidth="876.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-13.0" AnchorPane.topAnchor="2.0">
                      <content>
-                        <TableView fx:id="bookTable" prefHeight="467.0" prefWidth="862.0" styleClass="text" stylesheets="@theme.css" tableMenuButtonVisible="true">
+                        <TableView fx:id="bookTable" prefHeight="467.0" prefWidth="874.0" styleClass="text" stylesheets="@theme.css" tableMenuButtonVisible="true">
                           <columns>
                             <TableColumn fx:id="nameColumn" maxWidth="212.0" minWidth="126.0" prefWidth="154.0" text="Titel" />
                               <TableColumn fx:id="authorColumn" maxWidth="236.0" minWidth="124.0" prefWidth="156.0" text="Autor" />

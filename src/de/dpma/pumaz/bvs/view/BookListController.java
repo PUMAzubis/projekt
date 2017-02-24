@@ -103,57 +103,6 @@ public class BookListController {
 	
 	public BookListController() {
 		
-		// textFieldSearchToolTip.setText("Type in title, year of release,
-		// author or ISBN to search for a book");
-		// buttonLendToolTip.setText("Click to lend book");
-		// buttonEditToolTip.setText("Click to edit");
-		// buttonNewBookToolTip.setText("Click to create new book");
-		// buttonDeleteToolTip.setText("Click to delete selected book");
-		// headerLabel.setText("Menu");
-		// nameColumn.setText("Name");
-		// authorColumn.setText("Author");
-		// releaseYearColumn.setText("Year of release");
-		// isbnColumn.setText("ISBN");
-		// categoryColumn.setText("Category");
-		// searchTextField.setText("Search");
-		// lendBookButton.setText("Lend");
-		// editBookButtom.setText("Edit");
-		// newBookButton.setText("New");
-		// deleteBookButton.setText("Delete");
-		// nameColumnLabel.setText("Name");
-		// authorColumnLabel.setText("Author");
-		// releaseColumnLabel.setText("Year of release");
-		// isbnColumnLabel.setText("ISBN");
-		// categoryColumnLabel.setText("Category");
-		// searchLabel.setText("Search");
-		//
-		// textFieldSearchToolTip.setText("Hier den Titel, ISBN, Jahr, oder
-		// Autor des Buches eingeben");
-		// buttonLendToolTip.setText("Hier klicken um das ausgewählte Buch zu
-		// verleihen.");
-		// buttonEditToolTip.setText("Hier Klicken um das ausgewählte Buch zu
-		// bearbeiten.");
-		// buttonNewBookToolTip.setText("Hier klicken um ein neues Buch
-		// anzulegen.");
-		// buttonDeleteToolTip.setText("Hier klicken um das ausgewählte Buch zu
-		// löschen.");
-		// headerLabel.setText("Menü");
-		// nameColumn.setText("Name");
-		// authorColumn.setText("Autor");
-		// releaseYearColumn.setText("Erscheinungsjahr");
-		// isbnColumn.setText("ISBN");
-		// categoryColumn.setText("Kategorie");
-		// searchTextField.setText("Suche");
-		// lendBookButton.setText("Verleihen");
-		// editBookButtom.setText("Bearbeiten");
-		// newBookButton.setText("Neu");
-		// deleteBookButton.setText("Löschen");
-		// nameColumnLabel.setText("Name");
-		// authorColumnLabel.setText("Autor");
-		// releaseColumnLabel.setText("Erscheinungsjahr");
-		// isbnColumnLabel.setText("ISBN");
-		// categoryColumnLabel.setText("Kategorie");
-		// searchLabel.setText("Suche");
 	}
 	
 	Stage stage = new Stage();
@@ -265,5 +214,54 @@ public class BookListController {
 			alert.showAndWait();
 		}
 		
+	}
+	
+	public void handleLanguage() {
+		
+		textFieldSearchToolTip.setText("Type in title, year of release, author or ISBN to search for a book");
+		buttonLendToolTip.setText("Click to lend book");
+		buttonEditToolTip.setText("Click to edit");
+		buttonNewBookToolTip.setText("Click to create new book");
+		buttonDeleteToolTip.setText("Click to delete selected book");
+		headerText.setText("Menu");
+		nameColumn.setText("Name");
+		authorColumn.setText("Author");
+		releaseYearColumn.setText("Year of release");
+		isbnColumn.setText("ISBN");
+		categoryColumn.setText("Category");
+		searchTextField.setText("Search");
+		lendBookButton.setText("Lend");
+		editBookButtom.setText("Edit");
+		newBookButton.setText("New");
+		deleteBookButton.setText("Delete");
+		nameColumnLabel.setText("Name");
+		authorColumnLabel.setText("Author");
+		releaseColumnLabel.setText("Year of release");
+		isbnColumnLabel.setText("ISBN");
+		categoryColumnLabel.setText("Category");
+		searchLabel.setText("Search");
+		
+		textFieldSearchToolTip.setText("Hier den Titel, ISBN, Jahr, oder Autor des Buches eingeben");
+		buttonLendToolTip.setText("Hier klicken um das ausgewählte Buch zu verleihen.");
+		buttonEditToolTip.setText("Hier Klicken um das ausgewählte Buch zu bearbeiten.");
+		buttonNewBookToolTip.setText("Hier klicken um ein neues Buch anzulegen.");
+		buttonDeleteToolTip.setText("Hier klicken um das ausgewählte Buch zu löschen.");
+		headerText.setText("Menü");
+		nameColumn.setText("Name");
+		authorColumn.setText("Autor");
+		releaseYearColumn.setText("Erscheinungsjahr");
+		isbnColumn.setText("ISBN");
+		categoryColumn.setText("Kategorie");
+		searchTextField.setText("Suche");
+		lendBookButton.setText("Verleihen");
+		editBookButtom.setText("Bearbeiten");
+		newBookButton.setText("Neu");
+		deleteBookButton.setText("Löschen");
+		nameColumnLabel.setText("Name");
+		authorColumnLabel.setText("Autor");
+		releaseColumnLabel.setText("Erscheinungsjahr");
+		isbnColumnLabel.setText("ISBN");
+		categoryColumnLabel.setText("Kategorie");
+		searchLabel.setText("Suche");
 	}
 }
