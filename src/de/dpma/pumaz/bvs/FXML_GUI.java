@@ -3,6 +3,8 @@ package de.dpma.pumaz.bvs;
 import java.io.IOException;
 import java.util.logging.Logger;
 
+import de.dpma.pumaz.bvs.model.Book;
+import de.dpma.pumaz.bvs.view.EditBookController;
 import de.dpma.pumaz.bvs.view.RootLayoutController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -22,6 +24,8 @@ public class FXML_GUI {
 	MainApp mainApp;
 	
 	RootLayoutController root;
+	
+	EditBookController editBookController;
 	
 	// SetSizeOfRootLayout ssorl;
 	
@@ -131,13 +135,15 @@ public class FXML_GUI {
 		}
 	}
 	
-	public void showEditBook() {
+	public void showEditBook(Book book) {
 		
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(FXML_GUI.class.getResource("view/EditBook.fxml"));
 			AnchorPane editBook;
 			editBook = (AnchorPane) loader.load();
+			editBookController = loader.getController();
+			editBookController.inputContent(book);
 			setSizeOfRootLayout(editBook.getPrefHeight(), editBook.getPrefWidth());
 			rootLayout.setCenter(editBook);
 		}
@@ -237,5 +243,10 @@ public class FXML_GUI {
 		primaryStage.setMinWidth(width + 20);
 		primaryStage.setMaxHeight(height + 173 + 50);
 		primaryStage.setMinHeight(height + 173 + 50);
+	}
+	
+	public void stageClose() {
+		
+		primaryStage.close();
 	}
 }

@@ -5,6 +5,7 @@ import java.util.logging.Logger;
 
 import de.dpma.pumaz.bvs.FXML_GUI;
 import de.dpma.pumaz.bvs.MainApp;
+import de.dpma.pumaz.bvs.model.Book;
 import de.dpma.pumaz.bvs.util.OpenFile;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -63,6 +64,11 @@ public class RootLayoutController {
 	
 	public void handleGUI(String check) {
 		
+		handleGUI(check, null);
+	}
+	
+	public void handleGUI(String check, Book book) {
+		
 		fxml_gui = new FXML_GUI(stage, borderPane);
 		
 		if (check.equals("login")) {
@@ -82,7 +88,7 @@ public class RootLayoutController {
 			fxml_gui.showNewBook();
 		}
 		else if (check.equals("editBook")) {
-			fxml_gui.showEditBook();
+			fxml_gui.showEditBook(book);
 		}
 		else if (check.equals("lendBook")) {
 			fxml_gui.showLendBook();
@@ -91,7 +97,7 @@ public class RootLayoutController {
 			fxml_gui.showPasswordForgott();
 		}
 		else if (check.equals("back")) {
-			fxml_gui.primaryStage.close();
+			fxml_gui.stageClose();
 		}
 		else {
 			log.warning(check + "wurde nicht gefunden");
