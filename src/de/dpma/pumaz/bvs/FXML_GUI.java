@@ -225,7 +225,7 @@ public class FXML_GUI {
 		
 		try {
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(FXML_GUI.class.getResource("view/PasswordChange.fxml"));
+			loader.setLocation(FXML_GUI.class.getResource("view/PasswordForgott.fxml"));
 			
 			AnchorPane passwordForgott;
 			passwordForgott = (AnchorPane) loader.load();

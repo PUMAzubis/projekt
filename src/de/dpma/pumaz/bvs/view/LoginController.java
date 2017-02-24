@@ -95,6 +95,8 @@ public class LoginController {
 	
 	Logger log = Logger.getLogger(LoginController.class.getName());
 	
+	KeyEvent event;
+	
 	// Eingaben prüfen und Nutzer einloggen
 	public void handleLogin() throws SQLException {
 		
@@ -129,6 +131,7 @@ public class LoginController {
 				
 				log.info("Passwort richtig, User einloggen");
 				root.handleGUI("bookList");
+				((Node) (event.getSource())).getScene().getWindow().hide();
 			}
 			else {
 				root.handleDialog("Kein Benutzer gefunden",
@@ -162,21 +165,18 @@ public class LoginController {
 	
 	public void handleKeyPressed(KeyEvent event) {
 		
+		this.event = event;
 		switch (event.getCode()) {
-			case ENTER:
-				try {
-					handleLogin();
-				}
-				catch (SQLException e) {
-					e.printStackTrace();
-				}
-				break;
-			default:
-				break;
-		}
-		if(loginUser.checkPassword(passwordTextField.getText(), loginUser.getPassword())){
-			((Node)(event.getSource())).getScene().getWindow().hide();
+		case ENTER:
+			try {
+				handleLogin();
+			}
+			catch (SQLException e) {
+				e.printStackTrace();
+			}
+			break;
+		default:
+			break;
 		}
 	}
-	
 }

@@ -8,10 +8,13 @@ import java.util.logging.Logger;
 import de.dpma.pumaz.bvs.MainApp;
 import de.dpma.pumaz.bvs.dao.UserDAO;
 import de.dpma.pumaz.bvs.model.User;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Tooltip;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Text;
 
 public class RegistrationController {
@@ -70,58 +73,17 @@ public class RegistrationController {
 	@FXML
 	private Button completeButton;
 	
-	public RegistrationController() {
-		//
-		// textFieldWorkerIdToolTip.setText("Type in your identification
-		// number");
-		// textFieldFirstNameToolTip.setText("Type in your first name");
-		// textFieldLastNameToolTip.setText("Type in your last name");
-		// textFieldPasswordToolTip.setText("Type in your password");
-		// buttonRegisterToolTip.setText("Click to complete your registration");
-		// buttonBackToolTip.setText("Click to get back to the last window");
-		// workerIdTextField.setText("Identification number");
-		// firstNameTextField.setText("First name");
-		// lastNameTextField.setText("Last name");
-		// passwordTextField.setText("Password");
-		// workerIdText.setText("Identification number");
-		// firstNameText.setText("First name");
-		// lastNameText.setText("Last name");
-		// passwordText.setText("Password");
-		// hintText.setText("Fields marked with * are required ");
-		// backButton.setText("Back");
-		// completeButton.setText("Complete");
-		// headerText.setText("Registration");
-		//
-		//
-		//
-		//
-		//
-		// textFieldWorkerIdToolTip.setText("Ausweisnummer eingeben");
-		// textFieldFirstNameToolTip.setText("Vorname eingeben");
-		// textFieldLastNameToolTip.setText("Nachname eingeben");
-		// textFieldPasswordToolTip.setText("Passwort eingeben");
-		// buttonRegisterToolTip.setText("Drücken um Registration
-		// abzuschliessen");
-		// buttonBackToolTip.setText("Drücken um zurück zu gelangen");
-		// workerIdTextField.setText("Ausweisnummer");
-		// firstNameTextField.setText("Vorname");
-		// lastNameTextField.setText("Nachname");
-		// passwordTextField.setText("Passwort");
-		// workerIdText.setText("Ausweisnummer");
-		// firstNameText.setText("Vorname");
-		// lastNameText.setText("Nachname");
-		// passwordText.setText("Passwort");
-		// hintText.setText("Mit * markierte Felder sind Pflichtfelder ");
-		// backButton.setText("Zurück");
-		// completeButton.setText("Abschließen");
-		// headerText.setText("Registrieren");
-	}
-	
 	RootLayoutController root = new RootLayoutController();
 	
 	User searchUser;
 	
 	Logger log = Logger.getLogger(LoginController.class.getName());
+	
+	KeyEvent event;
+	
+	public RegistrationController() {
+		
+	}
 	
 	// Registrierungsangaben prüfen und Registrierung durchführen
 	public void handleRegister() throws SQLException {
@@ -175,6 +137,7 @@ public class RegistrationController {
 					lastNameTextField.getText(), passwordTextField.getText(), 0));
 			root.handleDialog("Mitarbeiter erfolgreich angelegt", "", "info");
 			log.info("Mitarbeiter angelegt");
+			((Node) (event.getSource())).getScene().getWindow().hide();
 		}
 	}
 	
@@ -187,8 +150,68 @@ public class RegistrationController {
 		return str.length() == pos.getIndex();
 	}
 	
-	public void handleBack() {
+	public void handleKeyPressed(KeyEvent event) {
 		
-		root.handleGUI("back");
+		this.event = event;
+		switch (event.getCode()) {
+		case ENTER:
+			try {
+				handleRegister();
+			}
+			catch (SQLException e) {
+				e.printStackTrace();
+			}
+			break;
+		default:
+			break;
+		}
+	}
+	
+	public void handleBack(ActionEvent event) {
+		
+		((Node) (event.getSource())).getScene().getWindow().hide();
+	}
+	
+	public void handleLanguage() {
+		
+		// textFieldWorkerIdToolTip.setText("Type in your identification
+		// number");
+		// textFieldFirstNameToolTip.setText("Type in your first name");
+		// textFieldLastNameToolTip.setText("Type in your last name");
+		// textFieldPasswordToolTip.setText("Type in your password");
+		// buttonRegisterToolTip.setText("Click to complete your registration");
+		// buttonBackToolTip.setText("Click to get back to the last window");
+		// workerIdTextField.setText("Identification number");
+		// firstNameTextField.setText("First name");
+		// lastNameTextField.setText("Last name");
+		// passwordTextField.setText("Password");
+		// workerIdText.setText("Identification number");
+		// firstNameText.setText("First name");
+		// lastNameText.setText("Last name");
+		// passwordText.setText("Password");
+		// hintText.setText("Fields marked with * are required ");
+		// backButton.setText("Back");
+		// completeButton.setText("Complete");
+		// headerText.setText("Registration");
+		
+		// textFieldWorkerIdToolTip.setText("Ausweisnummer eingeben");
+		// textFieldFirstNameToolTip.setText("Vorname eingeben");
+		// textFieldLastNameToolTip.setText("Nachname eingeben");
+		// textFieldPasswordToolTip.setText("Passwort eingeben");
+		// buttonRegisterToolTip.setText("Drücken um Registration
+		// abzuschliessen");
+		// buttonBackToolTip.setText("Drücken um zurück zu gelangen");
+		// workerIdTextField.setText("Ausweisnummer");
+		// firstNameTextField.setText("Vorname");
+		// lastNameTextField.setText("Nachname");
+		// passwordTextField.setText("Passwort");
+		// workerIdText.setText("Ausweisnummer");
+		// firstNameText.setText("Vorname");
+		// lastNameText.setText("Nachname");
+		// passwordText.setText("Passwort");
+		// hintText.setText("Mit * markierte Felder sind Pflichtfelder ");
+		// backButton.setText("Zurück");
+		// completeButton.setText("Abschließen");
+		// headerText.setText("Registrieren");
 	}
 }
