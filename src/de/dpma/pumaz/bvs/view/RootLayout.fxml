@@ -25,7 +25,6 @@
               <menus>
                 <Menu fx:id="fileMenu" mnemonicParsing="false" text="Datei">
                   <items>
-                    <MenuItem fx:id="changeLanguageMenuItem" mnemonicParsing="false" text="Sprache ändern" />
                         <MenuItem fx:id="exitMenuItem" mnemonicParsing="false" onAction="#handleExit" text="Beenden" />
                   </items>
                 </Menu>
@@ -37,16 +36,6 @@
                 </Menu>
               </menus>
             </MenuBar>
-            <ImageView fitHeight="25.0" fitWidth="40.0" layoutX="74.0" layoutY="59.0" AnchorPane.rightAnchor="55.0" AnchorPane.topAnchor="35.0">
-               <image>
-                  <Image url="@../../../../../../resources/germany-flag-1783774_640.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="25.0" fitWidth="40.0" layoutX="154.0" layoutY="59.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="35.0">
-               <image>
-                  <Image url="@../../../../../../resources/union-jack-1027898_640%20(1).jpg" />
-               </image>
-            </ImageView>
          </children>
       </AnchorPane>
    </top>
