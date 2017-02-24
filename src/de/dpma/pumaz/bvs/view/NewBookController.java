@@ -18,7 +18,7 @@ import javafx.scene.control.Tooltip;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class EditBookController {
+public class NewBookController {
 
 	@FXML
 	private Tooltip textFieldTitleToolTip;
@@ -100,31 +100,17 @@ public class EditBookController {
 
 	RootLayoutController root = new RootLayoutController();
 
-	Logger log = Logger.getLogger(EditBookController.class.getName());
+	Logger log = Logger.getLogger(NewBookController.class.getName());
 
-	Book editBook;
+	Book newBook = new Book();
 
-	public EditBookController() {
-
+	public NewBookController() {
 	}
 
 	@FXML
 	public void initialize() throws SQLException {
 
-	}
-
-	public void inputContent(Book book) {
-
-		this.editBook = book;
-
-		categoryComboBox.setValue(book.getCategoryName());
 		categoryComboBox.setItems(categoryComboBoxList);
-		titleTextField.setText(book.getName());
-		authorTextField.setText(book.getAuthor());
-		isbnTextField.setText(book.getISBN());
-		yearTextField.setText(book.getRelease_year());
-		availableTextField.setText(book.getAvailable_count());
-
 	}
 
 	@FXML
@@ -158,30 +144,23 @@ public class EditBookController {
 					"warning");
 			log.warning("Bitte Verfügbarkeit eingeben!");
 		} else {
-			this.editBook.setName(titleTextField.getText());
-			this.editBook.setAuthor(authorTextField.getText());
-			this.editBook.setISBN(isbnTextField.getText());
-			this.editBook.setRelease_year(yearTextField.getText());
+			this.newBook.setName(titleTextField.getText());
+			this.newBook.setAuthor(authorTextField.getText());
+			this.newBook.setISBN(isbnTextField.getText());
+			this.newBook.setRelease_year(yearTextField.getText());
 
-			this.editBook
+			this.newBook
 					.setId_categorys(BookListController.bookDao.getCategoryId(categoryComboBox.getValue().toString()));
 
-			bookList.bookDao.updateBook(this.editBook);
+			bookList.bookDao.insertBook(this.newBook);
 
-			if (Integer.parseInt(availableTextField.getText()) > Integer.parseInt(this.editBook.getAvailable_count())) {
-				for (int i = 0; i < (Integer.parseInt(availableTextField.getText())
-						- Integer.parseInt(this.editBook.getAvailable_count())); i++) {
-					bookList.bookDao.insertBookInstance(new Book(this.editBook.getId()));
-				}
-			} else if (Integer.parseInt(availableTextField.getText()) < Integer
-					.parseInt(this.editBook.getAvailable_count())) {
-				bookList.bookDao.deleteBookInstance(this.editBook.getId(),
-						(Integer.parseInt(this.editBook.getAvailable_count())
-								- Integer.parseInt(availableTextField.getText())));
+			int lastBook = bookList.bookDao.getLastBookId();
+
+			for (int i = 0; i < (Integer.parseInt(availableTextField.getText())); i++) {
+				bookList.bookDao.insertBookInstance(new Book(lastBook));
 			}
 
 			bookList.initialize();
-			root.handleDialog("Buch erfolgreich erstellt", "", "info");
 		}
 	}
 

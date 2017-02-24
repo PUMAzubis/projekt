@@ -6,15 +6,17 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
+import de.dpma.pumaz.bvs.MainApp;
 import de.dpma.pumaz.bvs.model.Book;
 
 public class BookDAO {
 	final String INSERT_BUCH = "INSERT INTO `books` (`name`, `author`, `release_year`, `isbn`, `id_categorys`) VALUES (?, ?, ?, ?, ?)";
-	final String INSERT_BUCH_INSTANCE = "INSERT INTO `books_single` (`id_books`, `id_borrower`, `available`) VALUES (?, ?, ?)";
+	final String INSERT_BUCH_INSTANCE = "INSERT INTO `books_single` (`id_books`) VALUES (?)";
 
 	final String DELETE_BUCH = "DELETE FROM `books` WHERE `id` = ?";
-	final String DELETE_BUCH_INSTANCE = "DELETE FROM `books_single` WHERE `single_id` = ?";
+	final String DELETE_BUCH_INSTANCE = "DELETE FROM `books_single` WHERE `id_books` = ? AND `available` = 1 LIMIT ?";
 
 	final String UPDATE_BUCH = "UPDATE `books` SET `name` = ?, `author` = ?, `release_year` = ?, `isbn` = ?, `id_categorys` = ? WHERE `id` = ?";
 	final String UPDATE_BUCH_INSTANCE = "UPDATE `books_single` SET `id_books` = ?, `id_borrower` = ?, `available` = ? WHERE `single_id` = ?";
@@ -35,11 +37,15 @@ public class BookDAO {
 
 	final String SELECT_BUCH_SEARCH = "SELECT *, (SELECT `name` FROM `categorys` WHERE `id` = b1.`id_categorys`) as categoryname, (SELECT COUNT(*) FROM `books_single` WHERE b1.`id` = `id_books`) as count, (SELECT COUNT(*) FROM `books_single` WHERE b1.`id` = `id_books` AND `available` = 1) as available_count FROM `books` b1 WHERE LOWER(b1.`name`) LIKE ? OR LOWER(b1.`author`) LIKE ? OR LOWER(b1.`release_year`) LIKE ? OR LOWER(b1.`isbn`) LIKE ? OR (SELECT LOWER(`name`) FROM `categorys` WHERE `id` = b1.`id_categorys`) LIKE ?";
 
-	// final String SELECT_BUCH_CATEGORY = "SELECT `name` FROM `categorys` WHERE
-	// `id` = ?";
-	private String cat;
+	final String SELECT_BUCH_CATEGORY_ID = "SELECT `id` FROM `categorys` WHERE `name` = ?";
+
+	final String SELECT_BUCH_LAST_ID = "SELECT `id` FROM `books` ORDER BY `add_time` DESC LIMIT 1";
+
+	private int id;
 
 	private final Connection con;
+
+	Logger log = Logger.getLogger(MainApp.class.getName());
 
 	public BookDAO(Connection con) {
 		this.con = con;
@@ -59,8 +65,6 @@ public class BookDAO {
 	public Book insertBookInstance(Book b) throws SQLException {
 		PreparedStatement stat = con.prepareStatement(INSERT_BUCH_INSTANCE);
 		stat.setInt(1, b.getBooks_single_id_books());
-		stat.setInt(2, b.getBooks_single_id_borrower());
-		stat.setInt(3, b.getBooks_single_available());
 		stat.executeUpdate();
 		return b;
 	}
@@ -74,6 +78,7 @@ public class BookDAO {
 		stat.setInt(5, b.getId_categorys());
 		stat.setInt(6, b.getId());
 		stat.executeUpdate();
+		log.info("asdsaadsdaasd");
 		return b;
 	}
 
@@ -94,11 +99,11 @@ public class BookDAO {
 		return b;
 	}
 
-	public Book deleteBookInstance(Book b) throws SQLException {
+	public void deleteBookInstance(int id, int amount) throws SQLException {
 		PreparedStatement stat = con.prepareStatement(DELETE_BUCH_INSTANCE);
-		stat.setInt(1, b.getBooks_single_id());
+		stat.setInt(1, id);
+		stat.setInt(2, amount);
 		stat.executeUpdate();
-		return b;
 	}
 
 	public List<Book> allBooks() throws SQLException {
@@ -189,6 +194,30 @@ public class BookDAO {
 			Books.add(Book);
 		}
 		return Books;
+	}
+
+	public int getCategoryId(String string) throws SQLException {
+		PreparedStatement stat = con.prepareStatement(SELECT_BUCH_CATEGORY_ID);
+		stat.setString(1, string);
+		ResultSet result = stat.executeQuery();
+
+		while (result.next()) {
+			id = result.getInt("id");
+		}
+		return id;
+
+	}
+
+	public int getLastBookId() throws SQLException {
+		PreparedStatement stat = con.prepareStatement(SELECT_BUCH_LAST_ID);
+		ResultSet result = stat.executeQuery();
+
+		while (result.next()) {
+			id = result.getInt("id");
+		}
+		System.out.println(id);
+		return id;
+
 	}
 
 	// public String getBookCategoryString(Book b) throws SQLException {

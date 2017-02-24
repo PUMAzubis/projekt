@@ -62,6 +62,11 @@ public class Book {
 		this.books_single_available = new SimpleIntegerProperty(books_single_available);
 	}
 
+	// Single Buch Constructor Short
+	public Book(int books_single_id_books) {
+		this.books_single_id_books = new SimpleIntegerProperty(books_single_id_books);
+	}
+
 	public int getBooks_single_id() {
 		return books_single_id.get();
 	}
