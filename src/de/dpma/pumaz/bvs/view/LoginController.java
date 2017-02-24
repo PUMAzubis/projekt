@@ -10,6 +10,7 @@ import de.dpma.pumaz.bvs.MainApp;
 import de.dpma.pumaz.bvs.dao.UserDAO;
 import de.dpma.pumaz.bvs.model.User;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Tooltip;
 import javafx.scene.input.KeyEvent;
@@ -173,5 +174,9 @@ public class LoginController {
 			default:
 				break;
 		}
+		if(loginUser.checkPassword(passwordTextField.getText(), loginUser.getPassword())){
+			((Node)(event.getSource())).getScene().getWindow().hide();
+		}
 	}
+	
 }
